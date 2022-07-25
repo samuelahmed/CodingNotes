@@ -1,0 +1,4239 @@
+\documentclass[10pt]{article}
+
+
+%Define the listing package
+\usepackage{listings} %code highlighter
+\usepackage{color} %use color
+\usepackage[hidelinks]{hyperref}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+
+ 
+%Customize a bit the look
+\lstset{ %
+backgroundcolor=\color{white}, % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\footnotesize, % the size of the fonts that are used for the code
+breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
+breaklines=true, % sets automatic line breaking
+captionpos=b, % sets the caption-position to bottom
+commentstyle=\color{mygreen}, % comment style
+deletekeywords={...}, % if you want to delete keywords from the given language
+escapeinside={\%*}{*)}, % if you want to add LaTeX within your code
+extendedchars=true, % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+frame=single, % adds a frame around the code
+keepspaces=true, % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+keywordstyle=\color{blue}, % keyword style
+% language=Octave, % the language of the code
+morekeywords={*,...}, % if you want to add more keywords to the set
+numbers=left, % where to put the line-numbers; possible values are (none, left, right)
+numbersep=5pt, % how far the line-numbers are from the code
+numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+rulecolor=\color{black}, % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+showspaces=false, % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+showstringspaces=false, % underline spaces within strings only
+showtabs=false, % show tabs within strings adding particular underscores
+stepnumber=1, % the step between two line-numbers. If it's 1, each line will be numbered
+stringstyle=\color{mymauve}, % string literal style
+tabsize=2, % sets default tabsize to 2 spaces
+title=\lstname % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+%END of listing package%
+ 
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+ 
+%define Javascript language
+\lstdefinelanguage{JavaScript}{
+keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, let, const, for, if, in, while, do, else, case, break},
+keywordstyle=\color{blue}\bfseries,
+ndkeywords={class, export, boolean, throw, implements, import, this},
+ndkeywordstyle=\color{darkgray}\bfseries,
+identifierstyle=\color{black},
+sensitive=false,
+comment=[l]{//},
+morecomment=[s]{/*}{*/},
+commentstyle=\color{purple}\ttfamily,
+stringstyle=\color{red}\ttfamily,
+morestring=[b]',
+morestring=[b]"
+}
+ 
+\lstset{
+language=JavaScript,
+extendedchars=true,
+basicstyle=\ttfamily,
+showstringspaces=false,
+showspaces=false,
+numbers=left,
+numberstyle=\footnotesize,
+numbersep=9pt,
+tabsize=2,
+breaklines=true,
+showtabs=false,
+captionpos=b
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\title{Javascript Notes: Concepts, Algorithms, and Data Structures}
+\author{Samuel Duval}
+
+
+\begin{document}
+
+%\date{}
+\maketitle
+
+\pagebreak
+
+%\tableofcontents
+
+%\section{Introduction}
+
+
+Welcome to my notes on coding. In this document I'll keep track of basic Javascript concepts, algorithms, and perhaps some data structures as well. These notes are to help me formalize this information in my own brain. Pretty much everything is from the internet, attribution will be given in some cases, but generally for the sake of brevity and since all concepts are basic it will be omitted. 
+
+\tableofcontents
+
+\pagebreak
+
+\section{Basic Javascript Concepts}
+
+\medskip %START OF SLICE
+\subsection{Array.prototype.slice()}
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice}
+
+\begin{itemize}
+	\item slice() returns a shallow copy of a portion of an array
+	\item array.slice(startIndex, endIndex)
+	\item slice() does not modify the array
+	\item without arguments slice() will automatically be slice(0, endIndex)
+	
+\begin{lstlisting}[title=Example slice(), captionpos=t]
+let fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']
+
+let citrus = fruits.slice(1, 3)
+// citrus contains ['Orange','Lemon']
+
+// fruits STILL contains ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']
+
+\end{lstlisting}
+\end{itemize}
+\medskip %END OF SLICE
+
+
+\pagebreak
+\medskip %START OF SORT
+\subsection{Array.prototype.sort()}
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort}	
+
+\begin{itemize}
+	\item sort() returns the same array in sorted order
+	\item default order is ascending, done by converting everything to a string then comparing the UTF-16 code unit values. So it does not naturally work for numbers as expected.
+	\item sort() modifies the the array
+	
+\begin{lstlisting}[title=Example sort() for integers, captionpos=t]
+const numbers = [4, 2, 5, 1, 3];
+
+numbers.sort((a, b) => a - b);
+
+console.log(numbers);
+// [1, 2, 3, 4, 5]
+\end{lstlisting}
+\end{itemize}
+\medskip %END OF SORT
+
+
+\medskip %START OF JOIN
+\pagebreak
+\subsection{Array.prototype.join()}
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join}
+
+\begin{itemize}
+	\item join() returns a new STRING by concatenating all elements in an ARRAY 
+	\item items should be seperated by commas (,) (or specified seperator string), if only one item then that item will be returned without using the seperator.
+
+	
+\begin{lstlisting}[title=Example join(), captionpos=t]
+const elements = ['Fire', 'Air', 'Water'];
+
+console.log(elements.join());
+// expected output: "Fire,Air,Water"
+
+console.log(elements.join(''));
+// expected output: "FireAirWater"
+
+console.log(elements.join('-'));
+// expected output: "Fire-Air-Water"
+\end{lstlisting}
+\end{itemize}
+\medskip %END OF JOIN
+
+
+\medskip %START OF INDEXOF
+\pagebreak
+\subsection{Array.prototype.indexOf()}
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf}
+
+\begin{itemize}
+	\item indexOf() returns the first index at which a given element can be found in an array or -1 if not found
+	\item good for finding the index of first appearance of something. If you want last use lastIndexOf()
+	
+\begin{lstlisting}[title=Example indexOf(), captionpos=t]
+const names = ['sam', 'bill', 'steve', 'matt']
+
+const idx = names.indexOf('sam')
+names[idx] = 'replaced-sam'
+
+console.log(names)
+//[ 'replaced-sam', 'bill', 'steve', 'matt' ]
+\end{lstlisting}
+\end{itemize}
+\medskip %END OF INDEXOF
+
+
+\medskip %START OF REDUCE
+\pagebreak
+\subsection{Array.prototype.reduce()}
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce}
+
+\begin{itemize}
+	\item reduce() passes a callback function on each item in the array and has a second parameter for storing current value
+	\item reduce((callback, currentValue) $\rightarrow$ callback, currentValue) 
+\end{itemize}
+
+	
+\begin{lstlisting}[title=Example reduce(), captionpos=t]
+const array = [1,2,3,4,5]
+
+let reduceExample = array.reduce((callback, currentValue) => callback + currentValue)
+
+console.log(reduceExample)
+//output: 15
+\end{lstlisting}
+\medskip %END OF REDUCE
+
+
+\medskip %START OF SPLIT
+\pagebreak
+\subsection{String.prototype.split()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split}
+
+\begin{itemize}
+	\item takes a string and splits it into parts and returns it as an array
+	\item split(), split(separator), split(separator, limit) 
+	\item can pass in a value(separator) and it will decide where the string will be split
+	\item can also take regular expressions ex. too many commas split(/,+/) may help resolve
+\end{itemize}
+
+	
+\begin{lstlisting}[title=Example split(), captionpos=t]
+const splitString = 'Hello,my,name,is,Sam'
+
+let split = splitString.split(',')
+
+console.log(split) 
+//[ 'Hello', 'my', 'name', 'is', 'Sam' ]
+\end{lstlisting}
+\medskip %END OF SPLIT
+
+
+\medskip %START OF FILL
+\pagebreak
+\subsection{Array.prototype.fill()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill}
+
+\begin{itemize}
+	\item Modifies an array with the value given in fill() 
+	\item fill(0) by default, fill(value, start, end)
+	\item useful for filling an array with numbers (0 seems common followed by other operations)
+\end{itemize}
+
+	
+\begin{lstlisting}[title=Example fill(), captionpos=t]
+const fillArray = [0,1,2,3,4,5]
+const fillArray2 = [0,1,2,3,4,5]
+
+fillArray.fill(0)
+//[ 0, 0, 0, 0, 0, 0 ]
+
+fillArray2.fill(0,3,5)
+//[ 0, 1, 2, 0, 0, 5 ]
+\end{lstlisting}
+\medskip %END OF FILL
+
+
+\medskip %START OF MAP
+\pagebreak
+\subsection{map()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map}
+
+\begin{itemize}
+	\item Executes a function on all elements of an array and returns a new array 
+	\item Does not change original array
+	\item map(callback)
+	\item Can even return new array of objects
+	\item Useful for pulling specific parts out of an array or for manipulating an entire array (ex. to find total value of objects within)
+\end{itemize}
+
+	
+\begin{lstlisting}[title=Example simple map() multiplying all elements by two, captionpos=t]
+const numbers = [1,2,3,4,5];
+
+let mapNumbers = numbers.map(nums => (nums * 2))
+//[ 2, 4, 6, 8, 10 ]
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example map() Number constructor turning string numbers into regular integers, captionpos=t]
+const stringNumbers = ['1', '2', '3', '4', '5']
+
+const regNumbers = stringNumbers.map(Number)
+// [ 1, 2, 3, 4, 5 ]
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example simple map() to manipulate objects within array, captionpos=t]
+const products = [
+    {
+        name: 'laptop',
+        price: 1500,
+        count: 5
+    },
+    {
+        name: 'desktop',
+        price: 2000,
+        count: 10
+    },
+    {
+        name: 'phone',
+        price: 1000,
+        count: 100
+    }
+];
+
+const totalProductValue = products.map(item => item.price * item.count);
+//[ 7500, 20000, 100000 ]
+
+const totalProductValueObject = products.map(item => ({
+    name: item.name,
+    totalValue: item.price * item.count
+}));
+// [
+//     { name: 'laptop', totalValue: 7500 },
+//     { name: 'desktop', totalValue: 20000 },
+//     { name: 'phone', totalValue: 100000 }
+// ]
+\end{lstlisting}
+\medskip %END OF MAP
+
+
+\medskip %START OF PUSH
+\pagebreak
+\subsection{Array.prototype.push()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push}
+
+\begin{itemize}
+	\item push() add ones or more elements to the end of an array
+	\item push(x,y,z,1,2,3,etc.) can have as many parameters as desired
+	\item push returns the new array length (for updated original array simply return that iteself)
+\end{itemize}
+
+	
+\begin{lstlisting}[title=Example push(), captionpos=t]
+const numbers = [1,2,3,4,5]
+
+numbers.push(6)
+//[ 1, 2, 3, 4, 5, 6 ]
+
+numbers.push(6,7,8,9,10)
+//[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+//note: if done in order above it would be 
+//[1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
+
+const total = numbers.push(6,7,8,9,10)
+//10
+//note: would be 16 if done as above 
+\end{lstlisting}
+\medskip %END OF PUSH
+
+
+
+\medskip %START OF SPLICE
+\pagebreak
+\subsection{Array.prototype.splice()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice}
+
+\begin{itemize}
+	\item splice() modifies an array by removing and/or replacing existing elements from it
+	\item splice(startIndex, removalCount, newElementsAdded)
+\end{itemize}
+
+	
+\begin{lstlisting}[title=Example splice(), captionpos=t]
+const numbers = [1,2,3,4,5];
+
+numbers.splice(2,3)
+//[ 1, 2 ]
+
+let deleted = numbers.splice(2,3)
+//[ 3, 4, 5 ]
+
+numbers.splice(2,3,6,9)
+//[ 1, 2, 6, 9 ]
+
+numbers.splice(2,0,6,9)
+//[ 1, 2, 6, 9, 3, 4, 5 ]
+\end{lstlisting}
+\medskip %END OF SPLICE
+
+
+
+\medskip %START OF XOR
+\pagebreak
+\subsection{Bitwise XOR (\textasciicircum)}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_XOR}
+
+\begin{itemize}
+	\item XOR (\textasciicircum) returns a 1 if the other corresponding bit is different
+\end{itemize}
+
+\begin{lstlisting}[title= XOR (\textasciicircum) rules, captionpos=t]
+//0 & 0 = 0 
+//0 & 1 = 1
+//1 & 1 = 0 
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example XOR (\textasciicircum), captionpos=t]
+const a = 5;        
+// 00000000000000000000000000000101
+const b = 3;        
+// 00000000000000000000000000000011
+
+console.log(a ^ b); 
+// 00000000000000000000000000000110
+// expected output: 6
+\end{lstlisting}
+\medskip %END OF XOR
+
+
+\medskip %START OF CHARCODEAT
+\pagebreak
+\subsection{String.prototype.charCodeAt()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt}
+
+\begin{itemize}
+	\item Returns the unicode integer of the character in a string representing the UTF-16 code unit of the given index.
+\end{itemize}
+
+\begin{lstlisting}[title=Example charCodeAt(), captionpos=t]
+const sentence = 'My name is Sam';
+
+const index = 4;
+const otherLocation = 1;
+
+console.log(`The character code ${sentence.charCodeAt(index)} is equal to ${sentence.charAt(index)}`);
+// "The character code 97 is equal to a"
+
+console.log(`The character code ${sentence.charCodeAt(otherLocation)} is equal to ${sentence.charAt(otherLocation)}`);
+//"The character code 121 is equal to y"
+\end{lstlisting}
+\medskip %END OF CHARCODEAT
+
+
+
+
+\medskip %START OF FROMCHARCODE
+\pagebreak
+\subsection{String.fromCharCode()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode}
+
+\begin{itemize}
+	\item The static String.fromCharCode() method returns a string created from the specified sequence of UTF-16 code units.
+\end{itemize}
+
+\begin{lstlisting}[title=Example fromCharCode(), captionpos=t]
+String.fromCharCode(65, 66, 67);   
+// returns "ABC"
+\end{lstlisting}
+\medskip %END OF FROMCHARCODE
+
+
+
+\medskip %START OF SOME()
+\pagebreak
+\subsection{Array.prototype.some()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some}
+
+\begin{itemize}
+	\item Executes a given function and returns true if at least one element in array provides a truthy value. 
+	\item If no item in array is true, it will provide false
+\end{itemize}
+
+\begin{lstlisting}[title=Example some(), captionpos=t]
+const numbers = [1,2,3,4,5]
+
+const res = numbers.some(greaterThanThree)
+//true
+
+function greaterThanThree(num) {
+    return num > 3;
+}
+\end{lstlisting}
+\medskip %END OF SOME()
+
+
+\medskip %START OF EVERY()
+\pagebreak
+\subsection{Array.prototype.every()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every}
+
+\begin{itemize}
+	\item Executes a given function on all items in an array and return true only if ALL items are truthy
+	\item If any item in the array returns a falsy value, it will automatically return false
+\end{itemize}
+
+\begin{lstlisting}[title=Example every(), captionpos=t]
+const numbers = [1,2,3,4,5,-1]
+
+const res = numbers.every(isPositive)
+//false
+
+function isPositive(num) {
+    return num > 0;
+}
+\end{lstlisting}
+\medskip %END OF EVERY()
+
+
+
+
+\medskip %START OF INCLUDES()
+\pagebreak
+\subsection{Array.prototype.includes()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes}
+
+\begin{itemize}
+	\item Checks in an element is included in an array
+	\item If the item is included it will return true
+	\item If the item is not included it will return false
+\end{itemize}
+
+\begin{lstlisting}[title=Example includes(), captionpos=t]
+const names = ['Sam', 'Gabe', 'Troy']
+
+const res = names.includes('Sam')
+// true
+const res = names.includes('Bill')
+// false
+\end{lstlisting}
+\medskip %END OF INCLUDES()
+
+
+\medskip %START OF FIND()
+\pagebreak
+\subsection{Array.prototype.find()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find}
+
+\begin{itemize}
+	\item Returns the first element in an array for which the callback has a truthy value
+	\item If object will return the whole object (or you can return a part of an object)
+	\item if nothing is found it will return undefined
+\end{itemize}
+
+\begin{lstlisting}[title=Example find(), captionpos=t]
+const names = ['Sam', 'Gabe', 'Troy']
+
+const namedPerson = names.find(findName)
+//Gabe
+
+function findName(name) {
+    return name === 'Gabe'
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example find() with objects, captionpos=t]
+const inventory = [
+    {name: 'apples', quantity: 2},
+    {name: 'bananas', quantity: 0},
+    {name: 'cherries', quantity: 5}
+  ];
+  
+  const result = inventory.find( ({ name }) => name === 'cherries' );
+  //{ name: 'cherries', quantity: 5 }
+  const result = inventory.find( ({ name }) => name === 'cherries' ).quantity;
+  //5
+\end{lstlisting}
+\medskip %END OF FIND()
+
+
+
+\medskip %START OF MATH.MAX.MIN.ABS()
+\pagebreak
+\subsection{Math.max(), Math.min(), Math.abs()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max}
+
+\medskip
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min}
+
+\medskip
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs}
+
+
+\begin{itemize}
+	\item Math.max() 
+	\item Returns highest value in list
+	\item Math.min()
+	\item Returns lowest value in list 
+	\item Math.abs()
+	\item Returns absolute value of a number (distance from zero) 
+\end{itemize}
+
+\begin{lstlisting}[title=Example Math.max(), captionpos=t]
+console.log(Math.max(1, 3, 2));
+// expected output: 3
+
+console.log(Math.max(-1, -3, -2));
+// expected output: -1
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Example Math.min(), captionpos=t]
+console.log(Math.min(2, 3, 1));
+// expected output: 1
+
+console.log(Math.min(-2, -3, -1));
+// expected output: -3
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Example Math.abs(), captionpos=t]
+function difference(a, b) {
+  return Math.abs(a - b);
+}
+
+console.log(difference(3, 5));
+// expected output: 2
+
+console.log(difference(5, 3));
+// expected output: 2
+\end{lstlisting}
+\medskip %END OF MATH.MAX.MIN.ABS()
+
+
+
+
+\medskip %START OF PARSEINT()
+\pagebreak
+\subsection{parseInt() \& parseFloat()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt}
+
+\medskip
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat}
+
+
+\begin{itemize}
+	\item parseInt() take a float or string and parses the integer out of it
+	\item Will go from start to end of the first integer it sees (if it sees words, space, or any non-number it will stop) 
+	\item parseFloat() will do the same except it will run through the first period (.) and stop at the next period / non-number
+	\item These don't work if the int / float isn't at the start of the string
+	\item Note: parseInt(string, radix) careful of radix when passing values to parseInt
+\end{itemize}
+
+\begin{lstlisting}[title=Example parseInt(), captionpos=t]
+let testString = '1337demo' 
+let parseIntDemo = parseInt(testString)
+//1337
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example parseFloat(), captionpos=t]
+let testStringTwo = '1337.37.37demo'
+let parseFloatDemo = parseFloat(testStringTwo)
+//1337.37
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example parseInt() without numbers at start, captionpos=t]
+let testString = 'doesnotwork1337.37.37demo'
+let parseIntDemo = parseInt(testString)
+//NaN
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example parseInt() with radix 16, captionpos=t]
+console.log(roughScale(' 0xF', 16));
+// expected output: 1500
+\end{lstlisting}
+
+\medskip %END OF PARSEINT()
+
+
+
+\medskip %START OF AND & OR ()
+\pagebreak
+\subsection{Logical (and \&\&) and (or	$\Vert$) }
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR}
+
+\medskip
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND}
+
+
+\begin{itemize}
+	\item The logical AND (\&\&) operator (logical conjunction) for a set of boolean operands will be true if and only if all the operands are true. Otherwise it will be false.
+	\item More generally, the operator returns the value of the first falsy operand encountered when evaluating from left to right, or the value of the last operand if they are all truthy.
+	\item The logical OR ($\Vert$) operator (logical disjunction) for a set of operands is true if and only if one or more of its operands is true.
+	\item the $\Vert$ operator actually returns the value of one of the specified operands, so if this operator is used with non-Boolean values, it will return a non-Boolean value.
+\end{itemize}
+
+\begin{lstlisting}[title=Example Logical AND \&\&, captionpos=t]
+const a = 3;
+const b = -2;
+
+console.log(a > 0 && b > 0);
+// expected output: false
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example Logical AND \&\&, captionpos=t]
+result = 2 && 0;      
+// result is assigned 0
+result = 'foo' && 4;  
+// result is assigned 4
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example Logical OR $\Vert$, captionpos=t]
+const a = 3;
+const b = -2;
+
+console.log(a > 0 || b > 0);
+// expected output: true
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example Logical OR $\Vert$, captionpos=t]
+o3 = true  || false      
+// t || f returns true
+o4 = false || (3 == 4)   
+// f || f returns false
+o5 = 'Cat' || 'Dog'     
+// t || t returns "Cat"
+\end{lstlisting}
+
+\medskip %END OF OF AND & OR ()
+
+
+
+
+
+\medskip %START OF SET() CONSTRUCTOR
+\pagebreak
+\subsection{Set() constructor}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set}
+
+\begin{itemize}
+	\item The Set constructor lets you create Set objects that store unique values of any type, whether primitive values or object references.
+\end{itemize}
+
+\begin{lstlisting}[title=Example set1 = new Set(), captionpos=t]
+const set1 = new Set([1, 2, 3, 4, 5]);
+
+console.log(set1.has(1));
+// expected output: true
+
+console.log(set1.has(5));
+// expected output: true
+
+console.log(set1.has(6));
+// expected output: false
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example using Set() object, captionpos=t]
+let mySet = new Set()
+
+mySet.add(1)           
+// Set [ 1 ]
+mySet.add(5)          
+// Set [ 1, 5 ]
+mySet.add(5)           
+// Set [ 1, 5 ]
+mySet.add('some text') // Set [ 1, 5, 'some text' ]
+let o = {a: 1, b: 2}
+mySet.add(o)
+\end{lstlisting}
+
+\medskip %END OF SET() CONSTRUCTOR
+
+
+
+
+
+
+
+
+\medskip %START OF CHARAT()
+\pagebreak
+\subsection{String.prototype.charAt()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt}
+
+\begin{itemize}
+	\item The String object's charAt() method returns a new string consisting of the single UTF-16 code unit located at the specified offset into the string.
+	\item charAt(index)
+\end{itemize}
+
+\begin{lstlisting}[title=Example charAt(), captionpos=t]
+const sentence = 'The quick brown fox jumps over the lazy dog.';
+
+const index = 4;
+
+console.log(`The character at index ${index} is ${sentence.charAt(index)}`);
+// expected output: "The character at index 4 is q"
+\end{lstlisting}
+
+\medskip %END OF CHARAT()
+
+
+
+
+
+
+
+
+\medskip %START OF FOROF()
+\pagebreak
+\subsection{for...of}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of}
+
+\begin{itemize}
+	\item The for...of statement creates a loop iterating over iterable objects, including: built-in String, Array, array-like objects (e.g., arguments or NodeList), TypedArray, Map, Set, and user-defined iterables. It invokes a custom iteration hook with statements to be executed for the value of each distinct property of the object.
+\end{itemize}
+
+\begin{lstlisting}[title=Example for...of, captionpos=t]
+const array1 = ['a', 'b', 'c'];
+
+for (const element of array1) {
+  console.log(element);
+}
+
+// expected output: "a"
+// expected output: "b"
+// expected output: "c"
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example for...of, captionpos=t]
+for (variable of iterable) {
+  statement
+}
+\end{lstlisting}
+\medskip %END OF FOROF()
+
+
+
+
+
+
+
+
+
+\medskip %START OF FORIN()
+\pagebreak
+\subsection{for...in}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in}
+
+\begin{itemize}
+	\item The for...in statement iterates over all enumerable properties of an object that are keyed by strings (ignoring ones keyed by Symbols), including inherited enumerable properties.
+\end{itemize}
+
+\begin{lstlisting}[title=Example for...in, captionpos=t]
+const object = { a: 1, b: 2, c: 3 };
+
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`);
+}
+
+// expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example for...in, captionpos=t]
+for (const variable in object) {
+  statement
+}
+\end{lstlisting}
+\medskip %END OF FORIN()
+
+
+
+
+
+
+
+
+
+
+
+
+
+\medskip %START OF TERNARY
+\pagebreak
+\subsection{Conditional (ternary) operator}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator}
+
+\begin{itemize}
+	\item The conditional (ternary) operator is the only JavaScript operator that takes three operands
+	\item A condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy.
+	\item This operator is frequently used as an alternative to an if...else statement.
+	\item condition ? exprIfTrue : exprIfFalse
+\end{itemize}
+
+\begin{lstlisting}[title=Example ternary operator, captionpos=t]
+function getFee(isMember) {
+  return (isMember ? '$2.00' : '$10.00');
+}
+
+console.log(getFee(true));
+// expected output: "$2.00"
+
+console.log(getFee(false));
+// expected output: "$10.00"
+
+console.log(getFee(null));
+// expected output: "$10.00"
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Example ternary operator, captionpos=t]
+const age = 26;
+const beverage = age >= 21 ? "Beer" : "Juice";
+console.log(beverage); // "Beer"
+\end{lstlisting}
+\medskip %END OF TERNARY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\medskip %START OF GET()
+\pagebreak
+\subsection{Map.prototype.get()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get}
+
+\begin{itemize}
+	\item The get() method returns a specified element from a Map object. 
+	\item If the value that is associated to the provided key is an object, then you will get a reference to that object and any change made to that object will effectively modify it inside the Map object.
+	\item get(key)
+\end{itemize}
+
+\begin{lstlisting}[title=Example Map.prototype.get(), captionpos=t]
+const map1 = new Map();
+map1.set('bar', 'foo');
+
+console.log(map1.get('bar'));
+// expected output: "foo"
+
+console.log(map1.get('baz'));
+// expected output: undefined
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Example get(), captionpos=t]
+const arr = [];
+const myMap = new Map();
+
+myMap.set('bar', arr);
+myMap.get('bar').push('foo');
+
+console.log(arr); 
+// ["foo"]
+console.log(myMap.get('bar')); 
+// ["foo"]
+\end{lstlisting}
+\medskip %END OF GET()
+
+
+
+
+
+\medskip %START OF HAS()
+\pagebreak
+\subsection{Map.prototype.has()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has}
+
+\begin{itemize}
+	\item The has() method returns a boolean indicating whether an element with the specified key exists or not.
+	\item has(key)
+
+\end{itemize}
+
+\begin{lstlisting}[title=Example Map.prototype.has(), captionpos=t]
+const map1 = new Map();
+map1.set('bar', 'foo');
+
+console.log(map1.has('bar'));
+// expected output: true
+
+console.log(map1.has('baz'));
+// expected output: false
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Example has(), captionpos=t]
+let myMap = new Map()
+myMap.set('bar', "foo")
+
+myMap.has('bar')   
+// returns true
+myMap.has('baz')   
+// returns false
+\end{lstlisting}
+\medskip %END OF HAS()
+
+
+
+
+
+
+
+\medskip %START OF SET
+\pagebreak
+\subsection{Set}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set}
+
+\begin{itemize}
+	\item The Set object lets you store unique values of any type, whether primitive values or object references.	
+	\item Set objects are collections of values. A value in the Set may only occur once; it is unique in the Set's collection.
+	\item You can iterate through the elements of a set in insertion order. The insertion order corresponds to the order in which each element was inserted into the set by the add()
+
+\end{itemize}
+
+\begin{lstlisting}[title=Example Set 0bject, captionpos=t]
+const mySet1 = new Set()
+
+mySet1.add(1)           // Set [ 1 ]
+mySet1.add(5)           // Set [ 1, 5 ]
+mySet1.add(5)           // Set [ 1, 5 ]
+mySet1.add('some text') // Set [ 1, 5, 'some text' ]
+const o = {a: 1, b: 2}
+mySet1.add(o)
+
+mySet1.add({a: 1, b: 2})   // o is referencing a different object, so this is okay
+
+mySet1.has(1)              // true
+mySet1.has(3)              // false, since 3 has not been added to the set
+mySet1.has(5)              // true
+mySet1.has(Math.sqrt(25))  // true
+mySet1.has('Some Text'.toLowerCase()) // true
+mySet1.has(o)       // true
+
+mySet1.size         // 5
+
+mySet1.delete(5)    // removes 5 from the set
+mySet1.has(5)       // false, 5 has been removed
+
+mySet1.size         // 4, since we just removed one value
+
+mySet1.add(5)       // Set [1, 'some text', {...}, {...}, 5] - a previously deleted item will be added as a new item, it will not retain its original position before deletion
+
+console.log(mySet1)
+
+
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Example remove duplicate elements from array, captionpos=t]
+// Use to remove duplicate elements from the array
+
+const numbers = [2,3,4,4,2,3,3,4,4,5,5,6,6,7,5,32,3,4,5]
+
+console.log([...new Set(numbers)])
+
+// [2, 3, 4, 5, 6, 7, 32]
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Example relationship with array, captionpos=t]
+const myArray = ['value1', 'value2', 'value3'];
+
+// Use the regular Set constructor to transform an Array into a Set
+const mySet = new Set(myArray);
+
+mySet.has('value1')     // returns true
+
+// Use the spread operator to transform a set into an Array.
+console.log([...mySet]); // Will show you exactly the same Array as myArray
+\end{lstlisting}
+
+
+
+\begin{lstlisting}[title=Example relationship with string, captionpos=t]
+const text = 'India';
+
+const mySet = new Set(text);  // Set(5) {'I', 'n', 'd', 'i', 'a'}
+mySet.size  // 5
+
+//case sensitive & duplicate omission
+new Set("Firefox")  // Set(7) { "F", "i", "r", "e", "f", "o", "x" }
+new Set("firefox")  // Set(6) { "f", "i", "r", "e", "o", "x" }
+\end{lstlisting}
+
+\medskip %END OF SET()
+
+
+
+
+
+
+\medskip %START OF toString()
+\pagebreak
+\subsection{Object.prototype.toString()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString}
+
+\begin{itemize}
+	\item The toString() method returns a string representing the object.
+	\item toString()
+\end{itemize}
+
+\begin{lstlisting}[title=Example toString(), captionpos=t]
+function Dog(name) {
+  this.name = name;
+}
+
+const dog1 = new Dog('Gabby');
+
+Dog.prototype.toString = function dogToString() {
+  return `${this.name}`;
+};
+
+console.log(dog1.toString());
+// expected output: "Gabby"
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Example toString(), captionpos=t]
+const arr = [1, 2, 3];
+
+arr.toString() 
+// "1,2,3"
+Object.prototype.toString.call(arr) 
+// "[object Array]"
+\end{lstlisting}
+
+\medskip %END OF toString()
+
+
+
+
+
+
+
+
+
+\medskip %START OF replace()
+\pagebreak
+\subsection{String.prototype.replace()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace}
+
+\begin{itemize}
+	\item The replace() method returns a new string with some or all matches of a pattern replaced by a replacement. 
+	\item  The pattern can be a string or a RegExp, and the replacement can be a string or a function called for each match.
+	\item If pattern is a string, only the first occurrence will be replaced.
+	\item The original string is left unchanged.
+	\item replace(substr, newSubstr)
+
+\end{itemize}
+
+\begin{lstlisting}[title=Example replace(), captionpos=t]
+const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+
+console.log(p.replace('dog', 'monkey'));
+// expected output: "The quick brown fox jumps over the lazy monkey. If the dog reacted, was it really lazy?"
+
+const regex = /Dog/gi;
+console.log(p.replace(regex, 'ferret'));
+// expected output: "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"
+
+const regex = /Dog/i;
+console.log(p.replace(regex, 'ferret'));
+// expected output: "The quick brown fox jumps over the lazy ferret. If the dog reacted, was it really lazy?"
+\end{lstlisting}
+
+\medskip %END OF replace()
+
+
+
+
+
+
+
+
+
+\medskip %START OF add()
+\pagebreak
+\subsection{Set.prototype.add()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/add}
+
+\begin{itemize}
+	\item The add() method inserts a new element with a specified value in to a Set object
+	\item  Only works if  if there isn't an element with the same value already in the Set.
+	\item add(value)
+
+\end{itemize}
+
+\begin{lstlisting}[title=Example add(), captionpos=t]
+const set1 = new Set();
+
+set1.add(42);
+set1.add(42);
+set1.add(13);
+
+for (const item of set1) {
+  console.log(item);
+  // expected output: 42
+  // expected output: 13
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example add(), captionpos=t]
+const mySet = new Set();
+
+mySet.add(1);
+mySet.add(5).add('some text'); // chainable
+
+console.log(mySet);
+// Set [1, 5, "some text"]
+\end{lstlisting}
+
+\medskip %END OF add()
+
+
+
+
+
+
+
+
+\medskip %START OF unshift()
+\pagebreak
+\subsection{Array.prototype.unshift()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift}
+
+\begin{itemize}
+	\item The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+	\item unshift(element0)
+	\item unshift(element0, element1)
+\end{itemize}
+
+\begin{lstlisting}[title=Examples using unshift(), captionpos=t]
+const arr = [1, 2]
+
+arr.unshift(0)               
+// result of the call is 3, which is the new array length
+// arr is [0, 1, 2]
+
+arr.unshift(-2, -1)          
+// the new array length is 5
+// arr is [-2, -1, 0, 1, 2]
+
+arr.unshift([-4, -3])        
+// the new array length is 6
+// arr is [[-4, -3], -2, -1, 0, 1, 2]
+
+arr.unshift([-7, -6], [-5])  
+// the new array length is 8
+// arr is [ [-7, -6], [-5], [-4, -3], -2, -1, 0, 1, 2 ]
+\end{lstlisting}
+
+
+
+\medskip %END OF unshift()
+
+
+
+
+
+
+
+
+
+
+
+\medskip %START OF size()
+\pagebreak
+\subsection{Set.prototype.size}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/size}
+
+\begin{itemize}
+	\item The size accessor property returns the number of (unique) elements in a Set object.
+	\item The value of size is an integer representing how many entries the Set object has.
+	\item A set accessor function for size is undefined; you cannot change this property.
+	\item set.size()
+\end{itemize}
+
+\begin{lstlisting}[title=Examples using size(), captionpos=t]
+const mySet = new Set();
+mySet.add(1);
+mySet.add(5);
+mySet.add('some text')
+
+mySet.size; 
+// 3
+\end{lstlisting}
+
+\medskip %END OF size()
+
+
+
+
+
+
+
+
+\medskip %START OF setDELETE()
+\pagebreak
+\subsection{Set.prototype.delete()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/delete}
+
+\begin{itemize}
+	\item The delete() method removes a specified value from a Set object, if it is in the set.
+	\item delete(value)
+	\item Returns true if value was already in Set; otherwise false.
+\end{itemize}
+
+\begin{lstlisting}[title=Examples using delete(), captionpos=t]
+const mySet = new Set();
+mySet.add('foo');
+
+mySet.delete('bar'); 
+// Returns false. No "bar" element found to be deleted.
+mySet.delete('foo');
+// Returns true. Successfully removed.
+
+mySet.has('foo');    
+// Returns false. The "foo" element is no longer present.
+\end{lstlisting}
+
+\begin{lstlisting}[title=Examples using delete(), captionpos=t]
+const setObj = new Set();   
+// Create a new set.
+
+setObj.add({x: 10, y: 20}); 
+// Add object in the set.
+
+setObj.add({x: 20, y: 30}); 
+// Add object in the set.
+
+// Delete any point with `x > 10`.
+setObj.forEach(function(point){
+  if (point.x > 10){
+    setObj.delete(point)
+  }
+})
+\end{lstlisting}
+
+\medskip %END OF setDELETE()
+
+
+
+
+
+
+
+
+
+\medskip %START OF Delete operator()
+\pagebreak
+\subsection{delete operator}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete}
+
+\begin{itemize}
+	\item The JavaScript delete operator removes a property from an object; if no more references to the same property are held, it is eventually released automatically.
+	\item delete expression
+	\item true for all cases except when the property is an Object.hasOwn non-configurable property, in which case, false is returned in non-strict mode.
+\end{itemize}
+
+\begin{lstlisting}[title=Example using delete operator, captionpos=t]
+const Employee = {
+  firstname: 'John',
+  lastname: 'Doe'
+};
+
+console.log(Employee.firstname);
+// expected output: "John"
+
+delete Employee.firstname;
+
+console.log(Employee.firstname);
+// expected output: undefined
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example using delete operator, captionpos=t]
+const trees = ['redwood', 'bay', 'cedar', 'oak', 'maple'];
+delete trees[3];
+console.log(3 in trees); // false
+\end{lstlisting}
+
+\medskip %END OF  DELETE OPERATOR()
+
+
+
+
+
+
+\medskip %START OF reverse()
+\pagebreak
+\subsection{Array.prototype.reverse()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse}
+
+\begin{itemize}
+	\item The reverse() method reverses an array in place. The first array element becomes the last, and the last array element becomes the first.
+
+	\item reverse()
+	\item return the reversed array
+\end{itemize}
+
+\begin{lstlisting}[title=Example using reverse(), captionpos=t]
+const array1 = ['one', 'two', 'three'];
+console.log('array1:', array1);
+// expected output: "array1:" Array ["one", "two", "three"]
+
+const reversed = array1.reverse();
+console.log('reversed:', reversed);
+// expected output: "reversed:" Array ["three", "two", "one"]
+
+// Careful: reverse is destructive -- it changes the original array.
+console.log('array1:', array1);
+// expected output: "array1:" Array ["three", "two", "one"]
+
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example using reverse() with array, captionpos=t]
+const items = [1, 2, 3];
+console.log(items);
+// [1, 2, 3]
+
+items.reverse();
+console.log(items); ]
+// [3, 2, 1]
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example using reverse() in array like object, captionpos=t]
+const obj = {0: 1, 1: 2, 2: 3, length: 3};
+console.log(obj); 
+// {0: 1, 1: 2, 2: 3, length: 3}
+
+Array.prototype.reverse.call(obj); 
+//same syntax for using apply()
+console.log(obj); 
+// {0: 3, 1: 2, 2: 1, length: 3}
+\end{lstlisting}
+\medskip %END OF  reverse()
+
+
+
+
+
+
+
+
+
+
+\medskip %START OF Array() constructor
+\pagebreak
+\subsection{Array() constructor}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array}
+
+\begin{itemize}
+	\item The Array() constructor is used to create Array objects.
+\end{itemize}
+
+\begin{lstlisting}[title=Example Array() constructor, captionpos=t]
+// literal constructor
+[element0, element1, ..., elementN]
+
+// construct from elements
+new Array(element0, element1, ..., elementN)
+
+// construct from array length
+new Array(arrayLength)
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example using literal notation, captionpos=t]
+let fruits = ['Apple', 'Banana'];
+
+console.log(fruits.length); 
+// 2
+console.log(fruits[0]);     
+// "Apple"
+\end{lstlisting}
+
+\medskip %END OF  Array() constructor
+
+
+
+
+
+
+
+\medskip %START OF Math.trunc() 
+\pagebreak
+\subsection{Math.trunc()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array}
+
+\begin{itemize}
+	\item The Math.trunc() function returns the integer part of a number by removing any fractional digits.
+	\item Math.trunc(x)
+\end{itemize}
+
+\begin{lstlisting}[title=Example Math.trunc(), captionpos=t]
+console.log(Math.trunc(13.37));
+// expected output: 13
+
+console.log(Math.trunc(42.84));
+// expected output: 42
+
+console.log(Math.trunc(0.123));
+// expected output: 0
+
+console.log(Math.trunc(-0.123));
+// expected output: -0
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example Math.trunc(), captionpos=t]
+Math.trunc(13.37);    // 13
+Math.trunc(42.84);    // 42
+Math.trunc(0.123);    //  0
+Math.trunc(-0.123);   // -0
+Math.trunc('-1.123'); // -1
+Math.trunc(NaN);      // NaN
+Math.trunc('foo');    // NaN
+Math.trunc();         // NaN
+\end{lstlisting}
+\medskip %END OF  Math.trunc() 
+
+
+
+
+
+
+
+
+
+
+\medskip %START OF continue 
+\pagebreak
+\subsection{continue}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue}
+
+\begin{itemize}
+	\item The continue statement terminates execution of the statements in the current iteration of the current or labeled loop, and continues execution of the loop with the next iteration.
+	\item continue [label];
+	\item In a while loop, it jumps back to the condition.
+	\item In a for loop, it jumps to the update expression.
+\end{itemize}
+
+\begin{lstlisting}[title=Example continue, captionpos=t]
+let text = '';
+
+for (let i = 0; i < 10; i++) {
+  if (i === 3) {
+    continue;
+  }
+  text = text + i;
+}
+
+console.log(text);
+// expected output: "012456789"
+
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example continue and label, captionpos=t]
+let i = 0;
+let j = 8;
+
+checkiandj: while (i < 4) {
+  console.log('i: ' + i);
+  i += 1;
+
+  checkj: while (j > 4) {
+    console.log('j: ' + j);
+    j -= 1;
+
+    if ((j % 2) == 0)
+      continue checkj;
+    console.log(j + ' is odd.');
+  }
+  console.log('i = ' + i);
+  console.log('j = ' + j);
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example output continue and label, captionpos=t]
+i: 0
+
+// start checkj
+j: 8
+7 is odd.
+j: 7
+j: 6
+5 is odd.
+j: 5
+// end checkj
+
+i = 1
+j = 4
+
+i: 1
+i = 2
+j = 4
+
+i: 2
+i = 3
+j = 4
+
+i: 3
+i = 4
+j = 4
+\end{lstlisting}
+
+
+\medskip %END OF continue
+
+
+
+
+
+
+
+\medskip %START OF map.set() 
+\pagebreak
+\subsection{Map.prototype.set()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set}
+
+\begin{itemize}
+	\item The set() method adds or updates an entry in a Map object with a specified key and a value.
+	\item set(key, value)
+	\item The key of the element to add to the Map object. The key may be any JavaScript type (any primitive value or any type of JavaScript object).
+	\item The value of the element to add to the Map object. The value may be any JavaScript type (any primitive value or any type of JavaScript object).
+	\item The Map object.
+\end{itemize}
+
+\begin{lstlisting}[title=Example map.set(), captionpos=t]
+const map1 = new Map();
+map1.set('bar', 'foo');
+
+console.log(map1.get('bar'));
+// expected output: "foo"
+
+console.log(map1.get('baz'));
+// expected output: undefined
+\end{lstlisting}
+
+
+\medskip %END OF  map.set() 
+
+
+
+
+
+
+\medskip %START OF substring() 
+\pagebreak
+\subsection{String.prototype.substring()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring}
+
+\begin{itemize}
+	\item The substring() method returns the part of the string between the start and end indexes, or to the end of the string.
+	\item substring(indexStart)
+	\item substring(indexStart, indexEnd)
+\end{itemize}
+
+\begin{lstlisting}[title=Example substring(), captionpos=t]
+const str = 'Mozilla';
+
+console.log(str.substring(1, 3));
+// expected output: "oz"
+
+console.log(str.substring(2));
+// expected output: "zilla"
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example substring(), captionpos=t]
+const anyString = 'Mozilla';
+
+// Displays 'M'
+console.log(anyString.substring(0, 1));
+console.log(anyString.substring(1, 0));
+
+// Displays 'Mozill'
+console.log(anyString.substring(0, 6));
+
+// Displays 'lla'
+console.log(anyString.substring(4));
+console.log(anyString.substring(4, 7));
+console.log(anyString.substring(7, 4));
+
+// Displays 'Mozilla'
+console.log(anyString.substring(0, 7));
+console.log(anyString.substring(0, 10));
+\end{lstlisting}
+
+
+\medskip %END OF  substring() 
+
+
+
+
+
+
+
+\medskip %START OF lowercase/uppercase() 
+\pagebreak
+\subsection{String.prototype.toLowerCase() String.prototype.toUpperCase()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase}
+\medskip
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase}
+
+
+\begin{itemize}
+	\item The toLowerCase() method returns the calling string value converted to lower case.
+	\item toLowerCase()
+	\item The toUpperCase() method returns the calling string value converted to uppercase (the value will be converted to a string if it isn't one).
+	\item toUpperCase()
+\end{itemize}
+
+\begin{lstlisting}[title=Example toLowerCase(), captionpos=t]
+const sentence = 'The quick brown fox jumps over the lazy dog.';
+
+console.log(sentence.toLowerCase());
+// expected output: "the quick brown fox jumps over the lazy dog."
+\end{lstlisting}
+
+\begin{lstlisting}[title=Example toUpperCase(), captionpos=t]
+const sentence = 'The quick brown fox jumps over the lazy dog.';
+
+console.log(sentence.toUpperCase());
+// expected output: "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG."
+\end{lstlisting}
+
+
+\medskip %END OF  lowercase/uppercase() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%START OF SECTION - ARRAYS
+
+\pagebreak
+\section{Array Algorithm Problems}
+
+\medskip %START 
+\subsection{Build Array from Permutation}
+https://leetcode.com/problems/build-array-from-permutation/
+
+\begin{enumerate}
+	\item initialize result array
+	\item loop through nums
+	\item push nums at each i to the answer 
+	\item return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution with for loop, captionpos=t]
+var buildArray = function(nums) {
+
+    let result = []
+    
+    for (let i = 0; i<nums.length; i++){
+        result.push(nums[nums[i]])
+    }
+    
+    return result
+};
+\end{lstlisting}
+	
+\begin{lstlisting}[title=Solution with map(), captionpos=t]
+const buildArray = (nums) => {
+    return nums.map(result => nums[result])
+};
+\end{lstlisting}
+\medskip %END 
+
+\pagebreak
+\medskip %START 
+\subsection{Count Items Matching a Rule}
+https://leetcode.com/problems/count-items-matching-a-rule/
+
+\begin{enumerate}
+	\item create rule index object
+	\item reduce(ans, items) so that ruleIndex[ruleKey] is equal to ruleValue
+	\item if equal increase ans by 1
+	\item if not equal answer is 0 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution countMatches, captionpos=t]
+const countMatches = (items, ruleKey, ruleValue) => {
+
+    const ruleIndex = {
+        'type': 0,
+        'color': 1,
+        'name': 2
+    }
+    
+    return items.reduce((ans,item) => 
+    item[ruleIndex[ruleKey]] === ruleValue ? ans + 1 : ans, 0);
+};
+\end{lstlisting}
+\medskip %END 
+
+\pagebreak
+\medskip %START
+\subsection{Create Target Array in the Given Order}
+https://leetcode.com/problems/create-target-array-in-the-given-order/
+
+\begin{enumerate}
+	\item initialize empty target array
+	\item loop through array 
+	\item loop though each index of the previous loop
+	\item if array[i] is less than or equal to inner loop, increment inner loop
+	\item loop in the nums array giving target the value: target[array[j]] = nums[i]
+	\item return target 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution createTargetArray, captionpos=t]
+const createTargetArray = (nums, array) => {
+
+    let target = [];
+    
+    for( let i=0; i<array.length; i++){
+        for(let j=0; j<i; j++){
+            if(array[i] <= array[j]){
+                array[j]++
+            }
+        }
+    }
+    
+    for(const i in nums){
+        target[array[i]] = nums[i]
+    }
+    
+    return target;
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution createTargetArray with splice(), captionpos=t]
+const createTargetArray = (nums, index) => {
+    
+    let target = []
+    
+    for(let i in nums){
+        target.splice(index[i], 0, nums[i])
+    }
+        
+    return target
+};
+\end{lstlisting}
+\medskip %END
+
+\pagebreak
+\medskip %START 
+\subsection{Decode XORed Array}
+https://leetcode.com/problems/decode-xored-array/
+
+\begin{enumerate}
+	\item initialize result with first in array
+	\item for loop through encoded
+	\item push result through result[i] \^\ encoded[i]
+	\item return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution decode, captionpos=t]
+const decode = (encoded, first) => {
+
+    let result = [first];
+    
+    for(let i = 0; i<encoded.length; i++){
+        result.push(result[i] ^ encoded[i])
+    }
+    
+    return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+\pagebreak
+\medskip %START 
+\subsection{Decompress Run-Length Encoded List}
+https://leetcode.com/problems/decompress-run-length-encoded-list/
+
+\begin{enumerate}
+	\item initialize empty result array
+	\item loop through nums, starting from 1, increasing by 2 each time
+	\item push result into a new array nums[i-1]
+	\item fill new array with nums[i]
+	\item return result 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution decompressRLEList, captionpos=t]
+const decompressRLEList = (nums) => {
+
+    let result = [];
+    
+    for (let i=1; i< nums.length; i+=2){
+        result.push(...new Array(nums[i-1]).fill(nums[i]));
+    }
+    
+    return result;
+};
+\end{lstlisting}
+\medskip %END 
+
+
+
+\pagebreak
+\medskip %START  
+\subsection{Final Value of Variable After Performing Operations}
+https://leetcode.com/problems/final-value-of-variable-after-performing-operations/
+
+\begin{enumerate}
+	\item initialize count at 0
+	\item loop through the values of operations (not the index)
+	\item if i is equal to 'X++' or '++X' increment
+	\item else decrement 
+	\item return final count
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution finalValueAfterOperations, captionpos=t]
+const finalValueAfterOperations = (operations) => {
+
+    let count = 0;
+
+    for (let i of operations) {
+        if (i === 'X++' || i === '++X') {
+            count++
+        } else count --;
+    }
+    
+    return count;
+};
+\end{lstlisting}
+\medskip %END 
+
+\pagebreak
+\medskip %START  
+\subsection{Concatenation of Array}
+https://leetcode.com/problems/concatenation-of-array/
+
+\begin{enumerate}
+	\item take nums and split it using ... operator
+	\item return nums twice in a single [ ]
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution getConcatenation, captionpos=t]
+var getConcatenation = function (nums) {
+    return [...nums, ...nums]
+}
+\end{lstlisting}
+\medskip %END 
+
+\pagebreak
+\medskip %START  
+\subsection{Kids With the Greatest Number of Candies}
+https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
+
+\begin{enumerate}
+	\item initialize results array
+	\item initialize max value tracker
+	\item loop through candies array 
+	\item create logic for max value
+	\item loop through candies[i]
+	\item test each candies with extraCandies to see if value is true 
+	\item return result 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution kidsWithCandies with for-of loop, captionpos=t]
+var kidsWithCandies = function(candies, extraCandies) {
+    const ret = []
+    let max = 0
+
+    for (const val of candies) {
+        val > max && (max = val)
+    }
+
+    for (let i = 0; i< candies.length; ++i){
+        ret.push(candies[i] + extraCandies >= max);
+    }
+
+    return ret; 
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution kidsWithCandies with for loop, captionpos=t]
+var kidsWithCandies = function(candies, extraCandies) {
+    
+    let answer = []
+    let max = 0
+    
+    for(let i=0; i<candies.length; i++){
+        candies[i] > max && (max = candies[i])
+    }
+    
+    for(let j=0; j<candies.length; j++){
+        answer.push(candies[j] + extraCandies >= max)
+    }
+    return answer
+};
+\end{lstlisting}
+\medskip %END 
+
+\pagebreak
+\medskip %START  
+\subsection{Maximum Number of Words Found in Sentences}
+https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/
+
+\begin{enumerate}
+	\item Initialize max and temp variables at zero 
+	\item Loop through sentence.length 
+	\item Split sentences based on parentheses and add the length of each to temp variable 
+	\item Find which value of temp or max is biggest and pass to max
+	\item Return max
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution mostWordsFound, captionpos=t]
+const mostWordsFound = (sentence) => {
+
+    let max = 0;
+    let temp = 0;
+
+    for(let i=0; i < sentence.length; i++){
+        temp = sentence[i].split(" ").length;
+        if(temp>max){
+            max = temp;
+        }
+    }
+    
+    return max;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution mostWordsFound with for-in loop and Math.max, captionpos=t]
+const mostWordsFound = (sentence) => {
+    
+    let max = 0
+    let temp = 0
+    
+    for(let i in sentence){
+        temp = sentence[i].split(" ").length;
+    }
+    
+    return Math.max(max, temp)
+}
+\end{lstlisting}
+\medskip %END 
+
+
+
+\pagebreak
+\medskip %START  
+\subsection{Number of Good Pairs}
+https://leetcode.com/problems/number-of-good-pairs/
+
+\begin{enumerate}
+	\item initialize counter
+	\item loop through nums array
+	\item loop again starting at i+1 
+	\item logic if(nums[i] === nums[j] increase count
+	\item return count
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution numIdenticalPairs, captionpos=t]
+var numIdenticalPairs = function (nums) {
+
+    let count = 0;
+
+    for (let i=0; i<nums.length; i++){
+        for(let j=i+1; j<nums.length; j++){
+            if(nums[i] === nums[j]){
+                count++
+            }
+        }
+    }
+    
+    return count; 
+}
+\end{lstlisting}
+
+\medskip %END 
+
+\pagebreak
+\medskip %START  
+\subsection{Shuffle String}
+https://leetcode.com/problems/shuffle-string/
+
+\begin{enumerate}
+	\item initialize empty results array
+	\item loop through idices array
+	\item tie the indices to the s parameter
+	\item return the result and join() it together since we are looking for a string 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution restoreString, captionpos=t]
+const restoreString = (s, indices) => {
+    
+    const result = [];
+
+    for(let i = 0; i<indices.length; i++){
+        result[indices[i]] = s[i]
+    }
+
+    return result.join('');
+}
+\end{lstlisting}
+
+\medskip %END 
+
+\pagebreak
+\medskip %START  
+\subsection{Richest Customer Wealth}
+https://leetcode.com/problems/richest-customer-wealth/
+
+\begin{enumerate}
+	\item initialize an answer
+	\item loop through the people, accounts
+	\item initialize temp variable
+	\item loop through the banks accounts[i]
+	\item add all their wealth to temp 
+	\item use math.max to find the highest number 
+	\item return the account with most wealth
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution maximumWealth, captionpos=t]
+const maximumWealth = (accounts) => {
+    let res = 0;
+
+    for(let i=0; i<accounts.length; i++){
+        let temp = 0;
+        for(let j = 0; j< accounts[i].length; j++){
+            temp += accounts[i][j];
+        }
+        res = Math.max(res, temp);
+    }
+    
+    return res;
+}
+\end{lstlisting}
+
+\medskip %END 
+
+\pagebreak
+\medskip %START  
+\subsection{Running Sum of 1d Array}
+https://leetcode.com/problems/running-sum-of-1d-array/
+
+\begin{enumerate}
+	\item create loop from 1(i) to end of array 
+	\item add nums[i] and nums[i-1] to array
+	\item return nums array
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution runningSum, captionpos=t]
+const runningSum = (nums) => {
+    
+    for (let i = 1; i < nums.length; i++){
+        nums[i] += nums [i-1]
+    }
+
+    return nums
+}\end{lstlisting}
+
+\medskip %END 
+
+
+\pagebreak
+\medskip %START  
+\subsection{Shuffle the Array}
+https://leetcode.com/problems/shuffle-the-array/
+
+\begin{enumerate}
+	\item create empty result array
+	\item loop through n with i< n 
+	\item push into nums[i] 
+	\item push into nums[i+n]
+	\item return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution shuffle, captionpos=t]
+var shuffle = function (nums, n) {
+    
+    let res = [];
+
+    for(let i = 0; i < n; i++){
+        res.push(nums[i])
+        res.push(nums[i+n])
+    }
+
+    return res
+};
+\end{lstlisting}
+
+\medskip %END 
+
+\pagebreak
+\medskip %START  
+\subsection{How Many Numbers Are Smaller Than the Current Number}
+leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+
+\begin{enumerate}
+	\item Initialize empty results array
+	\item Initialize sorted array
+	\item Slice() sorted array to duplicated
+	\item Sort() sorted array using ((a, b) $\rightarrow$ a - b) so it works for numbers 
+	\item For loop through nums
+	\item Compare the value of sorted array with nums array and push into results the indexOf at which sorted is in nums[i]
+	\item Return results 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution smallerNumbersThanCurrent, captionpos=t]
+const smallerNumbersThanCurrent = (nums) => {
+
+    let answer = []
+    let sorted = nums.slice().sort((a,b)=>a-b)
+
+    for(let i = 0; i<nums.length; i++){
+        answer.push(sorted.indexOf(nums[i]))
+    }
+
+    return answer
+}
+\end{lstlisting}
+
+\medskip %END 
+
+\pagebreak
+\medskip %START  
+\subsection{Sum of All Odd Length Subarrays}
+https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
+
+\begin{enumerate}
+	\item Initialize result at 0 
+	\item For loop through arr starting at 1
+	\item Start from second element and add to itself the first element and so on. So each index has the value of all previous indexes added to it
+	\item loop through all start indices 
+	\item End is initially start and look for all odd (+=2) subarrays
+	\item Sum up += the query in result 
+	\item Return result 
+	\item Setup helper sumBetween function that takes sum from start to end 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution sumOddLengthSubarrays with helper function, captionpos=t]
+const sumOddLengthSubarrays = (arr) => {
+
+    let result = 0;
+ 
+    for(let i = 1; i<arr.length; i++){
+        arr[i] += arr[i - 1]
+    }
+
+    for(let start = 0; start<arr.length; start++){
+        for(let end = start; end<arr.length; end +=2){
+            result += sumBetween(start, end)
+        }
+    }
+    
+    return result
+
+    function sumBetween(start, end){
+        return arr[end] - (arr[start -1] || 0)
+    }
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution sumOddLengthSubarrays with parseInt, captionpos=t]
+var sumOddLengthSubarrays = function(arr) {
+
+    let res = 0, n = arr.length
+
+    for(let i = 0; i< n; ++i) {
+        res += parseInt(((i + 1) * (n - i) + 1) / 2) * arr[i];
+    }
+    
+    return res
+};
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Solution sumOddLengthSubarrays with for loops and modulo, captionpos=t]
+const sumOddLengthSubarrays = (arr) => {
+
+    let count = 0;
+
+    for(let i=0; i<arr.length; i++){
+        for(let j=i; j<arr.length; j++){
+            if((i-j)%2==0){
+                for(let k=i;k<=j;k++){
+                    count+=arr[k]
+                }
+            }
+        }
+    }
+
+    return count;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution sumOddLengthSubarrays with while loop, captionpos=t]
+var sumOddLengthSubarrays = function(arr) {
+
+    let i=1;
+    let sum=0;
+
+     while(i<=arr.length){
+         for(let j=0;j<=arr.length-i;j++){
+              for(let k=j;k<i+j;k++){
+                 sum+=arr[k]
+              }
+         }
+         i+=2
+     }
+     
+     return sum
+ };
+\end{lstlisting}
+
+
+\medskip %END 
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Count Number of Pairs With Absolute Difference K}
+https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/
+
+\begin{enumerate}
+	\item Create empty object
+	\item Initialize answer at zero
+	\item Loop through nums giving values to the object
+	\item Loop through nums if obj[nums[i]-k] += that value to answer
+	\item Return Answer
+\end{enumerate}
+
+
+
+\begin{lstlisting}[title=Solution countKDifference, captionpos=t]
+const countKDifference = (nums, k) => {
+    
+    let obj = {}
+    let answer = 0
+
+    for(let i of nums){
+        obj[i] ? obj[i]++ : obj[i] = 1
+    }
+    
+    for (let i=0; i<nums.length; i++) {
+        if(obj[nums[i] -k]){
+            answer += obj[nums[i] - k]
+        }
+    }
+    
+    return answer 
+}
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Minimum Number of Moves to Seat Everyone}
+https://leetcode.com/problems/minimum-number-of-moves-to-seat-everyone/
+
+\begin{enumerate}
+	\item Initialize answer variable
+	\item Sort seats
+	\item Sort students
+	\item Loop through arrays finding the absolute value of the number and += to answer
+	\item Return answer
+\end{enumerate}
+
+
+
+\begin{lstlisting}[title=Solution minMovesToSeat, captionpos=t]
+const minMovesToSeat = (seats, students) => {
+    
+    let answer = 0
+    
+    seats = seats.sort((a,b) => a-b)
+    students = students.sort((a,b) => a-b)
+    
+    for(let i in seats){
+        answer += Math.abs(seats[i] - students[i])
+    }
+    
+    return answer
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Minimum Amount of Time to Fill Cups}
+https://leetcode.com/problems/minimum-amount-of-time-to-fill-cups/
+
+\begin{enumerate}
+	\item Initalize answer to zero
+	\item Sort the amount array 
+	\item Whie loop amount 1 and 2 decrement them until zero while increasing answer
+	\item Sort in the while loop to keep the biggest amounts furthest away 
+	\item Add the remaining amount to the answer in second (only 1 amount so will always be 1 per second)
+	\item Return answer
+\end{enumerate}
+
+
+
+\begin{lstlisting}[title=Solution fillCups, captionpos=t]
+const fillCups = (amount) => {
+    
+    let answer = 0;
+
+    amount.sort((a, b) => a - b);
+    
+    while (amount[1] && amount[2]) {
+        answer++;
+        amount[1]--;
+        amount[2]--;
+        amount.sort((a, b) => a - b);
+    }
+    
+        answer += amount[2];
+    return answer;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Assign Cookies}
+https://leetcode.com/problems/assign-cookies/
+
+\begin{enumerate}
+	\item Initalize empty answer
+	\item Sort (g) children and (s) cookies 
+	\item Whie loop amount 1 and 2 decrement them until zero while increasing answer
+	\item Loop with forEach through (s) and if  child is greater than g[answer]  increment answer (this needs work not sure exactly what is happening here)
+	\item Return answer
+\end{enumerate}
+
+
+
+\begin{lstlisting}[title=Solution findContentChildren, captionpos=t]
+const findContentChildren = (g,s) => {
+    
+    let answer = 0
+    
+    g.sort((a,b) => a-b)
+    s.sort((a,b) => a-b)
+    
+    s.forEach((child) => {
+        if(child >= g[answer]){
+            answer++
+        }
+    })
+    
+    return answer
+}
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+%END OF SECTION - ARRAYS
+
+
+
+
+
+
+
+%START OF SECTION - STRINGS
+
+
+\pagebreak
+\section{String Algorithm Problems}
+
+
+
+\medskip %START  
+\subsection{Defanging an IP Address}
+https://leetcode.com/problems/defanging-an-ip-address/
+
+\begin{enumerate}
+	\item split and join the address
+	\item return return address
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution defangIPaddr, captionpos=t]
+const defangIPaddr = (address) => {
+    return address.split('.').join('[.]')
+}
+\end{lstlisting}
+\medskip %END 
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Jewels and Stones}
+https://leetcode.com/problems/jewels-and-stones/
+
+\begin{enumerate}
+	\item Initialize count to zero
+	\item Loop through jewels string
+	\item Loop through stones string
+	\item Logic to check if each part of stones is equal to jewels
+	\item If equal add to count
+	\item Return count
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution numJewelsInStones, captionpos=t]
+const numJewelsInStones = (jewels, stones) => {
+    
+    let count = 0
+    
+    for(let i = 0; i<jewels.length; i++){
+        for(let j=0; j<stones.length; j++){
+            if(stones[j] === jewels[i]){
+                count ++
+            }
+        }
+    }
+
+    return count
+};
+\end{lstlisting}
+\medskip %END 
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Goal Parser Interpretation}
+https://leetcode.com/problems/goal-parser-interpretation/
+
+\begin{enumerate}
+	\item Split command by () join o in place
+	\item Split command by (al) join al in place
+	\item Return command
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution interpret, captionpos=t]
+const interpret = (command) => {
+    return command.split('()').join('o').split('(al)').join('al')
+};
+\end{lstlisting}
+\medskip %END 
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Cells in a Range on an Excel Sheet}
+https://leetcode.com/problems/cells-in-a-range-on-an-excel-sheet/
+
+\begin{enumerate}
+	\item Initialize empty answer array
+	\item Initialize array with string s [col1, row1, EMPTY SPACE, col2, row2] = s
+	\item Loop through columns - c with charCodeAt
+	\item Loop through rows - r with +row
+	\item Push answer to a string using fromCharCode(c) + r
+	\item Return answer
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution cellsInRange, captionpos=t]
+const cellsInRange = (s) => {
+
+    let answer = []
+    let [col1, row1, , col2, row2] = s
+    
+    for(let c = col1.charCodeAt(0), ce = col2.charCodeAt(0); c<= ce; c++){
+        for(let r = +row1, re = +row2; r<=re; r++){
+            answer.push(String.fromCharCode(c) + r)
+        }
+    }
+    
+    return answer
+};
+\end{lstlisting}
+\medskip %END 
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Split a String in Balanced Strings}
+https://leetcode.com/problems/split-a-string-in-balanced-strings/
+
+\begin{enumerate}
+	\item Initialize empty matches variable
+	\item Initalize empty balance variable
+	\item Loop through s.length
+	\item If each S[i] is equal to L add +1 to balance, else reduce it by one
+	\item If balance is equal to zero add +1 to matches 
+	\item Return matches 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution balancedStringSplit with balance counter, captionpos=t]
+const balancedStringSplit = (s) => {
+    
+    let matches = 0;
+    let balance = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        s[i] === 'L' ? balance++ : balance--
+        if (balance === 0) {
+            matches++;
+        }
+    }
+
+    return matches;
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution balancedStringSplit with stack, captionpos=t]
+var balancedStringSplitStack = function(s) {
+
+    let matches = 0
+    const stack = []
+
+    stack.push(s[0])
+
+    for (let i = 1; i < s.length; i++) {
+        const top = stack[stack.length - 1];
+        if (top !== undefined && top !== s[i]) {
+          stack.pop()
+        } else {
+            stack.push(s[i]);
+        }
+        if (stack.length === 0) {
+            matches += 1;
+        }
+    }
+
+    return matches;
+}
+\end{lstlisting}
+\medskip %END 
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Sorting the Sentence}
+https://leetcode.com/problems/sorting-the-sentence/
+
+\begin{enumerate}
+	\item Return s.split to put into parts
+	\item Sort by number orders and use x[x.length-1] to find last item (the number)
+	\item Map to remove the last item (the number) from the words
+	\item Join(' ') to turn it back into a string as opposed to array
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution sortSentence, captionpos=t]
+const sortSentence = function(s) {
+    return s.split(' ')
+        .sort((a,b) => a[a.length-1] - b[b.length-1])
+        .map((word) => word.slice(0, word.length-1))
+        .join(' ');
+ };
+\end{lstlisting}
+\medskip %END 
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Decode the Message}
+https://leetcode.com/problems/decode-the-message/
+
+\begin{enumerate}
+	\item Create map variable of empty map()
+	\item Set start at 97
+	\item Initialize empty result string
+	\item For of loop through key if map has i or is empty continue 
+	\item If not set i as a string fromCharCode(start++)
+	\item map.set(' ', ' ')
+	\item For of loop through message and add map.get(m) to result
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution decodeMessage, captionpos=t]
+const decodeMessage = (key, message) => {
+    
+    let map = new Map();
+    let start=97;
+    let result="";
+
+    for(let i=0; i<key.length;i++){
+        if(map.has(key[i])||key[i]===" "){
+            continue
+        } else {
+        map.set(key[i],String.fromCharCode(start++)) 
+        }
+    }
+    
+    map.set(" "," "); 
+    
+    for(let m of message){
+        result+=map.get(m)
+    }
+    
+    return result
+};
+\end{lstlisting}
+\medskip %END 
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Maximum Nesting Depth of the Parentheses}
+https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/
+
+\begin{enumerate}
+	\item Initialize answer int at zero
+	\item Initialize counter int at zero
+	\item For loop through s
+	\item If s[i] is equal to ( answer.math.max(answer, ++counter)
+	\item Else decrement counter
+	\item Return answer
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution maxDepth, captionpos=t]
+const maxDepth = (s) => {
+
+    let answer = 0
+    let count = 0
+    
+    for(let i = 0; i < s.length;  i++){
+        if(s[i] === '('){
+            answer = Math.max(answer, ++count)
+        }else if(s[i] === ')'){
+            count--
+        }  
+    }
+    
+    return answer
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution maxDepth with split() and reduce(), captionpos=t]
+const maxDepth = (s) => {
+
+    let l = 0
+    let r = 0
+    
+    return s.split('').reduce((depth, c) => {
+        if (c === '(') l++
+        if (c === ')') r++
+        return Math.max(l - r, depth)
+    }, 0)
+}
+\end{lstlisting}
+\medskip %END 
+
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Fizz Buzz}
+https://leetcode.com/problems/fizz-buzz/
+
+\begin{enumerate}
+	\item Initialize empty answer array
+	\item Loop through n starting at 1 and ending when <= n
+	\item If i  modulo 15 is equal to zero push string 'FizzBuzz'
+	\item Else if i  modulo 5 is equal to zero push string 'Buzz'
+	\item Else if i  modulo 3 is equal to zero push string 'Fizz'
+	\item Else push string i 
+	\item Return snswer 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution fizzBuzz with for loop, captionpos=t]
+const fizzBuzz = (n) => {
+
+    const result = []
+    
+    for(let i=1; i<=n; i++) {
+        if(i % 15 === 0 ) {
+            result.push('FizzBuzz')
+        } else if(i % 3 === 0) {
+            result.push('Fizz')
+        } else if(i % 5 === 0) {
+            result.push('Buzz')
+        } else {
+            result.push(i.toString())
+        }
+    }
+    
+    return result
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution fizzBuzz ES6, captionpos=t]
+var fizzBuzz = function(n) {
+    return new Array(n).fill(0).map((a, i) => (++i % 3 ? '' : 'Fizz') + (i % 5 ? '' : 'Buzz') || '' + i)
+};
+\end{lstlisting}
+\medskip %END 
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Check If Two String Arrays are Equivalent}
+https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+
+\begin{enumerate}
+	\item Join('') word1 and word2 so they become strings
+	\item Compare the two strings so they are equal
+	\item Return true if equal
+	\item Return false if not equal
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution arrayStringsAreEqual, captionpos=t]
+var arrayStringsAreEqual = function(word1, word2) {
+    
+    let w1 = word1.join('')
+    let w2 = word2.join('')
+    
+    if(w1 === w2){
+        return true
+    } else {
+        return false
+    }
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution arrayStringsAreEqual ES6, captionpos=t]
+var arrayStringsAreEqual = function(word1, word2) {
+    return word1.join('') === word2.join('')
+};
+\end{lstlisting}
+\medskip %END 
+
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Count the Number of Consistent Strings}
+https://leetcode.com/problems/count-the-number-of-consistent-strings/
+
+\begin{enumerate}
+	\item Initialize empty answer array 
+	\item For of loop through i of words
+	\item Set word equals to i 
+	\item Loop through word.length and set wordChar as word[j]
+	\item If !allowed includes wordChar break
+	\item Else if j===word.length -1 push word.length to answer
+	\item Return answer.length
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution countConsistentStrings with loops, captionpos=t]
+const countConsistentStrings = (allowed, words) => {
+    
+    let answer = []
+    
+    for(let i of words){
+        let word = i
+        for(let j = 0; j<word.length; j++){
+            let wordChar = word[j]
+            if(!allowed.includes(wordChar)){
+              break
+            } else if(j === word.length-1){
+                answer.push(word.length)
+            }
+        }
+    }
+    
+    return answer.length
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution countConsistentStrings ES6, captionpos=t]
+const countConsistentStrings = (allowed, words) => {
+
+    let set = new Set(allowed)
+    
+    return words.reduce((a, w) => {
+      return w.split('').every(l => set.has(l)) ? ++a : a
+    }, 0)
+    
+  }
+\end{lstlisting}
+\medskip %END 
+
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{To Lower Case}
+https://leetcode.com/problems/to-lower-case/
+
+\begin{enumerate}
+	\item Return s.toLowerCase()
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution toLowerCase, captionpos=t]
+var toLowerCase = function(s) {
+    return s.toLowerCase()
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution toLowerCase with hex code, captionpos=t]
+//hex code for letter 'A' is 0x41 and for letter 'a' is 0x61. That's a diff of 0x20.
+var toLowerCase = function(str) {
+    let i = 0;
+    let lowerCase = "";
+    
+    while (i < str.length) {
+        lowerCase += String.fromCharCode(str.charCodeAt(i) | 0x20);
+        i++;
+    }
+    
+    return lowerCase;
+};
+\end{lstlisting}
+\medskip %END 
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Rings and Rods}
+https://leetcode.com/problems/rings-and-rods/
+
+\begin{enumerate}
+	\item Initialize new Map() called map
+	\item Initialize answer int to zero 
+	\item Loop through rings.length 
+	\item Set color to rings[i]
+	\item Set rod to +rings[i+1]
+	\item If !map has rod Map.set rod, new Set()
+	\item Map.get rod.add(color)
+	\item Loop through map with [rod, setColors]
+	\item If set color size is equal to 3 answer ++
+	\item Return answer
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution countPoints, captionpos=t]
+const countPoints = (rings) => {
+    
+    let map = new Map()
+    let answer = 0
+    
+    for(let i = 0; i<rings.length; i += 2){
+        let color = rings[i]
+        let rod = +rings[i + 1]
+        if(!map.has(rod))
+            map.set(rod, new Set())
+            map.get(rod).add(color)
+    }
+    
+    for(let [rod, setColors] of map){
+        if(setColors.size === 3){
+            answer++
+        }
+    }
+    
+    return answer
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution countPoints is this slower?, captionpos=t]
+var countPoints = function(rings) {
+
+    let rods = Array(10).fill("");
+
+    for(let i = 0; i < rings.length; i += 2){
+        if(!(rods[rings[i+1]].includes(rings[i]))) rods[rings[i+1]] += rings[i]
+    }
+    
+    return rods.filter(rod => rod.length > 2).length
+};
+\end{lstlisting}
+\medskip %END 
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Truncate Sentence}
+https://leetcode.com/problems/truncate-sentence/
+
+\begin{enumerate}
+	\item Split string so that it becomes array
+	\item Slice the array from index 0 to index k (desired length)
+	\item Join the array into a string (' ') removing commas
+	\item Return the string
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution truncateSentence, captionpos=t]
+var truncateSentence = function(s, k) {
+
+    return s.split(' ').slice(0,k).join(' ')
+    
+ };
+\end{lstlisting}
+\medskip %END 
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Check if the Sentence Is Pangram}
+https://leetcode.com/problems/check-if-the-sentence-is-pangram/
+
+\begin{enumerate}
+	\item Make new Set (what does this mean?)
+	\item Split('') the sentence
+	\item Set size to equal 26
+	\item Return
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution checkIfPangram, captionpos=t]
+var checkIfPangram = function(sentence) {
+    
+    return new Set(sentence.split("")).size === 26;
+    
+}
+\end{lstlisting}
+\medskip %END 
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Count Asterisks}
+https://leetcode.com/problems/count-asterisks/
+
+\begin{enumerate}
+	\item Set count and result counters
+	\item For loop through s.length
+	\item If s[i] === | increment count
+	\item If count is multiple of two and s[i] = * then increment result
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution countAsterisks, captionpos=t]
+var countAsterisks = function(s) {
+    
+    let count = 0;
+    let res = 0;
+    
+    for(let i = 0; i < s.length; i++){
+        if(s[i] === '|'){
+           count ++
+        }
+        if(count % 2 === 0 && s[i] === '*'){
+            res ++
+        }
+    }
+    
+    return res;
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=My messy solution while learning, captionpos=t]
+var countAsterisks = function(s) {
+    
+    let count = 0
+    let  s2 = s.split('|')
+    let temp = []
+     
+     for(let i=0; i<s2.length; i+=2){
+         temp = s2[i].split('').join('')
+         for(let j=0; j<temp.length;j++){
+             if(temp[j] === '*'){
+                 count++
+             }
+         }
+     }
+     
+     return count
+ };
+\end{lstlisting}
+\medskip %END
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Unique Morse Code Words}
+https://leetcode.com/problems/unique-morse-code-words/
+
+\begin{enumerate}
+	\item Set const morse to morse code from questions
+	\item Initialize answer to new Set
+	\item For of loop through words with word
+	\item Initialize transform as empty string
+	\item For loop through word to seperate each character
+	\item Set i euqal to char.charCodeAt(0) - 97
+	\item Add morse[i] to transform 
+	\item Add transform to answer Set
+	\item Return size of answer set
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution uniqueMorseRepresentations, captionpos=t]
+const morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+
+const uniqueMorseRepresentations = (words) => {
+    
+    let answer = new Set
+    
+    for (let word of words){
+        let transform = ''
+        for(let char of word){
+            let i = char.charCodeAt(0) - 97
+            transform += morse[i]
+        }
+        answer.add(transform)
+    }
+    
+    return answer.size
+};
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Solution uniqueMorseRepresentations with object, captionpos=t]
+const alphabet = {
+    a: '.-', b: '-...',   c: '-.-.', d: '-..', e: '.', f: '..-.', g: '--.', h: '....', i: '..',  j: '.---',  k: '-.-',  l: '.-..', m: '--',
+    n: '-.',  o: '---', p: '.--.',  q: '--.-',  r: '.-.', s: '...', t: '-', u: '..-', v: '...-', w: '.--', x: '-..-',  y: '-.--', z: '--..' 
+}
+
+const uniqueMorseRepresentations = words => {  
+
+    return new Set(words.map(word => word.split('').map(letter => alphabet[letter]).join(''))).size
+}
+\end{lstlisting}
+
+
+\medskip %END
+
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Number of Strings That Appear as Substrings in Word}
+leetcode.com/problems/number-of-strings-that-appear-as-substrings-in-word/
+
+\begin{enumerate}
+	\item Initialize answer to zero 
+	\item Loop through patterns
+	\item If word includes(patter[i]) increment answer
+	\item Return answer
+\end{enumerate}
+
+
+
+\begin{lstlisting}[title=Solution numOfStrings, captionpos=t]
+var numOfStrings = function(patterns, word) {
+
+    let answer = 0
+    
+    for (let i = 0; i<patterns.length ; i++){
+        if(word.includes(patterns[i])){
+            answer++
+        }
+    }
+    
+return answer
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Remove Outermost Parentheses}
+https://leetcode.com/problems/remove-outermost-parentheses/
+
+\begin{enumerate}
+	\item Initialize empty answer string
+	\item Initialize counter to zero 
+	\item Loop through s 
+	\item If s[i] is equal to ( if counter is greater than zero add ( to answer string and increment counter
+	\item Else if s[i] is equal to ) and counter greater than one add ) to answer string and decrement counter
+	\item Return answer 
+\end{enumerate}
+
+
+
+\begin{lstlisting}[title=Solution removeOuterParentheses, captionpos=t]
+const removeOuterParentheses = (s) => {
+    
+    let answer = ''
+    let counter = 0
+    
+    for(let i = 0; i<s.length; i++){
+        if(s[i] === '('){
+            if(counter > 0){
+                answer += '('
+            }
+            counter++
+        } else if(s[i] === ')'){
+            if(counter > 1){
+                answer += ')'
+            }
+            counter--
+        }
+    }
+    
+    return answer
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+\pagebreak %START  
+\medskip 
+\subsection{Replace All Digits with Characters}
+https://leetcode.com/problems/replace-all-digits-with-characters/
+
+\begin{enumerate}
+	\item loop through s starting at 1 += 2
+	\item Initialize value to String fromCharCode(s[i-1].charCodeAt()+Number(s[i]))
+	\item Update s to equal s.replace(s[i], value)
+	\item Return s
+\end{enumerate}
+
+
+
+\begin{lstlisting}[title=Solution replaceDigits, captionpos=t]
+const replaceDigits = (s) => {
+    
+    for(let i = 1; i<s.length; i+=2){
+        let value = String.fromCharCode(s[i-1].charCodeAt()+Number(s[i]))
+        s = s.replace(s[i], value)
+    }
+    
+    return s
+}
+\end{lstlisting}
+\medskip %END
+
+%END OF SECTION - STRINGS
+
+
+
+
+
+
+
+
+%START OF SECTION - HASH TABLES
+
+
+\pagebreak
+\section{Hash Tables}
+
+
+
+%START  
+\medskip 
+\subsection{Destination City}
+https://leetcode.com/problems/destination-city/
+
+\begin{enumerate}
+	\item Create new set named departure
+	\item Loop through paths and add path[0] to departure
+	\item Loop through paths again and check if subarray has second index value (if it does not it is unique)
+	\item If no second index value, return that value (should be destination)
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution destCity, captionpos=t]
+const destCity = (paths) => {
+    
+    let set = new Set()
+    
+    for(let path of paths){
+        set.add(path[0])
+    }
+    
+    for(let path of paths){
+        if(!set.has(path[1])){
+            return path[1]
+        }
+    }
+}
+\end{lstlisting}
+\medskip %END 
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Maximum Number of Pairs in Array}
+https://leetcode.com/problems/maximum-number-of-pairs-in-array/
+
+\begin{enumerate}
+	\item Initialize new map and count
+	\item Loop through nums
+	\item If map[nums[i]] then go ahead and delete map[nums[i]] and increment count
+	\item Else replace map[nums[i]] with one
+	\item Return [count, Object.values(map).length]
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution numberOfPairs, captionpos=t]
+const numberOfPairs = (nums) => {
+    
+    let map = new Map()
+    let count = 0
+    
+    
+    for(let i=0;i<nums.length;i++){
+        if(map[nums[i]]){
+            delete(map[nums[i]])
+            count++
+        } else {
+            map[nums[i]] = 1
+        }
+    }
+
+    return [count, Object.values(map).length]
+}
+\end{lstlisting}
+\medskip %END
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Design an Ordered Stream}
+https://leetcode.com/problems/design-an-ordered-stream/
+
+\begin{enumerate}
+	\item Created class OrderedStream
+	\item Setup constructor
+	\item Set pointed to zero and initialize empty list 
+	\item Insert (id, value)
+	\item Initialize empty chunk array
+	\item Set this.list[id-1] to value
+	\item While loop through (this.list[this.pointer])
+	\item Push (this.list[this.pointer]) into chunk
+	\item Increment this.pointer
+	\item Return chunk 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution orderedStream, captionpos=t]
+class OrderedStream {
+    constructor(n) {
+      this.pointer = 0
+      this.list = []
+    }
+  
+    insert(id, value) {
+      let chunk = []
+      this.list[id - 1] = value
+      while(this.list[this.pointer]) {
+        chunk.push(this.list[this.pointer])
+        this.pointer++
+      }
+      
+      return chunk
+    }
+  }
+\end{lstlisting}
+\medskip %END
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Increasing Decreasing String}
+https://leetcode.com/problems/increasing-decreasing-string/
+
+\begin{enumerate}
+	\item Initialize arr with Array.from(s) (splitting s into an array of its parts)
+	\item Initialize empty answer string
+	\item Sort arr 
+	\item While loop through arr.length
+	\item Filter arr so that if i === 0 or x !== answer.length-1 increase answer by x and return false
+	\item Else return true 
+	\item Reverse arr
+	\item Return answer 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution sortString, captionpos=t]
+const sortString = (s) => {
+    
+    let arr = Array.from(s)
+    let answer = '';
+    
+    arr.sort();
+  
+    while (arr.length) {
+      arr = arr.filter((x, i) => {
+        if (i === 0 || x !== answer[answer.length - 1]) {
+          answer += x;
+          return false;
+        }
+        return true;
+      });
+      arr.reverse();
+    }
+  
+    return answer;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Check if All Characters Have Equal Number of Occurrences}
+https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/
+
+\begin{enumerate}
+	\item Initialize empty Map
+	\item Loop through letters of s
+	\item Map[letter] is equal to itself or zero + 1 (setup count of each letter)
+	\item Initialize occurences equal to the set of Object.values(map)
+	\item If occurences.size === 1 (all letter groups are equal) return true
+	\item Else return false
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution areOccurrencesEqual with Map, captionpos=t]
+const areOccurrencesEqual = (s) => {
+    
+    let map = new Map()
+    
+    for(let letter of s){
+        map[letter] = (map[letter] || 0) + 1
+    }
+    
+    let count = new Set(Object.values(map))
+    if(count.size === 1) return true
+    return false 
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution areOccurrencesEqual with reduce(), captionpos=t]
+const areOccurrencesEqualReduce = (s) => {
+    
+    let count = s.split('').reduce((obj, cur)=>{
+      obj.hasOwnProperty(cur) ? obj[cur] += 1 : obj[cur] = 1
+      return obj
+    },{})
+
+    return new Set(Object.values(count)).size === 1
+  };
+\end{lstlisting}
+\medskip %END
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Divide Array Into Equal Pairs}
+https://leetcode.com/problems/divide-array-into-equal-pairs/
+
+\begin{enumerate}
+	\item Create empty map ()
+	\item Loop through nums and if map has number delete it else set the number true
+	\item Return true if map size is empty else return false
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution divideArray, captionpos=t]
+const divideArray = (nums) => {
+    
+    let map = new Map();
+      
+    for (const number of nums) {
+      map.has(number) ? map.delete(number) : map.set(number, true);
+    }
+      
+    return map.size === 0;
+  };
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{N-Repeated Element in Size 2N Array}
+https://leetcode.com/problems/n-repeated-element-in-size-2n-array/
+
+\begin{enumerate}
+	\item Initialize empty Map()
+	\item Loop through values of nums
+	\item If value is in map return value
+	\item Else return zero 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution repeatedNTimes with Map(), captionpos=t]
+const repeatedNTimes = (nums) => {
+    
+    let map = new Map()
+    
+    for ( let num of nums) {
+        if (num in map) {
+            return num;
+        } else {
+            map[num] = 0;
+        }
+    }
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution repeatedNTimes with ES6, captionpos=t]
+var repeatedNTimes = function(nums) {
+    return nums.find((a, index, array) => array.indexOf(a) !== index)
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution repeatedNTimes with Set(), captionpos=t]
+var repeatedNTimes = function(A) {
+    let set = new Set();
+    
+    for(let a of A) {
+        if(set.has(a))
+            return a;
+        
+        set.add(a);
+    }
+};\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Sum of Unique Elements}
+https://leetcode.com/problems/sum-of-unique-elements/
+
+\begin{enumerate}
+	\item Create empty Map()
+	\item Initialize sum at zero 
+	\item Loop through nums if map[n] is undefined increase sum by n and set map[n] to true
+	\item Else if decrement n from sum and set map[n] to false 
+	\item Return sum 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution sumOfUnique with Map(), captionpos=t]
+const sumOfUnique = (nums) => {
+
+    let map = new Map()
+    let sum = 0
+    
+    for(let n of nums){
+        if(map[n] === undefined){
+            sum += n
+            map[n] = true
+        } else if(map[n]){
+            sum -= n
+            map[n] = false
+        }
+    }
+    
+    return sum
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution sumOfUnique with forEach, captionpos=t]
+var sumOfUnique = function(nums) {
+    let result = []
+    nums.forEach(function(e){
+        if(nums.indexOf(e)  == nums.lastIndexOf(e)){
+            result.push(e)
+        } 
+    })
+    return result.reduce((a,b) => a + b , 0)
+}
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Maximum Number of Balls in a Box}
+https://leetcode.com/problems/maximum-number-of-balls-in-a-box/
+
+\begin{enumerate}
+	\item Create empty Map()
+	\item Loop from low to high limit incrementing i and setting sum to zero
+	\item Loop through i with j using Math.trunc for the numbers that are more digits
+	\item Map.set the numbers so the map is counting the values
+	\item Return with math.max the map of split map with the highest values
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution countBalls, captionpos=t]
+const countBalls = (lowLimit, highLimit) => {
+     
+    let map = new Map();
+       
+    for (let i = lowLimit, sum = 0; i <= highLimit; i++, sum = 0) {
+      for (let j = i; j; j = Math.trunc(j / 10)) {
+          sum += j % 10;
+      }
+      map.set(sum, (map.get(sum) || 0) + 1);
+    }
+  
+    return Math.max(...map.values());
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Check if Number Has Equal Digit Count and Digit Value}
+https://leetcode.com/problems/check-if-number-has-equal-digit-count-and-digit-value/
+
+\begin{enumerate}
+	\item Create array with num length and fill it with zero 
+	\item For of Loop through num and increase arr[Number(i)++]
+	\item return arr.join('') if it is equal to num 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution digitCount, captionpos=t]
+const digitCount = (num) => {
+    
+    let arr= Array(num.length).fill(0);
+
+    for(let i of num){
+        arr[Number(i)]++;
+    }
+    
+    return arr.join('') === num;d
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Keep Multiplying Found Values by Two}
+https://leetcode.com/problems/keep-multiplying-found-values-by-two/submissions/
+
+\begin{enumerate}
+	\item Loop through nums
+	\item If nums includes original value multiply original by two 
+	\item Return original
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution findFinalValue with while loop, captionpos=t]
+const findFinalValue = (nums, original) => {
+
+    while(nums.includes(original)){
+        original = original * 2
+    }
+
+    return original
+};
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Solution findFinalValue with for loop, captionpos=t]
+const findFinalValue = (nums, original) => {
+        
+    for(let i = 0; i<nums.length; i++){
+        if(nums.includes(original)){
+           original = original * 2
+        }
+    }
+    
+    return original
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution findFinalValue with set, captionpos=t]
+var findFinalValueSet = function(nums, original) {
+
+    const set = new Set(nums)
+    let result = original
+    
+    while (set.has(result))
+        result *= 2
+
+    return result
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Two Out of Three}
+https://leetcode.com/problems/two-out-of-three/
+
+\begin{enumerate}
+	\item Initialize arr with three split... Set() for nums1,2,3
+	\item Initialize map object
+	\item Initialize empty results array
+	\item For of loop through arr and build map to have count of each value
+	\item For in loop through map and push any values >= 2 into the results array
+	\item Return results
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution twoOutOfThree O(n) time/space, captionpos=t]
+const twoOutOfThree = (nums1, nums2, nums3) => {
+    
+    let arr = [...new Set(nums1), ...new Set(nums2), ...new Set(nums3)]
+    let map = {}
+    let result = []
+    
+    for(let n of arr) {
+        if(map[n]) {
+            map[n] += 1
+        } else {
+            map[n] = 1
+        }
+    }
+    
+    for(let i in map) {
+        if(map[i] >= 2) {
+            result.push(i)
+        }
+    }
+    
+  return result  
+};
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Solution twoOutOfThree - clunky first answer, captionpos=t]
+var twoOutOfThree = function(nums1, nums2, nums3) {
+    
+    let answer = []
+    
+    for(let n of nums1){
+        for(let n2 of nums2){
+            if(n === n2){
+                answer.push(n)
+            }
+            for(let n3 of nums3){
+                if (n2 === n3){
+                    answer.push(n2)
+                }
+                if (n === n3){
+                    answer.push(n3)
+                }
+            }
+        }
+    }
+    
+    let finalAnswer = [...new Set(answer)];
+    return finalAnswer
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Kth Distinct String in an Array}
+https://leetcode.com/problems/kth-distinct-string-in-an-array/
+\begin{enumerate}
+	\item Initialize empty map 
+	\item Initialize answer array 
+	\item For each through the array to build the map
+	\item For loop through [key, val] of map Object 
+	\item Return the values === 1 and push their key to the answer
+	\item Return answer [k-1] since it starts at zero index || empty string if nothing
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution kthDistinct, captionpos=t]
+const kthDistinct = (arr, k) => {
+    
+    let map = {} 
+    let answer = [] 
+    
+    arr.forEach(i => map[i] = map[i] + 1 || 1)
+    
+    for (let [key, val] of Object.entries(map)) 
+        if (val === 1) answer.push(key)
+    
+    return answer[k-1] || ""
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Maximum Number of Words You Can Type}
+https://leetcode.com/problems/maximum-number-of-words-you-can-type/
+
+\begin{enumerate}
+	\item Initialize empty answer variable
+	\item Set t = true 
+	\item Create new Set with brokenLetter split into characters
+	\item Loop through text and set letter to charAt(i)
+	\item If set has letter set t to false 
+	\item If letter is empty or letter is there increase by one, set t to true again
+	\item If t is there, increase answer by 1	
+	\item Return answer
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution canBeTypedWords, captionpos=t]
+const canBeTypedWords = (text, brokenLetters) => {
+
+    let answer = 0;
+    let t = true;
+    let set = new Set(brokenLetters.split(''));
+    
+    for(let i=0;i<text.length;i++){
+        let letter = text.charAt(i);
+        if(set.has(letter)) t = false;
+        if(letter==' ') {
+            if(t) answer += 1;
+            t = true;
+        }
+    }
+    
+    if(t) answer += 1;
+    
+    return answer;
+}
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Substrings of Size Three with Distinct Characters}
+https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/
+
+\begin{enumerate}
+	\item Initialize answer at zero 
+	\item For loop through s.length  - 1
+	\item Set str to  a slice of s that starts at i and goes till i+3
+	\item Make a new Set(str)
+	\item If the size of the set is === 3, += 1 to answer
+	\item Return answer
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution countGoodSubstrings, captionpos=t]
+const countGoodSubstrings = (s) => {
+
+    let answer = 0
+
+    for (let i = 0; i < s.length - 2; i++) {
+        let str = s.slice(i, i + 3)
+        let set = new Set(str)
+        if (set.size === 3) answer += 1
+    }
+
+    return answer
+};
+
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Find the Difference of Two Arrays}
+https://leetcode.com/problems/find-the-difference-of-two-arrays/submissions/
+
+\begin{enumerate}
+	\item Set set1 to a new Set of nums1
+	\item Set set2 to a new Set of nums2
+	\item ForEach loop through nums2 where it will delete any values that are also in set1
+	\item ForEach loop through nums1 where it will delete any values that are also in set2
+	\item Return and array of split arrays set1 and set2
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution findDifference, captionpos=t]
+const findDifference = (nums1, nums2) => {
+    
+    let set1 = new Set(nums1)
+    let set2 = new Set(nums2)
+
+    nums2.forEach(i => {set1.delete(i)})
+    nums1.forEach(i => {set2.delete(i)})
+
+    return ([[...set1], [...set2]])
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Isomorphic Strings}
+https://leetcode.com/problems/isomorphic-strings/
+
+\begin{enumerate}
+	\item Initialize new Map()
+	\item Loop through s.length 
+	\item If there is no map['s' +s[i]] then add it and set to t[i]
+	\item If there is no map['t' +t[i]] then add it and set to s[i]
+	\item If t[i] is not equal to the s map or if s[i] is not equal to the t map return false 
+	\item Return true
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution isIsomorphic, captionpos=t]
+const isIsomorphic = (s, t) => {
+    
+    let map = new Map()
+
+    for (let i = 0; i<s.length; i++){
+        if(!map['s' + s[i]]) {
+            map['s' + s[i]] = t[i]
+        } 
+        if(!map['t' + t[i]]) {
+            map['t' + t[i]] = s[i]
+        }
+        if(t[i] != map['s' + s[i]] || s[i] != map['t' + t[i]]){  
+            return false
+        } 
+    }
+    
+    return true;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Word Pattern}
+https://leetcode.com/problems/word-pattern/
+
+\begin{enumerate}
+	\item Set words to s.split(' ')
+	\item Set map to new Map()
+	\item If words.length is not equal to pattern return false (catches diff length)
+	\item If words.size is not equal to set(patter).size return false (catches equal word)
+	\item For loop through pattern length 
+	\item If map pattern has pattern [i] and it is not equal to words[i] return false
+	\item Map.set pattern[i]  and words[i]
+	\item Return true
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution wordPattern, captionpos=t]
+const wordPattern = (pattern, s) => {
+    
+    let words = s.split(' ')
+    let map = new Map()
+    
+    if(words.length !== pattern.length){
+        return false
+    }
+    if(new Set(words).size !== new Set(pattern).size){
+        return false
+    } 
+    
+    for(let i = 0; i < pattern.length; i++) {
+        if(map.has(pattern[i]) && 
+           map.get(pattern[i]) !== words[i]) {
+            return false
+        } 
+        map.set(pattern[i], words[i])
+    }
+    
+    return true
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Longest Harmonious Subsequence}
+https://leetcode.com/problems/longest-harmonious-subsequence/
+
+\begin{enumerate}
+	\item Initialize new Map()
+	\item Set result at zero 
+	\item For of loop through nums map[v] = map[v] + 1 or 1 (build map)
+	\item Loop through the key of map and parse int key + 1
+	\item Set result to math max result, map[key] + map[parseInt(key) + 1]
+	\item Return result
+	
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution findLHS, captionpos=t]
+const findLHS = (nums) => {
+    
+    let map = new Map() 
+    let result = 0
+    
+    for(let v of nums) {
+        map[v] = map[v] + 1 || 1
+    }
+    
+    for (let key in map) {
+        if(map[parseInt(key) + 1]) {
+            result = Math.max(result, map[key] + map[parseInt(key) + 1])
+        }
+    }
+    
+    return result
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Next Greater Element I}
+https://leetcode.com/problems/next-greater-element-i/
+
+\begin{enumerate}
+	\item Initialize new Map()
+	\item Initialize empty array called stack 
+	\item Loop through nums2 with forEach and nest a while loop
+	\item While stack.length  0 \&\& it is within stack push stack n 
+	\item Return nums1.map(n map[n] or -1)
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution nextGreaterElement, captionpos=t]
+const nextGreaterElement = (nums1, nums2) => {
+    
+    let map = {}
+    let stack = []
+      
+    nums2.forEach(n => {
+      while (stack.length > 0 && stack[stack.length - 1] < n) {
+        map[stack.pop()] = n
+      }
+      stack.push(n)
+    })
+      
+    return nums1.map(n => map[n] || -1)
+  };
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+\end{document}
