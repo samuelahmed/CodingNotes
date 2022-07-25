@@ -1788,12 +1788,97 @@ console.log(sentence.toUpperCase());
 
 
 
+\medskip %START OF THIS 
+\pagebreak
+\subsection{this}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this}
+
+
+
+\begin{itemize}
+	\item In most cases, the value of this is determined by how a function is called (runtime binding). It can't be set by assignment during execution, and it may be different each time the function is called
+\end{itemize}
+
+\begin{lstlisting}[title=Example this, captionpos=t]
+const test = {
+  prop: 42,
+  func: function() {
+    return this.prop;
+  },
+};
+
+console.log(test.func());
+// expected output: 42
+\end{lstlisting}
+\medskip %END OF THIS
 
 
 
 
 
-test test test
+
+
+
+
+\medskip %START OF Object.VALUES() 
+\pagebreak
+\subsection{Object.values()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values}
+
+
+\begin{itemize}
+	\item The Object.values() method returns an array of a given object's own enumerable property values, in the same order as that provided by a for...in loop.
+	\item (The only difference is that a for...in loop enumerates properties in the prototype chain as well.)
+	\item Object.values(obj)
+\end{itemize}
+
+\begin{lstlisting}[title=Example Object.values(), captionpos=t]
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.values(object1));
+// expected output: Array ["somestring", 42, false]
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Example values(), captionpos=t]
+const obj = { foo: 'bar', baz: 42 };
+console.log(Object.values(obj)); // ['bar', 42]
+
+// Array-like object
+const arrayLikeObj1 = { 0: 'a', 1: 'b', 2: 'c' };
+console.log(Object.values(arrayLikeObj1 )); // ['a', 'b', 'c']
+
+// Array-like object with random key ordering
+// When using numeric keys, the values are returned in the keys' numerical order
+const arrayLikeObj2 = { 100: 'a', 2: 'b', 7: 'c' };
+console.log(Object.values(arrayLikeObj2 )); // ['b', 'c', 'a']
+
+// getFoo is property which isn't enumerable
+const my_obj = Object.create({}, { getFoo: { value() { return this.foo; } } });
+my_obj.foo = 'bar';
+console.log(Object.values(my_obj)); // ['bar']
+
+// non-object argument will be coerced to an object
+console.log(Object.values('foo')); // ['f', 'o', 'o']
+\end{lstlisting}
+\medskip %END OF Object.VALUES()
+
+
+
+
+
+
+
+
+
+
+
 
 
 
