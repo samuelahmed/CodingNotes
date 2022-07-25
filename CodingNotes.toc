@@ -106,3 +106,5 @@
 \contentsline {subsection}{\numberline {4.18}Word Pattern}{120}{subsection.4.18}%
 \contentsline {subsection}{\numberline {4.19}Longest Harmonious Subsequence}{121}{subsection.4.19}%
 \contentsline {subsection}{\numberline {4.20}Next Greater Element I}{122}{subsection.4.20}%
+\contentsline {section}{\numberline {5}Dynamic Programming}{123}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Counting Bits}{123}{subsection.5.1}%

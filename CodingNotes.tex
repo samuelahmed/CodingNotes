@@ -4315,6 +4315,56 @@ const nextGreaterElement = (nums1, nums2) => {
 
 
 
+%END OF SECTION - HASH TABLES
+
+
+
+
+
+
+
+
+%START OF SECTION - DYNAMIC PROGRAMMING
+
+\pagebreak
+\section{Dynamic Programming}
+
+
+
+ %START  
+\medskip   
+\subsection{Counting Bits}
+https://leetcode.com/problems/counting-bits/
+
+\begin{enumerate}
+	\item Initialize result array at [0]
+	\item Initialize offset at 1
+	\item For loop through n starting at 1, going till n+1
+	\item If offset * 2 === i then set offset to i 
+	\item result[i] is equal to 1 + result [i - offset]
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution countBits, captionpos=t]
+const countBits = (n) => {
+    
+    let result = [0]
+    let offset = 1
+      
+    for (let i = 1; i < n + 1; i++) {
+      if (offset * 2 === i) {
+        offset = i
+      }
+      result[i] = 1 + result[i - offset]
+    }
+  
+    return result
+  };\end{lstlisting}
+
+\medskip %END
+
+
+
 
 
 
