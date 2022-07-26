@@ -1874,6 +1874,192 @@ console.log(Object.values('foo')); // ['f', 'o', 'o']
 
 
 
+\medskip %START OF constructor 
+\pagebreak
+\subsection{constructor}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor}
+
+
+\begin{itemize}
+	\item The constructor method is a special method of a class for creating and initializing an object instance of that class.
+	\item constructor() { /* … */ }
+	\item constructor(argument0, argument1, /* … ,*/ argumentN) { /* … */ }
+
+\end{itemize}
+
+\begin{lstlisting}[title=Example Classes Constructor, captionpos=t]
+class Polygon {
+  constructor() {
+    this.name = 'Polygon';
+  }
+}
+
+const poly1 = new Polygon();
+
+console.log(poly1.name);
+// expected output: "Polygon"
+\end{lstlisting}
+\medskip %END OF constructor
+
+
+
+
+
+\medskip %START OF CLASSES 
+\pagebreak
+\subsection{Classes}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes}
+
+
+\begin{itemize}
+	\item Classes are a template for creating objects. They encapsulate data with code to work on that data.
+	\item Classes in JS are built on prototypes but also have some syntax and semantics that are not shared with ES5 class-like semantics. 
+\end{itemize}
+
+\begin{lstlisting}[title=Example Classes, captionpos=t]
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  // Getter
+  get area() {
+    return this.calcArea();
+  }
+  // Method
+  calcArea() {
+    return this.height * this.width;
+  }
+}
+
+const square = new Rectangle(10, 10);
+
+console.log(square.area); // 100
+\end{lstlisting}
+\medskip %END OF CLASSES
+
+
+
+
+
+
+
+
+\medskip %START OF FROM() 
+\pagebreak
+\subsection{Array.from()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from}
+
+
+\begin{itemize}
+	\item The Array.from() static method creates a new, shallow-copied Array instance from an iterable or array-like object.
+\end{itemize}
+
+\begin{lstlisting}[title=Example from(), captionpos=t]
+console.log(Array.from('foo'));
+// expected output: Array ["f", "o", "o"]
+
+console.log(Array.from([1, 2, 3], x => x + x));
+// expected output: Array [2, 4, 6]
+\end{lstlisting}
+
+\begin{lstlisting}[title=Examples from(), captionpos=t]
+// Arrow function
+Array.from(arrayLike, (element) => {stuff})
+Array.from(arrayLike, (element, index) => {stuff})
+
+// Mapping function
+Array.from(arrayLike, mapFn)
+Array.from(arrayLike, mapFn, thisArg)
+
+// Inline mapping function
+Array.from(arrayLike, function mapFn(element) {stuff})
+Array.from(arrayLike, function mapFn(element, index) {stuff})
+Array.from(arrayLike, function mapFn(element) {stuff}, thisArg)
+Array.from(arrayLike, function mapFn(element, index) {stuff}, thisArg)
+\end{lstlisting}
+
+
+\medskip %END OF FROM()
+
+
+
+
+
+
+
+
+
+
+\medskip %START OF forEach() 
+\pagebreak
+\subsection{Array.prototype.forEach()}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach}
+
+
+\begin{itemize}
+	\item The forEach() method executes a provided function once for each array element.
+
+\end{itemize}
+
+\begin{lstlisting}[title=Example forEach(), captionpos=t]
+const array1 = ['a', 'b', 'c'];
+
+array1.forEach(element => console.log(element));
+
+// expected output: "a"
+// expected output: "b"
+// expected output: "c"
+\end{lstlisting}
+
+\begin{lstlisting}[title=Examples forEach(), captionpos=t]
+const words = ['one', 'two', 'three', 'four'];
+words.forEach((word) => {
+  console.log(word);
+  if (word === 'two') {
+    words.shift(); //'one' will delete from array
+  }
+}); // one // two // four
+
+console.log(words); // ['two', 'three', 'four']
+\end{lstlisting}
+
+
+\medskip %END OF forEach()
+
+
+
+
+
+
+\medskip %START OF map() constructor
+\pagebreak
+\subsection{Map() constructor}
+
+\url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/Map}
+
+
+\begin{itemize}
+	\item The Map() constructor creates Map objects.
+	\item new Map()
+	\item new Map(iterable)
+	
+\end{itemize}
+
+\begin{lstlisting}[title=Example new Map(), captionpos=t]
+let myMap = new Map([
+  [1, 'one'],
+  [2, 'two'],
+  [3, 'three'],
+])
+\end{lstlisting}
+
+\medskip %END OF map() consturctor
+
 
 
 
