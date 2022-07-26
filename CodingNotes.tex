@@ -4359,9 +4359,189 @@ const countBits = (n) => {
     }
   
     return result
-  };\end{lstlisting}
+  };
+  \end{lstlisting}
 
 \medskip %END
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Fibonacci Number}
+https://leetcode.com/problems/fibonacci-number/
+
+\begin{enumerate}
+	\item Initialize result to [0,1]
+	\item For loop starting from 2 till i <= n
+	\item Result push result[i-2] plus result[i-1]
+	\item Return result[n]
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution fib, captionpos=t]
+const fib = (n) => {
+    
+    let result = [0,1]
+    
+    for(let i = 2; i<= n; i++){
+        result.push(result[i-1] + result[i-2])
+    }
+    
+    return result[n]
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Pascal's Triangle}
+https://leetcode.com/problems/pascals-triangle/
+
+\begin{enumerate}
+	\item Initialize empty results array
+	\item For loop through n 
+	\item Set result[i] to empty array 
+	\item Set result[i][0] equal to result[i][i] = 1
+	\item For loop through i starting at 1
+	\item Set result[i][j] equal to result[i-1][j] + result[i-1][j-1]
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution generate, captionpos=t]
+const generate = (n) => {
+    
+    let result = []
+    
+    for(let i = 0; i<n; i++){
+        result[i] = []
+        result[i][0] = result[i][i] = 1
+        for(let j = 1; j < i; j++){
+            result[i][j] = result[i-1][j] + result[i-1][j-1]
+        }
+    }
+    
+    return result
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution generate with less mess, captionpos=t]
+const generate = (n) => {
+    
+    let r = []
+    
+    for(let i =0;i<n; i++){
+        r[i] = []
+        r[i][0] = r[i][i] = 1
+        for(let j = 1; j<i; j++){
+            r[i][j] = r[i-1][j]+r[i-1][j-1]
+        }
+    }
+    return r
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Divisor Game}
+https://leetcode.com/problems/divisor-game/
+
+\begin{enumerate}
+	\item return n \% 2 === 0 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution divisorGame, captionpos=t]
+const divisorGame = (n) => {
+    return n % 2 === 0
+};
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Solution divisorGame, captionpos=t]
+const divisorGame = (n) => {
+    
+    let result = Array(n + 1).fill(false)
+    
+    for (let i = 2; i <= n; ++i){
+        for (let j = Math.floor(Math.sqrt(i)); 1 <= j; --j){
+            if (!(i % j) && !result[i - j]){
+                result[i] = true
+            }
+        }
+    }
+   
+    return result[n]
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{N-th Tribonacci Number}
+https://leetcode.com/problems/n-th-tribonacci-number/
+
+\begin{enumerate}
+	\item return Initialize result array to 0,1,1
+	\item For loop through n starting from 3
+	\item Set result to result -1,-2-3 for initial values
+	\item Return result[n]
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution tribonacci, captionpos=t]
+const tribonacci = (n) => {
+    
+    let result = [0,1,1]
+    
+    for(let i = 3; i<=n; i++) {
+        result[i] = result[i-1] + result[i-2] + result[i-3]
+    }
+    
+    return result[n]
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
