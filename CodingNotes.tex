@@ -4847,4 +4847,36 @@ const maxProfit = (prices) => {
 
 
 
+\pagebreak %START  
+\medskip   
+\subsection{Climbing Stairs}
+https://leetcode.com/problems/climbing-stairs/
+
+\begin{enumerate}
+	\item Initialize result to [0,1,2,3]
+	\item For loop through n starting from 4
+	\item Set result[i] to result[i-1] + result[i-2]
+	\item Return result[n]
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution climbStairs, captionpos=t]
+const climbStairs = (n) => {
+
+    let result = [0,1,2,3]
+    
+    for(let i = 4; i <= n; i++){
+        result[i] = result[ i - 1] + result[i - 2]
+    }
+    
+    return result[n]
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
 \end{document}
