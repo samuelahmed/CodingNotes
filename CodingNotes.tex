@@ -4716,6 +4716,45 @@ const tribonacci = (n) => {
 
 
 
+\pagebreak %START  
+\medskip   
+\subsection{Min Cost Climbing Stairs}
+https://leetcode.com/problems/min-cost-climbing-stairs/
+
+\begin{enumerate}
+	\item Initialize L array at cost[0]
+	\item Initialize R array at cost[1]
+	\item Initialize current as empty array
+	\item if cost.length === 1 return zero
+	\item If cost.length === 2 return math.min(L, R)
+	\item Loop through cost starting from 2
+	\item Set current to cost[i] + math.min(L, R)
+	\item Set L to R
+	\item Set R to current
+	\item Return Math.min(L, R)
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution minCostClimbingStairs, captionpos=t]
+const minCostClimbingStairs = (cost) => {
+
+    let L = cost[0]
+    let R = cost[1]
+    let current = []
+    
+    if (cost.length === 1) return 0
+    if (cost.length === 2) return Math.min(L, R)
+    
+    for (let i = 2; i < cost.length; i++) {
+        current = cost[i] + Math.min(L, R)
+        L = R
+        R = current
+    }
+
+    return Math.min(L, R)
+};
+\end{lstlisting}
+
+\medskip %END
 
 
 
@@ -4726,8 +4765,79 @@ const tribonacci = (n) => {
 
 
 
+\pagebreak %START  
+\medskip   
+\subsection{Pascal's Triangle II}
+https://leetcode.com/problems/pascals-triangle-ii/
+
+\begin{enumerate}
+	\item Initialize result as empty array
+	\item Loop through row index + 1
+	\item Set result[i] to empty array
+	\item Result [i][0] = result [i][i] = 1
+	\item Loop through i starting from 1
+	\item Set result [i][j] to result[i-1][j] + result[i-1][j-1]
+	\item Return result[rowIndex]
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution getRow, captionpos=t]
+const getRow = (rowIndex) => {
+
+    let result = []
+    
+    for(let i = 0; i<rowIndex+1; i++){
+        result[i] = []
+        result[i][0] = result[i][i] = 1
+        for(let j = 1; j < i; j++){
+            result[i][j] = result[i-1][j] + result[i-1][j-1]
+        }
+    }
+    
+    return result[rowIndex]
+};
+\end{lstlisting}
+
+\medskip %END
 
 
+
+
+
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Best Time to Buy and Sell Stock}
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+\begin{enumerate}
+	\item Initialize profits at zero
+	\item Initialize min at prices[0]
+	\item Loop through prices starting from index 1 
+	\item If min greater than prices[i] set min=prices[i]
+	\item Else if prices[i] - min greater than profit set profit = prices[i] - min
+	\item Return profit
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution maxProfit, captionpos=t]
+const maxProfit = (prices) => {
+    
+    let profit = 0
+    let min = prices[0]
+    
+    for(let i = 1; i < prices.length; i++) { 
+        if(min > prices[i]) {
+            min = prices[i]
+        } else if(prices[i] - min > profit) {
+            profit = prices[i] - min
+        }
+    }
+    
+    return profit
+};
+\end{lstlisting}
+
+\medskip %END
 
 
 

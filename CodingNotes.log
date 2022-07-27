@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  25 JUL 2022 23:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  26 JUL 2022 18:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -686,15 +686,15 @@ tinct-characters/
  []
 
 [122] [123] [124] [125] [126] [127] [128] [129] [130] [131] [132] [133]
-(./CodingNotes.aux)
+[134] [135] [136] (./CodingNotes.aux)
 Package rerunfilecheck Info: File `CodingNotes.out' has not changed.
-(rerunfilecheck)             Checksum: C8C5FBD1DAB68D69CEBB7E87B5F0BCD4;22694.
+(rerunfilecheck)             Checksum: CFF8E700C166C90A74A4C0D629253AF0;23279.
  ) 
 Here is how much of TeX's memory you used:
- 12611 strings out of 478268
- 189474 string characters out of 5846348
+ 12700 strings out of 478268
+ 190679 string characters out of 5846348
  767176 words of memory out of 5000000
- 28107 multiletter control sequences out of 15000+600000
+ 28118 multiletter control sequences out of 15000+600000
  474314 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,432b,1837s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -709,10 +709,10 @@ l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on CodingNotes.pdf (133 pages, 481216 bytes).
+Output written on CodingNotes.pdf (136 pages, 489137 bytes).
 PDF statistics:
- 4278 PDF objects out of 4296 (max. 8388607)
- 4082 compressed objects within 41 object streams
- 2638 named destinations out of 2984 (max. 500000)
- 953 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4393 PDF objects out of 5155 (max. 8388607)
+ 4193 compressed objects within 42 object streams
+ 2716 named destinations out of 2984 (max. 500000)
+ 977 words of extra memory for PDF output out of 10000 (max. 10000000)
 
