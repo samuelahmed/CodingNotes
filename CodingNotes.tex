@@ -5053,28 +5053,107 @@ https://leetcode.com/problems/find-all-the-lonely-nodes/
 
 \begin{lstlisting}[title=Solution getLonelyNodes, captionpos=t]
 const getLonelyNodes = (root) => {
-
-    let result = []
-
-    const dfs = root => {
-
-        if (!root) return result
-        if (!root.left && root.right) {
-            result.push(root.right.val)
-        }
+    
+    let result = [];
+    
+    const dfs = (root) => {
+        
+        if (!root) return result; 
         if (!root.right && root.left) {
-            result.push(root.left.val) 
+            result.push(root.left.val);
         }
-        dfs(root.left)
-        dfs(root.right)
+        if (!root.left && root.right) {
+            result.push(root.right.val);
+        }
+        dfs(root.right);
+        dfs(root.left);
     };
-
-    dfs(root)
-    return result
+    
+    dfs(root);
+    return result;
 };
 \end{lstlisting}
 
 \medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection{Range Sum of BST}
+https://leetcode.com/problems/range-sum-of-bst/
+
+\begin{enumerate}
+	\item Initialize result as zero
+	\item If no root return result 
+	\item If root.val is greater than or equal high AND root.val is greater than or equal to low 
+	\item Result += root val
+	\item If root.val is greater than low add recursive root.left, low, high
+	\item If root.val is lower than high add recursive root.right, low, high
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution rangeSumBST, captionpos=t]
+const rangeSumBST = (root, low, high) => {
+    
+    let result = 0;
+    
+    if(!root) return result;
+    if(root.val <= high && root.val >= low){
+        result += (root.val);
+    }
+    if(root.val > low){
+        result += rangeSumBST(root.left, low, high);
+    }
+    if(root.val < high){
+        result += rangeSumBST(root.right, low, high);
+    }
+    
+    return result; 
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
