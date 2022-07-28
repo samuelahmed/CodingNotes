@@ -4879,4 +4879,67 @@ const climbStairs = (n) => {
 
 
 
+
+
+\pagebreak %START  
+\medskip   
+\subsection{Is Subsequence}
+https://leetcode.com/problems/is-subsequence/
+
+\begin{enumerate}
+	\item Initialize results to zero
+	\item If s.length is greater than t.length return false
+	\item Loop through t.length and if s[result] === t[i] increment result
+	\item Return check if result is equal to s.length
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution isSubsequence, captionpos=t]
+const isSubsequence = (s, t) => {
+    
+    let result = 0
+
+    if (s.length > t.length){
+        return false   
+    } 
+
+    for (let i = 0; i < t.length; i++) {
+        if (s[result] === t[i]) {
+            result++;
+        }
+    }
+
+    return result === s.length
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
