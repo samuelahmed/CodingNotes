@@ -5044,11 +5044,14 @@ const evaluateTree = (root) => {
 https://leetcode.com/problems/find-all-the-lonely-nodes/
 
 \begin{enumerate}
-	\item 
-	\item
-	\item
-	\item 
-
+	\item Create new function dfs with (root)
+	\item If no root return results 
+	\item If no right root and yes left root result.push value of left root
+	\item If no left root and yes right root result.push value of right root
+	\item Recursive dfs(root.right)
+	\item Recursive dfs(root.left)
+	\item Call dfs on root
+	\item Return result
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution getLonelyNodes, captionpos=t]
