@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  28 JUL 2022 16:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  28 JUL 2022 19:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -688,20 +688,20 @@ tinct-characters/
 
 [123] [124] [125] [126] [127] [128] [129] [130] [131] [132] [133] [134]
 [135] [136] [137] [138] [139] [140]
-Overfull \hbox (3.63959pt too wide) in paragraph at lines 4970--4971
+Overfull \hbox (3.63959pt too wide) in paragraph at lines 4989--4990
 \OT1/cmr/m/n/10 https://leetcode.com/problems/find-a-corresponding-node-of-a-bi
 nary-tree-in-a-
  []
 
-[141] [142] [143] [144] (./CodingNotes.aux)
+[141] [142] [143] [144] [145] [146] [147] [148] (./CodingNotes.aux)
 Package rerunfilecheck Info: File `CodingNotes.out' has not changed.
-(rerunfilecheck)             Checksum: 6DE55880E189A6A6A4942E832E778BC5;24929.
+(rerunfilecheck)             Checksum: 8FC5BE34CD82042112EC035757437F5F;25641.
  ) 
 Here is how much of TeX's memory you used:
- 12875 strings out of 478268
- 193083 string characters out of 5846348
+ 12995 strings out of 478268
+ 194823 string characters out of 5846348
  767180 words of memory out of 5000000
- 28140 multiletter control sequences out of 15000+600000
+ 28151 multiletter control sequences out of 15000+600000
  474314 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,479b,1837s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -716,10 +716,10 @@ l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on CodingNotes.pdf (144 pages, 507038 bytes).
+Output written on CodingNotes.pdf (148 pages, 518597 bytes).
 PDF statistics:
- 4638 PDF objects out of 5155 (max. 8388607)
- 4427 compressed objects within 45 object streams
- 2869 named destinations out of 2984 (max. 500000)
- 1041 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4795 PDF objects out of 5155 (max. 8388607)
+ 4579 compressed objects within 46 object streams
+ 2978 named destinations out of 2984 (max. 500000)
+ 1065 words of extra memory for PDF output out of 10000 (max. 10000000)
 

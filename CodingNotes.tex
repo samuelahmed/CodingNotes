@@ -4958,6 +4958,25 @@ const maxDepth = (root) => {
 };
 \end{lstlisting}
 
+\begin{lstlisting}[title=Solution maxDepth bfs, captionpos=t]
+const maxDepth = (root) => {
+    
+    let result = 0;
+    
+    const bfs = (node, level) => {
+        
+        if (!node) return;
+        if(level > result) result = level; 
+        
+        bfs(node.left, level +1);
+        bfs(node.right, level +1);
+    };
+    
+    bfs(root, 1);
+    return result;
+};
+\end{lstlisting}
+
 \medskip %END
 
 
@@ -5137,6 +5156,40 @@ const rangeSumBST = (root, low, high) => {
 
 
 
+ %START  
+\pagebreak
+\medskip   
+\subsection{Sum of Root To Leaf Binary Numbers}
+https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/
+
+\begin{enumerate}
+	\item Start bfs function with (root, string)
+	\item If no root return zero 
+	\item String += root.val
+	\item If no right and left root return parseInt(string, 2)
+	\item Return dfs(root.right, string) + dfs(root.left, string)
+	\item Return dfs(root, '')
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution sumRootToLeaf, captionpos=t]
+const sumRootToLeaf = (root) => {
+    
+    const dfs = (root, string) => {
+        
+        if (!root) return 0;
+        string += root.val;
+        if (!root.right && !root.left) {
+            return parseInt(string, 2);
+        }
+        
+        return dfs(root.right, string) + dfs(root.left, string);
+    };
+    
+    return dfs(root, '');
+};
+\end{lstlisting}
+
+\medskip %END
 
 
 
@@ -5149,6 +5202,112 @@ const rangeSumBST = (root, low, high) => {
 
 
 
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection{Sum of Root To Leaf Binary Numbers}
+https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/
+
+\begin{enumerate}
+	\item Initialize result as [] in function arguments
+	\item If !root return results 
+	\item Push root.val into results array
+	\item For of loop through child of root.children
+	\item Recursive call to preorder(child, result) in loop
+	\item Return results
+\end{enumerate}
+
+
+
+\begin{lstlisting}[title=Solution preorder recursive, captionpos=t]
+const preorder = (root, result = []) => {
+    
+    if (!root) return result;
+    result.push(root.val);
+    
+    for (let child of root.children){
+        preorder(child, result);
+    }
+    
+    return result;
+};\end{lstlisting}
+
+
+
+\begin{lstlisting}[title=Solution preorderIterative, captionpos=t]
+const preorderIterative = (root) => {
+
+    let stack = [];
+    let result = [];
+
+    if (!root) {
+        return result;
+    }
+    stack.push(root);
+
+    while(stack.length) {
+        let node = stack.pop();
+        result.push(node.val);
+        for(let i = node.children.length - 1; i >= 0; i--) {
+            stack.push(node.children[i]);
+        }
+    }
+
+    return result;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection{N-ary Tree Postorder Traversal}
+https://leetcode.com/problems/n-ary-tree-postorder-traversal/
+
+\begin{enumerate}
+	\item Initialize result as empty array
+	\item Recurse(root) and return result
+	\item Create recurse function with (node)
+	\item If no node return result
+	\item Loop through child of node.children 
+	\item Recurse child
+	\item Push node.val into results
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution postorder, captionpos=t]
+const postorder = (root) => {
+
+    let result = [];
+
+    recurse(root);
+    return result;
+
+    function recurse(node) {
+        
+        if (!node) return result;
+        for (let child of node.children) {
+            recurse(child);
+        }
+        result.push(node.val);
+    }
+};
+\end{lstlisting}
+
+\medskip %END
 
 
 
