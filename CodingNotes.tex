@@ -2093,19 +2093,21 @@ https://leetcode.com/problems/build-array-from-permutation/
 \begin{lstlisting}[title=Solution with for loop, captionpos=t]
 var buildArray = function(nums) {
 
-    let result = []
+    let result = [];
     
     for (let i = 0; i<nums.length; i++){
-        result.push(nums[nums[i]])
+        result.push(nums[nums[i]]);
     }
     
-    return result
+    return result;
 };
 \end{lstlisting}
 	
 \begin{lstlisting}[title=Solution with map(), captionpos=t]
 const buildArray = (nums) => {
-    return nums.map(result => nums[result])
+
+    return nums.map(result => nums[result]);
+    
 };
 \end{lstlisting}
 \medskip %END 
@@ -2132,7 +2134,9 @@ const countMatches = (items, ruleKey, ruleValue) => {
     }
     
     return items.reduce((ans,item) => 
+    
     item[ruleIndex[ruleKey]] === ruleValue ? ans + 1 : ans, 0);
+    
 };
 \end{lstlisting}
 \medskip %END 
@@ -2154,21 +2158,21 @@ https://leetcode.com/problems/create-target-array-in-the-given-order/
 \begin{lstlisting}[title=Solution createTargetArray, captionpos=t]
 const createTargetArray = (nums, array) => {
 
-    let target = [];
+    let result = [];
     
     for( let i=0; i<array.length; i++){
         for(let j=0; j<i; j++){
             if(array[i] <= array[j]){
-                array[j]++
+                array[j]++;
             }
         }
     }
     
     for(const i in nums){
-        target[array[i]] = nums[i]
+        result[array[i]] = nums[i];
     }
     
-    return target;
+    return result;
 };
 \end{lstlisting}
 
@@ -2204,7 +2208,7 @@ const decode = (encoded, first) => {
     let result = [first];
     
     for(let i = 0; i<encoded.length; i++){
-        result.push(result[i] ^ encoded[i])
+        result.push(result[i] ^ encoded[i]);
     }
     
     return result;
@@ -2258,15 +2262,15 @@ https://leetcode.com/problems/final-value-of-variable-after-performing-operation
 \begin{lstlisting}[title=Solution finalValueAfterOperations, captionpos=t]
 const finalValueAfterOperations = (operations) => {
 
-    let count = 0;
+    let result = 0;
 
     for (let i of operations) {
         if (i === 'X++' || i === '++X') {
-            count++
-        } else count --;
+            result++;
+        } else result --;
     }
     
-    return count;
+    return result;
 };
 \end{lstlisting}
 \medskip %END 
@@ -2283,7 +2287,9 @@ https://leetcode.com/problems/concatenation-of-array/
 
 \begin{lstlisting}[title=Solution getConcatenation, captionpos=t]
 var getConcatenation = function (nums) {
-    return [...nums, ...nums]
+
+    return [...nums, ...nums];
+    
 }
 \end{lstlisting}
 \medskip %END 
@@ -2305,18 +2311,18 @@ https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
 
 \begin{lstlisting}[title=Solution kidsWithCandies with for-of loop, captionpos=t]
 var kidsWithCandies = function(candies, extraCandies) {
-    const ret = []
-    let max = 0
+    const result = [];
+    let max = 0;
 
     for (const val of candies) {
-        val > max && (max = val)
+        val > max && (max = val);
     }
 
     for (let i = 0; i< candies.length; ++i){
-        ret.push(candies[i] + extraCandies >= max);
+        result.push(candies[i] + extraCandies >= max);
     }
 
-    return ret; 
+    return result; 
 }
 \end{lstlisting}
 
@@ -2354,18 +2360,18 @@ https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/
 \begin{lstlisting}[title=Solution mostWordsFound, captionpos=t]
 const mostWordsFound = (sentence) => {
 
-    let max = 0;
+    let result = 0;
     let temp = 0;
 
     for(let i=0; i < sentence.length; i++){
         temp = sentence[i].split(" ").length;
-        if(temp>max){
-            max = temp;
+        if(temp>result){
+            result = temp;
         }
     }
     
-    return max;
-}
+    return result;
+};
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution mostWordsFound with for-in loop and Math.max, captionpos=t]
@@ -2401,18 +2407,18 @@ https://leetcode.com/problems/number-of-good-pairs/
 \begin{lstlisting}[title=Solution numIdenticalPairs, captionpos=t]
 var numIdenticalPairs = function (nums) {
 
-    let count = 0;
+    let result = 0;
 
-    for (let i=0; i<nums.length; i++){
-        for(let j=i+1; j<nums.length; j++){
-            if(nums[i] === nums[j]){
-                count++
+    for (let i=0; i<nums.length; i++) {
+        for (let j=i+1; j<nums.length; j++) {
+            if (nums[i] === nums[j]) {
+                result++;
             }
         }
     }
     
-    return count; 
-}
+    return result; 
+};
 \end{lstlisting}
 
 \medskip %END 
@@ -2435,7 +2441,7 @@ const restoreString = (s, indices) => {
     const result = [];
 
     for(let i = 0; i<indices.length; i++){
-        result[indices[i]] = s[i]
+        result[indices[i]] = s[i];
     }
 
     return result.join('');
@@ -2461,18 +2467,18 @@ https://leetcode.com/problems/richest-customer-wealth/
 
 \begin{lstlisting}[title=Solution maximumWealth, captionpos=t]
 const maximumWealth = (accounts) => {
-    let res = 0;
+    let result = 0;
 
     for(let i=0; i<accounts.length; i++){
         let temp = 0;
         for(let j = 0; j< accounts[i].length; j++){
             temp += accounts[i][j];
         }
-        res = Math.max(res, temp);
+        result = Math.max(result, temp);
     }
     
-    return res;
-}
+    return result;
+};
 \end{lstlisting}
 
 \medskip %END 
@@ -2492,10 +2498,10 @@ https://leetcode.com/problems/running-sum-of-1d-array/
 const runningSum = (nums) => {
     
     for (let i = 1; i < nums.length; i++){
-        nums[i] += nums [i-1]
+        nums[i] += nums [i-1];
     }
 
-    return nums
+    return nums;
 }\end{lstlisting}
 
 \medskip %END 
@@ -2515,16 +2521,16 @@ https://leetcode.com/problems/shuffle-the-array/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution shuffle, captionpos=t]
-var shuffle = function (nums, n) {
+const shuffle =  (nums, n) => {
     
-    let res = [];
+    let result = [];
 
     for(let i = 0; i < n; i++){
-        res.push(nums[i])
-        res.push(nums[i+n])
+        result.push(nums[i]);
+        result.push(nums[i+n]);
     }
 
-    return res
+    return result;
 };
 \end{lstlisting}
 
@@ -2548,14 +2554,14 @@ leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
 \begin{lstlisting}[title=Solution smallerNumbersThanCurrent, captionpos=t]
 const smallerNumbersThanCurrent = (nums) => {
 
-    let answer = []
-    let sorted = nums.slice().sort((a,b)=>a-b)
+    let result = [];
+    let sorted = nums.slice().sort((a,b)=>a-b);
 
     for(let i = 0; i<nums.length; i++){
-        answer.push(sorted.indexOf(nums[i]))
+        result.push(sorted.indexOf(nums[i]));
     }
 
-    return answer
+    return result;
 }
 \end{lstlisting}
 
@@ -2583,33 +2589,34 @@ const sumOddLengthSubarrays = (arr) => {
     let result = 0;
  
     for(let i = 1; i<arr.length; i++){
-        arr[i] += arr[i - 1]
+        arr[i] += arr[i - 1];
     }
 
     for(let start = 0; start<arr.length; start++){
         for(let end = start; end<arr.length; end +=2){
-            result += sumBetween(start, end)
+            result += sumBetween(start, end);
         }
     }
     
-    return result
+    return result;
 
     function sumBetween(start, end){
-        return arr[end] - (arr[start -1] || 0)
-    }
-}
+        return arr[end] - (arr[start -1] || 0);
+    };
+};
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution sumOddLengthSubarrays with parseInt, captionpos=t]
-var sumOddLengthSubarrays = function(arr) {
+const sumOddLengthSubarrays = (arr) => {
 
-    let res = 0, n = arr.length
+    let result = 0;
+    let n = arr.length;
 
     for(let i = 0; i< n; ++i) {
-        res += parseInt(((i + 1) * (n - i) + 1) / 2) * arr[i];
+        result += parseInt(((i + 1) * (n - i) + 1) / 2) * arr[i];
     }
     
-    return res
+    return result;
 };
 \end{lstlisting}
 
@@ -2617,19 +2624,19 @@ var sumOddLengthSubarrays = function(arr) {
 \begin{lstlisting}[title=Solution sumOddLengthSubarrays with for loops and modulo, captionpos=t]
 const sumOddLengthSubarrays = (arr) => {
 
-    let count = 0;
+    let result = 0;
 
     for(let i=0; i<arr.length; i++){
         for(let j=i; j<arr.length; j++){
             if((i-j)%2==0){
                 for(let k=i;k<=j;k++){
-                    count+=arr[k]
+                    result+=arr[k];
                 }
             }
         }
     }
 
-    return count;
+    return result;
 }
 \end{lstlisting}
 
@@ -2674,20 +2681,20 @@ https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/
 \begin{lstlisting}[title=Solution countKDifference, captionpos=t]
 const countKDifference = (nums, k) => {
     
-    let obj = {}
-    let answer = 0
+    let obj = {};
+    let result = 0;
 
     for(let i of nums){
-        obj[i] ? obj[i]++ : obj[i] = 1
+        obj[i] ? obj[i]++ : obj[i] = 1;
     }
     
     for (let i=0; i<nums.length; i++) {
         if(obj[nums[i] -k]){
-            answer += obj[nums[i] - k]
+            result += obj[nums[i] - k];
         }
     }
     
-    return answer 
+    return result; 
 }
 \end{lstlisting}
 \medskip %END
@@ -2718,16 +2725,16 @@ https://leetcode.com/problems/minimum-number-of-moves-to-seat-everyone/
 \begin{lstlisting}[title=Solution minMovesToSeat, captionpos=t]
 const minMovesToSeat = (seats, students) => {
     
-    let answer = 0
+    let result = 0;
     
-    seats = seats.sort((a,b) => a-b)
-    students = students.sort((a,b) => a-b)
+    seats = seats.sort((a,b) => a-b);
+    students = students.sort((a,b) => a-b);
     
     for(let i in seats){
-        answer += Math.abs(seats[i] - students[i])
+        result += Math.abs(seats[i] - students[i]);
     }
     
-    return answer
+    return result;
 };
 \end{lstlisting}
 \medskip %END
@@ -2756,7 +2763,7 @@ https://leetcode.com/problems/minimum-amount-of-time-to-fill-cups/
 \begin{lstlisting}[title=Solution fillCups, captionpos=t]
 const fillCups = (amount) => {
     
-    let answer = 0;
+    let result = 0;
 
     amount.sort((a, b) => a - b);
     
@@ -2767,8 +2774,8 @@ const fillCups = (amount) => {
         amount.sort((a, b) => a - b);
     }
     
-        answer += amount[2];
-    return answer;
+    result += amount[2];
+    return result;
 };
 \end{lstlisting}
 \medskip %END
@@ -2799,18 +2806,18 @@ https://leetcode.com/problems/assign-cookies/
 \begin{lstlisting}[title=Solution findContentChildren, captionpos=t]
 const findContentChildren = (g,s) => {
     
-    let answer = 0
+    let result = 0;
     
-    g.sort((a,b) => a-b)
-    s.sort((a,b) => a-b)
+    g.sort((a,b) => a-b);
+    s.sort((a,b) => a-b);
     
     s.forEach((child) => {
-        if(child >= g[answer]){
-            answer++
+        if(child >= g[result]){
+            result++;
         }
     })
     
-    return answer
+    return result;
 }
 \end{lstlisting}
 \medskip %END
@@ -2850,8 +2857,10 @@ https://leetcode.com/problems/defanging-an-ip-address/
 
 \begin{lstlisting}[title=Solution defangIPaddr, captionpos=t]
 const defangIPaddr = (address) => {
-    return address.split('.').join('[.]')
-}
+
+    return address.split('.').join('[.]');
+    
+};
 \end{lstlisting}
 \medskip %END 
 
@@ -2874,17 +2883,17 @@ https://leetcode.com/problems/jewels-and-stones/
 \begin{lstlisting}[title=Solution numJewelsInStones, captionpos=t]
 const numJewelsInStones = (jewels, stones) => {
     
-    let count = 0
+    let result = 0;
     
     for(let i = 0; i<jewels.length; i++){
         for(let j=0; j<stones.length; j++){
             if(stones[j] === jewels[i]){
-                count ++
+                result ++;
             }
         }
     }
 
-    return count
+    return result;
 };
 \end{lstlisting}
 \medskip %END 
@@ -2904,7 +2913,9 @@ https://leetcode.com/problems/goal-parser-interpretation/
 
 \begin{lstlisting}[title=Solution interpret, captionpos=t]
 const interpret = (command) => {
-    return command.split('()').join('o').split('(al)').join('al')
+
+    return command.split('()').join('o').split('(al)').join('al');
+    
 };
 \end{lstlisting}
 \medskip %END 
@@ -2929,16 +2940,16 @@ https://leetcode.com/problems/cells-in-a-range-on-an-excel-sheet/
 \begin{lstlisting}[title=Solution cellsInRange, captionpos=t]
 const cellsInRange = (s) => {
 
-    let answer = []
-    let [col1, row1, , col2, row2] = s
+    let result = [];
+    let [col1, row1, , col2, row2] = s;
     
     for(let c = col1.charCodeAt(0), ce = col2.charCodeAt(0); c<= ce; c++){
         for(let r = +row1, re = +row2; r<=re; r++){
-            answer.push(String.fromCharCode(c) + r)
+            result.push(String.fromCharCode(c) + r);
         }
     }
     
-    return answer
+    return result;
 };
 \end{lstlisting}
 \medskip %END 
@@ -2963,17 +2974,17 @@ https://leetcode.com/problems/split-a-string-in-balanced-strings/
 \begin{lstlisting}[title=Solution balancedStringSplit with balance counter, captionpos=t]
 const balancedStringSplit = (s) => {
     
-    let matches = 0;
+    let result = 0;
     let balance = 0;
 
     for (let i = 0; i < s.length; i++) {
-        s[i] === 'L' ? balance++ : balance--
+        s[i] === 'L' ? balance++ : balance--;
         if (balance === 0) {
-            matches++;
+            result++;
         }
     }
 
-    return matches;
+    return result;
 };
 \end{lstlisting}
 
@@ -5185,7 +5196,7 @@ const sumRootToLeaf = (root) => {
         return dfs(root.right, string) + dfs(root.left, string);
     };
     
-    return dfs(root, '');
+    return dfs(root, ' ');
 };
 \end{lstlisting}
 
@@ -5234,7 +5245,8 @@ const preorder = (root, result = []) => {
     }
     
     return result;
-};\end{lstlisting}
+};
+\end{lstlisting}
 
 
 
@@ -5314,6 +5326,157 @@ const postorder = (root) => {
 
 
 
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Increasing Order Search Tree}
+https://leetcode.com/problems/increasing-order-search-tree/
+
+\begin{enumerate}
+	\item Initialize null result variable
+	\item Initialize null newTree variable
+	\item Make new recurse function with node variable
+	\item If !node return result 
+	\item If no result result = newTree = node
+	\item Else newTree.left = null, newTree.right = node, newTree = newTree.right;
+	\item Call recurse on (node.right)
+	\item Call recurse on (root)
+	\item Return result 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution increasingBST, captionpos=t]
+const increasingBST = (root) => {
+    
+    let result = null;
+    let newTree = null;
+    
+    const recurse = (node) => {
+        
+        if (!node) return result;
+        recurse (node.left);
+        if (!result) {
+            result = newTree = node;
+        } else {
+            node.left = null;
+            newTree.right = node;
+            newTree = newTree.right;
+        }
+        recurse (node.right);
+    };
+
+    recurse (root);
+    return result;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Merge Two Binary Trees}
+https://leetcode.com/problems/merge-two-binary-trees/
+
+\begin{enumerate}
+	\item 
+	\item
+	\item
+	\item
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution mergeTrees, captionpos=t]
+const mergeTrees = (root1, root2) => {
+    
+    if (!root1){
+        return root2;
+    }
+    if(!root2){
+        return root1;
+    }
+    
+    root1.val += root2.val;
+    root1.left = mergeTrees(root1.left, root2.left);
+    root1.right = mergeTrees(root1.right, root2.right);
+    
+    return root1; 
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+%END OF SECTION - DFS
+
+
+
+
+
+
+
+%START OF SECTION - BFS
+
+\pagebreak
+\section{Breadth First Search}
+
+
+
+
+
+
+
+
+ %START  
+
+\medskip   
+\subsection {Invert Binary Tree}
+https://leetcode.com/problems/invert-binary-tree/
+
+\begin{enumerate}
+	\item Initialize queue as [root]
+	\item While queue.length let n = queue.shift()
+	\item If n != null [n.left, n.right] = [n.right, n.left]
+	\item Queue.push(n.left, n.right);
+	\item Return root
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution mergeTrees, captionpos=t]
+const invertTree = (root) => {
+    
+    let queue = [root];
+    
+    while (queue.length) {
+        
+        let n = queue.shift();
+        
+        if(n !== null){
+            [n.left, n.right] = [n.right, n.left];
+            queue.push(n.left, n.right);
+        }
+    };
+    
+    return root;
+};
+\end{lstlisting}
+
+\medskip %END
 
 
 
