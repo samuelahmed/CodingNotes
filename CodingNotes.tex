@@ -3895,7 +3895,7 @@ https://leetcode.com/problems/n-repeated-element-in-size-2n-array/
 \begin{lstlisting}[title=Solution repeatedNTimes with Map(), captionpos=t]
 const repeatedNTimes = (nums) => {
     
-    let map = new Map()
+    let map = new Map();
     
     for ( let num of nums) {
         if (num in map) {
@@ -3914,7 +3914,8 @@ var repeatedNTimes = function(nums) {
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution repeatedNTimes with Set(), captionpos=t]
-var repeatedNTimes = function(A) {
+const repeatedNTimes = (A) => {
+
     let set = new Set();
     
     for(let a of A) {
@@ -3923,7 +3924,8 @@ var repeatedNTimes = function(A) {
         
         set.add(a);
     }
-};\end{lstlisting}
+};
+\end{lstlisting}
 
 \medskip %END
 
@@ -3949,21 +3951,21 @@ https://leetcode.com/problems/sum-of-unique-elements/
 \begin{lstlisting}[title=Solution sumOfUnique with Map(), captionpos=t]
 const sumOfUnique = (nums) => {
 
-    let map = new Map()
-    let sum = 0
+    let map = new Map();
+    let result = 0;
     
-    for(let n of nums){
-        if(map[n] === undefined){
-            sum += n
-            map[n] = true
+    for (let n of nums) {
+        if (map[n] === undefined) {
+            result += n;
+            map[n] = true;
         } else if(map[n]){
-            sum -= n
-            map[n] = false
+            result -= n;
+            map[n] = false;
         }
     }
     
-    return sum
-}
+    return result;
+};
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution sumOfUnique with forEach, captionpos=t]
@@ -4035,11 +4037,11 @@ const digitCount = (num) => {
     
     let arr= Array(num.length).fill(0);
 
-    for(let i of num){
+    for (let i of num) {
         arr[Number(i)]++;
     }
     
-    return arr.join('') === num;d
+    return arr.join('') === num;
 };
 \end{lstlisting}
 \medskip %END
@@ -4061,11 +4063,11 @@ https://leetcode.com/problems/keep-multiplying-found-values-by-two/submissions/
 \begin{lstlisting}[title=Solution findFinalValue with while loop, captionpos=t]
 const findFinalValue = (nums, original) => {
 
-    while(nums.includes(original)){
-        original = original * 2
+    while (nums.includes(original)) {
+        original = original * 2;
     }
 
-    return original
+    return original;
 };
 \end{lstlisting}
 
@@ -4121,52 +4123,52 @@ https://leetcode.com/problems/two-out-of-three/
 \begin{lstlisting}[title=Solution twoOutOfThree O(n) time/space, captionpos=t]
 const twoOutOfThree = (nums1, nums2, nums3) => {
     
-    let arr = [...new Set(nums1), ...new Set(nums2), ...new Set(nums3)]
-    let map = {}
-    let result = []
+    let arr = [...new Set(nums1), ...new Set(nums2), ...new Set(nums3)];
+    let map = new Map;
+    let result = [];
     
     for(let n of arr) {
         if(map[n]) {
-            map[n] += 1
+            map[n] += 1;
         } else {
-            map[n] = 1
+            map[n] = 1;
         }
     }
     
     for(let i in map) {
         if(map[i] >= 2) {
-            result.push(i)
+            result.push(i);
         }
     }
     
-  return result  
+  return result;
 };
 \end{lstlisting}
 
 
 \begin{lstlisting}[title=Solution twoOutOfThree - clunky first answer, captionpos=t]
-var twoOutOfThree = function(nums1, nums2, nums3) {
+const twoOutOfThree = (nums1, nums2, nums3) => {
     
-    let answer = []
+    let result = [];
     
     for(let n of nums1){
         for(let n2 of nums2){
             if(n === n2){
-                answer.push(n)
+                result.push(n);
             }
             for(let n3 of nums3){
                 if (n2 === n3){
-                    answer.push(n2)
+                    result.push(n2);
                 }
                 if (n === n3){
-                    answer.push(n3)
+                    result.push(n3);
                 }
             }
         }
     }
     
-    let finalAnswer = [...new Set(answer)];
-    return finalAnswer
+    let finalResult = [...new Set(result)];
+    return finalResult;
 };
 \end{lstlisting}
 \medskip %END
@@ -4194,15 +4196,15 @@ https://leetcode.com/problems/kth-distinct-string-in-an-array/
 \begin{lstlisting}[title=Solution kthDistinct, captionpos=t]
 const kthDistinct = (arr, k) => {
     
-    let map = {} 
-    let answer = [] 
+    let map = new Map;
+    let result = [];
     
-    arr.forEach(i => map[i] = map[i] + 1 || 1)
+    arr.forEach(i => map[i] = map[i] + 1 || 1);
     
     for (let [key, val] of Object.entries(map)) 
-        if (val === 1) answer.push(key)
+        if (val === 1) result.push(key);
     
-    return answer[k-1] || ""
+    return result[k-1] || "";
 };
 \end{lstlisting}
 
@@ -4233,7 +4235,7 @@ https://leetcode.com/problems/maximum-number-of-words-you-can-type/
 \begin{lstlisting}[title=Solution canBeTypedWords, captionpos=t]
 const canBeTypedWords = (text, brokenLetters) => {
 
-    let answer = 0;
+    let result = 0;
     let t = true;
     let set = new Set(brokenLetters.split(''));
     
@@ -4241,15 +4243,15 @@ const canBeTypedWords = (text, brokenLetters) => {
         let letter = text.charAt(i);
         if(set.has(letter)) t = false;
         if(letter==' ') {
-            if(t) answer += 1;
+            if(t) result += 1;
             t = true;
         }
     }
     
-    if(t) answer += 1;
+    if(t) result += 1;
     
-    return answer;
-}
+    return result;
+};
 \end{lstlisting}
 
 \medskip %END
@@ -4280,15 +4282,15 @@ https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/
 \begin{lstlisting}[title=Solution countGoodSubstrings, captionpos=t]
 const countGoodSubstrings = (s) => {
 
-    let answer = 0
+    let result = 0;
 
     for (let i = 0; i < s.length - 2; i++) {
-        let str = s.slice(i, i + 3)
-        let set = new Set(str)
-        if (set.size === 3) answer += 1
+        let str = s.slice(i, i + 3);
+        let set = new Set(str);
+        if (set.size === 3) result += 1;
     }
 
-    return answer
+    return result;
 };
 
 \end{lstlisting}
@@ -4321,13 +4323,13 @@ https://leetcode.com/problems/find-the-difference-of-two-arrays/submissions/
 \begin{lstlisting}[title=Solution findDifference, captionpos=t]
 const findDifference = (nums1, nums2) => {
     
-    let set1 = new Set(nums1)
-    let set2 = new Set(nums2)
+    let set1 = new Set(nums1);
+    let set2 = new Set(nums2);
 
-    nums2.forEach(i => {set1.delete(i)})
-    nums1.forEach(i => {set2.delete(i)})
+    nums2.forEach(i => {set1.delete(i)});
+    nums1.forEach(i => {set2.delete(i)});
 
-    return ([[...set1], [...set2]])
+    return ([[...set1], [...set2]]);
 };
 \end{lstlisting}
 
@@ -4357,17 +4359,17 @@ https://leetcode.com/problems/isomorphic-strings/
 \begin{lstlisting}[title=Solution isIsomorphic, captionpos=t]
 const isIsomorphic = (s, t) => {
     
-    let map = new Map()
+    let map = new Map();
 
     for (let i = 0; i<s.length; i++){
         if(!map['s' + s[i]]) {
-            map['s' + s[i]] = t[i]
+            map['s' + s[i]] = t[i];
         } 
         if(!map['t' + t[i]]) {
-            map['t' + t[i]] = s[i]
+            map['t' + t[i]] = s[i];
         }
         if(t[i] != map['s' + s[i]] || s[i] != map['t' + t[i]]){  
-            return false
+            return false;
         } 
     }
     
@@ -4406,25 +4408,25 @@ https://leetcode.com/problems/word-pattern/
 \begin{lstlisting}[title=Solution wordPattern, captionpos=t]
 const wordPattern = (pattern, s) => {
     
-    let words = s.split(' ')
-    let map = new Map()
+    let words = s.split(' ');
+    let map = new Map();
     
     if(words.length !== pattern.length){
-        return false
+        return false;
     }
     if(new Set(words).size !== new Set(pattern).size){
-        return false
+        return false;
     } 
     
     for(let i = 0; i < pattern.length; i++) {
         if(map.has(pattern[i]) && 
            map.get(pattern[i]) !== words[i]) {
-            return false
+            return false;
         } 
-        map.set(pattern[i], words[i])
+        map.set(pattern[i], words[i]);
     }
     
-    return true
+    return true;
 };
 \end{lstlisting}
 \medskip %END
@@ -4459,20 +4461,20 @@ https://leetcode.com/problems/longest-harmonious-subsequence/
 \begin{lstlisting}[title=Solution findLHS, captionpos=t]
 const findLHS = (nums) => {
     
-    let map = new Map() 
-    let result = 0
+    let map = new Map(); 
+    let result = 0;
     
     for(let v of nums) {
-        map[v] = map[v] + 1 || 1
+        map[v] = map[v] + 1 || 1;
     }
     
     for (let key in map) {
         if(map[parseInt(key) + 1]) {
-            result = Math.max(result, map[key] + map[parseInt(key) + 1])
+            result = Math.max(result, map[key] + map[parseInt(key) + 1]);
         }
     }
     
-    return result
+    return result;
 };
 \end{lstlisting}
 
@@ -4498,17 +4500,17 @@ https://leetcode.com/problems/next-greater-element-i/
 \begin{lstlisting}[title=Solution nextGreaterElement, captionpos=t]
 const nextGreaterElement = (nums1, nums2) => {
     
-    let map = {}
-    let stack = []
+    let map = {};
+    let stack = [];
       
     nums2.forEach(n => {
       while (stack.length > 0 && stack[stack.length - 1] < n) {
-        map[stack.pop()] = n
+        map[stack.pop()] = n;
       }
-      stack.push(n)
+      stack.push(n);
     })
       
-    return nums1.map(n => map[n] || -1)
+    return nums1.map(n => map[n] || -1);
   };
 \end{lstlisting}
 
@@ -4550,17 +4552,17 @@ https://leetcode.com/problems/counting-bits/
 \begin{lstlisting}[title=Solution countBits, captionpos=t]
 const countBits = (n) => {
     
-    let result = [0]
-    let offset = 1
+    let result = [0];
+    let offset = 1;
       
     for (let i = 1; i < n + 1; i++) {
       if (offset * 2 === i) {
-        offset = i
+        offset = i;
       }
-      result[i] = 1 + result[i - offset]
+      result[i] = 1 + result[i - offset];
     }
   
-    return result
+    return result;
   };
   \end{lstlisting}
 
@@ -4587,13 +4589,13 @@ https://leetcode.com/problems/fibonacci-number/
 \begin{lstlisting}[title=Solution fib, captionpos=t]
 const fib = (n) => {
     
-    let result = [0,1]
+    let result = [0,1];
     
     for(let i = 2; i<= n; i++){
-        result.push(result[i-1] + result[i-2])
+        result.push(result[i-1] + result[i-2]);
     }
     
-    return result[n]
+    return result[n];
 };
 \end{lstlisting}
 \medskip %END
@@ -4622,33 +4624,34 @@ https://leetcode.com/problems/pascals-triangle/
 \begin{lstlisting}[title=Solution generate, captionpos=t]
 const generate = (n) => {
     
-    let result = []
+    let result = [];
     
-    for(let i = 0; i<n; i++){
-        result[i] = []
-        result[i][0] = result[i][i] = 1
-        for(let j = 1; j < i; j++){
-            result[i][j] = result[i-1][j] + result[i-1][j-1]
+    for (let i = 0; i<n; i++) {
+        result[i] = [];
+        result[i][0] = result[i][i] = 1;
+        for (let j = 1; j < i; j++) {
+            result[i][j] = result[i-1][j] + result[i-1][j-1];
         }
     }
     
-    return result
+    return result;
 };
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution generate with less mess, captionpos=t]
 const generate = (n) => {
     
-    let r = []
+    let r = [];
     
-    for(let i =0;i<n; i++){
-        r[i] = []
-        r[i][0] = r[i][i] = 1
-        for(let j = 1; j<i; j++){
-            r[i][j] = r[i-1][j]+r[i-1][j-1]
+    for (let i =0;i<n; i++) {
+        r[i] = [];
+        r[i][0] = r[i][i] = 1;
+        for (let j = 1; j<i; j++) {
+            r[i][j] = r[i-1][j]+r[i-1][j-1];
         }
-    }
-    return r
+    } 
+    
+    return r;
 };
 \end{lstlisting}
 \medskip %END
@@ -4671,7 +4674,9 @@ https://leetcode.com/problems/divisor-game/
 
 \begin{lstlisting}[title=Solution divisorGame, captionpos=t]
 const divisorGame = (n) => {
-    return n % 2 === 0
+
+    return n % 2 === 0;
+    
 };
 \end{lstlisting}
 
@@ -4715,13 +4720,13 @@ https://leetcode.com/problems/n-th-tribonacci-number/
 \begin{lstlisting}[title=Solution tribonacci, captionpos=t]
 const tribonacci = (n) => {
     
-    let result = [0,1,1]
+    let result = [0,1,1];
     
     for(let i = 3; i<=n; i++) {
-        result[i] = result[i-1] + result[i-2] + result[i-3]
+        result[i] = result[i-1] + result[i-2] + result[i-3];
     }
     
-    return result[n]
+    return result[n];
 };
 \end{lstlisting}
 
@@ -4753,20 +4758,20 @@ https://leetcode.com/problems/min-cost-climbing-stairs/
 \begin{lstlisting}[title=Solution minCostClimbingStairs, captionpos=t]
 const minCostClimbingStairs = (cost) => {
 
-    let L = cost[0]
-    let R = cost[1]
-    let current = []
+    let L = cost[0];
+    let R = cost[1];
+    let current = [];
     
-    if (cost.length === 1) return 0
-    if (cost.length === 2) return Math.min(L, R)
+    if (cost.length === 1) return 0;
+    if (cost.length === 2) return Math.min(L, R);
     
     for (let i = 2; i < cost.length; i++) {
-        current = cost[i] + Math.min(L, R)
-        L = R
-        R = current
+        current = cost[i] + Math.min(L, R);
+        L = R;
+        R = current;
     }
 
-    return Math.min(L, R)
+    return Math.min(L, R);
 };
 \end{lstlisting}
 
@@ -4799,17 +4804,17 @@ https://leetcode.com/problems/pascals-triangle-ii/
 \begin{lstlisting}[title=Solution getRow, captionpos=t]
 const getRow = (rowIndex) => {
 
-    let result = []
+    let result = [];
     
     for(let i = 0; i<rowIndex+1; i++){
-        result[i] = []
-        result[i][0] = result[i][i] = 1
+        result[i] = [];
+        result[i][0] = result[i][i] = 1;
         for(let j = 1; j < i; j++){
-            result[i][j] = result[i-1][j] + result[i-1][j-1]
+            result[i][j] = result[i-1][j] + result[i-1][j-1];
         }
     }
     
-    return result[rowIndex]
+    return result[rowIndex];
 };
 \end{lstlisting}
 
@@ -4838,18 +4843,18 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 \begin{lstlisting}[title=Solution maxProfit, captionpos=t]
 const maxProfit = (prices) => {
     
-    let profit = 0
-    let min = prices[0]
+    let profit = 0;
+    let min = prices[0];
     
     for(let i = 1; i < prices.length; i++) { 
         if(min > prices[i]) {
-            min = prices[i]
+            min = prices[i];
         } else if(prices[i] - min > profit) {
-            profit = prices[i] - min
+            profit = prices[i] - min;
         }
     }
     
-    return profit
+    return profit;
 };
 \end{lstlisting}
 
@@ -4878,13 +4883,13 @@ https://leetcode.com/problems/climbing-stairs/
 \begin{lstlisting}[title=Solution climbStairs, captionpos=t]
 const climbStairs = (n) => {
 
-    let result = [0,1,2,3]
+    let result = [0,1,2,3];
     
     for(let i = 4; i <= n; i++){
-        result[i] = result[ i - 1] + result[i - 2]
+        result[i] = result[ i - 1] + result[i - 2];
     }
     
-    return result[n]
+    return result[n];
 };
 \end{lstlisting}
 
@@ -4912,10 +4917,10 @@ https://leetcode.com/problems/is-subsequence/
 \begin{lstlisting}[title=Solution isSubsequence, captionpos=t]
 const isSubsequence = (s, t) => {
     
-    let result = 0
+    let result = 0;
 
     if (s.length > t.length){
-        return false   
+        return false;
     } 
 
     for (let i = 0; i < t.length; i++) {
@@ -4924,7 +4929,7 @@ const isSubsequence = (s, t) => {
         }
     }
 
-    return result === s.length
+    return result === s.length;
 };
 \end{lstlisting}
 

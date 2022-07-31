@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  30 JUL 2022 18:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  30 JUL 2022 19:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -669,26 +669,26 @@ l-number-of-occurrences/
  []
 
 [113] [114] [115] [116] [117]
-Overfull \hbox (6.05623pt too wide) in paragraph at lines 4025--4026
+Overfull \hbox (6.05623pt too wide) in paragraph at lines 4027--4028
 \OT1/cmr/m/n/10 https://leetcode.com/problems/check-if-number-has-equal-digit-c
 ount-and-digit-
  []
 
 [118]
-Overfull \hbox (20.41745pt too wide) in paragraph at lines 4053--4054
+Overfull \hbox (20.41745pt too wide) in paragraph at lines 4055--4056
 \OT1/cmr/m/n/10 https://leetcode.com/problems/keep-multiplying-found-values-by-
 two/submissions/ 
  []
 
 [119] [120] [121] [122] [123]
-Overfull \hbox (7.25061pt too wide) in paragraph at lines 4269--4270
+Overfull \hbox (7.25061pt too wide) in paragraph at lines 4271--4272
 \OT1/cmr/m/n/10 https://leetcode.com/problems/substrings-of-size-three-with-dis
 tinct-characters/ 
  []
 
 [124] [125] [126] [127] [128] [129] [130] [131] [132] [133] [134] [135]
 [136] [137] [138] [139] [140] [141]
-Overfull \hbox (3.63959pt too wide) in paragraph at lines 5005--5006
+Overfull \hbox (3.63959pt too wide) in paragraph at lines 5010--5011
 \OT1/cmr/m/n/10 https://leetcode.com/problems/find-a-corresponding-node-of-a-bi
 nary-tree-in-a-
  []
@@ -699,8 +699,8 @@ Package rerunfilecheck Info: File `CodingNotes.out' has not changed.
 (rerunfilecheck)             Checksum: D2A41D8C72EABD239126EFBBB96B5211;27086.
  ) 
 Here is how much of TeX's memory you used:
- 13239 strings out of 478268
- 198212 string characters out of 5846348
+ 13243 strings out of 478268
+ 198278 string characters out of 5846348
  777184 words of memory out of 5000000
  28172 multiletter control sequences out of 15000+600000
  474314 words of font info for 45 fonts, out of 8000000 for 9000
@@ -717,10 +717,10 @@ l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on CodingNotes.pdf (156 pages, 541137 bytes).
+Output written on CodingNotes.pdf (156 pages, 541536 bytes).
 PDF statistics:
- 5122 PDF objects out of 5155 (max. 8388607)
- 4895 compressed objects within 49 object streams
- 3201 named destinations out of 3580 (max. 500000)
+ 5129 PDF objects out of 5155 (max. 8388607)
+ 4901 compressed objects within 50 object streams
+ 3205 named destinations out of 3580 (max. 500000)
  1129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
