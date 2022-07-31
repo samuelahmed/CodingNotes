@@ -2158,15 +2158,15 @@ const createTargetArray = (nums, array) => {
 
     let result = [];
     
-    for( let i=0; i<array.length; i++){
-        for(let j=0; j<i; j++){
-            if(array[i] <= array[j]){
+    for ( let i=0; i<array.length; i++) {
+        for (let j=0; j<i; j++) {
+            if (array[i] <= array[j]) {
                 array[j]++;
             }
         }
     }
     
-    for(const i in nums){
+    for (let i in nums) {
         result[array[i]] = nums[i];
     }
     
@@ -2205,7 +2205,7 @@ const decode = (encoded, first) => {
 
     let result = [first];
     
-    for(let i = 0; i<encoded.length; i++){
+    for (let i = 0; i<encoded.length; i++) {
         result.push(result[i] ^ encoded[i]);
     }
     
@@ -2233,7 +2233,7 @@ const decompressRLEList = (nums) => {
 
     let result = [];
     
-    for (let i=1; i< nums.length; i+=2){
+    for (let i=1; i< nums.length; i+=2) {
         result.push(...new Array(nums[i-1]).fill(nums[i]));
     }
     
@@ -2284,7 +2284,7 @@ https://leetcode.com/problems/concatenation-of-array/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution getConcatenation, captionpos=t]
-var getConcatenation = function (nums) {
+const getConcatenation = (nums) => {
 
     return [...nums, ...nums];
     
@@ -2308,20 +2308,20 @@ https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution kidsWithCandies with for-of loop, captionpos=t]
-var kidsWithCandies = function(candies, extraCandies) {
-    const result = [];
+const kidsWithCandies = (candies, extraCandies) => {
+
+    let result = [];
     let max = 0;
 
     for (const val of candies) {
         val > max && (max = val);
     }
-
-    for (let i = 0; i< candies.length; ++i){
+    for (let i = 0; i< candies.length; ++i) {
         result.push(candies[i] + extraCandies >= max);
     }
 
     return result; 
-}
+};
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution kidsWithCandies with for loop, captionpos=t]
@@ -2361,7 +2361,7 @@ const mostWordsFound = (sentence) => {
     let result = 0;
     let temp = 0;
 
-    for(let i=0; i < sentence.length; i++){
+    for (let i=0; i < sentence.length; i++) {
         temp = sentence[i].split(" ").length;
         if(temp>result){
             result = temp;
@@ -2375,10 +2375,10 @@ const mostWordsFound = (sentence) => {
 \begin{lstlisting}[title=Solution mostWordsFound with for-in loop and Math.max, captionpos=t]
 const mostWordsFound = (sentence) => {
     
-    let max = 0
-    let temp = 0
+    let max = 0;
+    let temp = 0;
     
-    for(let i in sentence){
+    for (let i in sentence) {
         temp = sentence[i].split(" ").length;
     }
     
@@ -2403,7 +2403,7 @@ https://leetcode.com/problems/number-of-good-pairs/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution numIdenticalPairs, captionpos=t]
-var numIdenticalPairs = function (nums) {
+const numIdenticalPairs =  (nums) => {
 
     let result = 0;
 
@@ -2436,14 +2436,14 @@ https://leetcode.com/problems/shuffle-string/
 \begin{lstlisting}[title=Solution restoreString, captionpos=t]
 const restoreString = (s, indices) => {
     
-    const result = [];
+    let result = [];
 
     for(let i = 0; i<indices.length; i++){
         result[indices[i]] = s[i];
     }
 
     return result.join('');
-}
+};
 \end{lstlisting}
 
 \medskip %END 
@@ -2465,6 +2465,7 @@ https://leetcode.com/problems/richest-customer-wealth/
 
 \begin{lstlisting}[title=Solution maximumWealth, captionpos=t]
 const maximumWealth = (accounts) => {
+
     let result = 0;
 
     for(let i=0; i<accounts.length; i++){
@@ -2495,12 +2496,13 @@ https://leetcode.com/problems/running-sum-of-1d-array/
 \begin{lstlisting}[title=Solution runningSum, captionpos=t]
 const runningSum = (nums) => {
     
-    for (let i = 1; i < nums.length; i++){
+    for (let i = 1; i < nums.length; i++) {
         nums[i] += nums [i-1];
     }
 
     return nums;
-}\end{lstlisting}
+};
+\end{lstlisting}
 
 \medskip %END 
 
@@ -2523,7 +2525,7 @@ const shuffle =  (nums, n) => {
     
     let result = [];
 
-    for(let i = 0; i < n; i++){
+    for (let i = 0; i < n; i++) {
         result.push(nums[i]);
         result.push(nums[i+n]);
     }
@@ -2555,12 +2557,12 @@ const smallerNumbersThanCurrent = (nums) => {
     let result = [];
     let sorted = nums.slice().sort((a,b)=>a-b);
 
-    for(let i = 0; i<nums.length; i++){
+    for (let i = 0; i<nums.length; i++) {
         result.push(sorted.indexOf(nums[i]));
     }
 
     return result;
-}
+};
 \end{lstlisting}
 
 \medskip %END 
@@ -2682,7 +2684,7 @@ const countKDifference = (nums, k) => {
     let obj = {};
     let result = 0;
 
-    for(let i of nums){
+    for (let i of nums) {
         obj[i] ? obj[i]++ : obj[i] = 1;
     }
     
@@ -2693,7 +2695,7 @@ const countKDifference = (nums, k) => {
     }
     
     return result; 
-}
+};
 \end{lstlisting}
 \medskip %END
 
@@ -2728,7 +2730,7 @@ const minMovesToSeat = (seats, students) => {
     seats = seats.sort((a,b) => a-b);
     students = students.sort((a,b) => a-b);
     
-    for(let i in seats){
+    for (let i in seats) {
         result += Math.abs(seats[i] - students[i]);
     }
     
@@ -2987,27 +2989,27 @@ const balancedStringSplit = (s) => {
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution balancedStringSplit with stack, captionpos=t]
-var balancedStringSplitStack = function(s) {
+const balancedStringSplitStack = (s) => {
 
-    let matches = 0
-    const stack = []
+    let result = 0;
+    let stack = [];
 
     stack.push(s[0])
 
     for (let i = 1; i < s.length; i++) {
-        const top = stack[stack.length - 1];
+        let top = stack[stack.length - 1];
         if (top !== undefined && top !== s[i]) {
-          stack.pop()
+          stack.pop();
         } else {
             stack.push(s[i]);
         }
         if (stack.length === 0) {
-            matches += 1;
+            result += 1;
         }
     }
 
-    return matches;
-}
+    return result;
+};
 \end{lstlisting}
 \medskip %END 
 
@@ -3026,11 +3028,13 @@ https://leetcode.com/problems/sorting-the-sentence/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution sortSentence, captionpos=t]
-const sortSentence = function(s) {
+const sortSentence = (s) => {
+
     return s.split(' ')
         .sort((a,b) => a[a.length-1] - b[b.length-1])
         .map((word) => word.slice(0, word.length-1))
         .join(' ');
+        
  };
 \end{lstlisting}
 \medskip %END 
@@ -3061,7 +3065,7 @@ const decodeMessage = (key, message) => {
 
     for(let i=0; i<key.length;i++){
         if(map.has(key[i])||key[i]===" "){
-            continue
+            continue;
         } else {
         map.set(key[i],String.fromCharCode(start++)) 
         }
@@ -3070,10 +3074,10 @@ const decodeMessage = (key, message) => {
     map.set(" "," "); 
     
     for(let m of message){
-        result+=map.get(m)
+        result+=map.get(m);
     }
     
-    return result
+    return result;
 };
 \end{lstlisting}
 \medskip %END 
@@ -3098,31 +3102,32 @@ https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/
 \begin{lstlisting}[title=Solution maxDepth, captionpos=t]
 const maxDepth = (s) => {
 
-    let answer = 0
-    let count = 0
+    let result = 0;
+    let count = 0;
     
-    for(let i = 0; i < s.length;  i++){
-        if(s[i] === '('){
-            answer = Math.max(answer, ++count)
-        }else if(s[i] === ')'){
-            count--
+    for (let i = 0; i < s.length;  i++) {
+        if (s[i] === '(') {
+            result = Math.max(result, ++count);
+        } else if (s[i] === ')') {
+            count--;
         }  
     }
     
-    return answer
+    return result
 };
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution maxDepth with split() and reduce(), captionpos=t]
 const maxDepth = (s) => {
 
-    let l = 0
-    let r = 0
+    let l = 0;
+    let r = 0;
     
     return s.split('').reduce((depth, c) => {
-        if (c === '(') l++
-        if (c === ')') r++
-        return Math.max(l - r, depth)
+        if (c === '(') l++;
+        if (c === ')') r++;
+        
+        return Math.max(l - r, depth);
     }, 0)
 }
 \end{lstlisting}
@@ -3150,21 +3155,21 @@ https://leetcode.com/problems/fizz-buzz/
 \begin{lstlisting}[title=Solution fizzBuzz with for loop, captionpos=t]
 const fizzBuzz = (n) => {
 
-    const result = []
+    const result = [];
     
-    for(let i=1; i<=n; i++) {
-        if(i % 15 === 0 ) {
-            result.push('FizzBuzz')
-        } else if(i % 3 === 0) {
-            result.push('Fizz')
-        } else if(i % 5 === 0) {
-            result.push('Buzz')
+    for (let i=1; i<=n; i++) {
+        if (i % 15 === 0 ) {
+            result.push('FizzBuzz');
+        } else if (i % 3 === 0) {
+            result.push('Fizz');
+        } else if (i % 5 === 0) {
+            result.push('Buzz');
         } else {
-            result.push(i.toString())
+            result.push(i.toString());
         }
     }
     
-    return result
+    return result;
 };
 \end{lstlisting}
 
@@ -3194,15 +3199,15 @@ https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution arrayStringsAreEqual, captionpos=t]
-var arrayStringsAreEqual = function(word1, word2) {
+const arrayStringsAreEqual = (word1, word2) => {
     
-    let w1 = word1.join('')
-    let w2 = word2.join('')
+    let w1 = word1.join('');
+    let w2 = word2.join('');
     
-    if(w1 === w2){
-        return true
+    if (w1 === w2) {
+        return true;
     } else {
-        return false
+        return false;
     }
 };
 \end{lstlisting}
@@ -3236,22 +3241,22 @@ https://leetcode.com/problems/count-the-number-of-consistent-strings/
 \begin{lstlisting}[title=Solution countConsistentStrings with loops, captionpos=t]
 const countConsistentStrings = (allowed, words) => {
     
-    let answer = []
+    let result = [];
     
     for(let i of words){
-        let word = i
+        let word = i;
         for(let j = 0; j<word.length; j++){
-            let wordChar = word[j]
+            let wordChar = word[j];
             if(!allowed.includes(wordChar)){
-              break
+              break;
             } else if(j === word.length-1){
-                answer.push(word.length)
+                result.push(word.length);
             }
         }
     }
     
-    return answer.length
-}
+    return result.length;
+};
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution countConsistentStrings ES6, captionpos=t]
@@ -3281,23 +3286,26 @@ https://leetcode.com/problems/to-lower-case/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution toLowerCase, captionpos=t]
-var toLowerCase = function(s) {
+const toLowerCase = (s) => {
+
     return s.toLowerCase()
+    
 };
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution toLowerCase with hex code, captionpos=t]
 //hex code for letter 'A' is 0x41 and for letter 'a' is 0x61. That's a diff of 0x20.
-var toLowerCase = function(str) {
+const toLowerCase = (str) => {
+
     let i = 0;
-    let lowerCase = "";
+    let result = "";
     
     while (i < str.length) {
-        lowerCase += String.fromCharCode(str.charCodeAt(i) | 0x20);
+        result += String.fromCharCode(str.charCodeAt(i) | 0x20);
         i++;
     }
     
-    return lowerCase;
+    return result;
 };
 \end{lstlisting}
 \medskip %END 
@@ -3324,25 +3332,25 @@ https://leetcode.com/problems/rings-and-rods/
 \begin{lstlisting}[title=Solution countPoints, captionpos=t]
 const countPoints = (rings) => {
     
-    let map = new Map()
-    let answer = 0
+    let map = new Map;
+    let result = 0;
     
     for(let i = 0; i<rings.length; i += 2){
-        let color = rings[i]
-        let rod = +rings[i + 1]
+        let color = rings[i];
+        let rod = +rings[i + 1];
         if(!map.has(rod))
-            map.set(rod, new Set())
-            map.get(rod).add(color)
+            map.set(rod, new Set());
+            map.get(rod).add(color);
     }
     
     for(let [rod, setColors] of map){
         if(setColors.size === 3){
-            answer++
+            result++;
         }
     }
     
-    return answer
-}
+    return result;
+};
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution countPoints is this slower?, captionpos=t]
@@ -3374,9 +3382,9 @@ https://leetcode.com/problems/truncate-sentence/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution truncateSentence, captionpos=t]
-var truncateSentence = function(s, k) {
+const truncateSentence = (s, k) => {
 
-    return s.split(' ').slice(0,k).join(' ')
+    return s.split(' ').slice(0,k).join(' ');
     
  };
 \end{lstlisting}
@@ -3398,11 +3406,11 @@ https://leetcode.com/problems/check-if-the-sentence-is-pangram/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution checkIfPangram, captionpos=t]
-var checkIfPangram = function(sentence) {
+const checkIfPangram = (sentence) => {
     
     return new Set(sentence.split("")).size === 26;
     
-}
+};
 \end{lstlisting}
 \medskip %END 
 
@@ -3421,21 +3429,21 @@ https://leetcode.com/problems/count-asterisks/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution countAsterisks, captionpos=t]
-var countAsterisks = function(s) {
+const countAsterisks = (s) => {
     
     let count = 0;
-    let res = 0;
+    let result = 0;
     
-    for(let i = 0; i < s.length; i++){
-        if(s[i] === '|'){
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === '|') {
            count ++
         }
-        if(count % 2 === 0 && s[i] === '*'){
-            res ++
+        if (count % 2 === 0 && s[i] === '*') {
+            result ++
         }
     }
     
-    return res;
+    return result;
 };
 \end{lstlisting}
 
@@ -3480,22 +3488,22 @@ https://leetcode.com/problems/unique-morse-code-words/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution uniqueMorseRepresentations, captionpos=t]
-const morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+let morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
 
 const uniqueMorseRepresentations = (words) => {
     
-    let answer = new Set
+    let result = new Set;
     
-    for (let word of words){
-        let transform = ''
-        for(let char of word){
-            let i = char.charCodeAt(0) - 97
-            transform += morse[i]
+    for (let word of words) {
+        let transform = '';
+        for (let char of word) {
+            let i = char.charCodeAt(0) - 97;
+            transform += morse[i];
         }
-        answer.add(transform)
+        result.add(transform);
     }
     
-    return answer.size
+    return result.size;
 };
 \end{lstlisting}
 
@@ -3534,17 +3542,17 @@ leetcode.com/problems/number-of-strings-that-appear-as-substrings-in-word/
 
 
 \begin{lstlisting}[title=Solution numOfStrings, captionpos=t]
-var numOfStrings = function(patterns, word) {
+const numOfStrings = (patterns, word) => {
 
-    let answer = 0
+    let result = 0;
     
-    for (let i = 0; i<patterns.length ; i++){
-        if(word.includes(patterns[i])){
-            answer++
+    for (let i = 0; i<patterns.length ; i++) {
+        if (word.includes(patterns[i])) {
+            result++;
         }
     }
     
-return answer
+return result;
 };
 \end{lstlisting}
 \medskip %END
@@ -3571,24 +3579,24 @@ https://leetcode.com/problems/remove-outermost-parentheses/
 \begin{lstlisting}[title=Solution removeOuterParentheses, captionpos=t]
 const removeOuterParentheses = (s) => {
     
-    let answer = ''
-    let counter = 0
+    let result = '';
+    let counter = 0;
     
-    for(let i = 0; i<s.length; i++){
-        if(s[i] === '('){
-            if(counter > 0){
-                answer += '('
+    for (let i = 0; i<s.length; i++) {
+        if (s[i] === '(') {
+            if (counter > 0) {
+                result += '(';
             }
-            counter++
-        } else if(s[i] === ')'){
-            if(counter > 1){
-                answer += ')'
+            counter++;
+        } else if(s[i] === ')') {
+            if (counter > 1) {
+                result += ')';
             }
-            counter--
+            counter--;
         }
     }
     
-    return answer
+    return result;
 };
 \end{lstlisting}
 \medskip %END
@@ -3614,13 +3622,13 @@ https://leetcode.com/problems/replace-all-digits-with-characters/
 \begin{lstlisting}[title=Solution replaceDigits, captionpos=t]
 const replaceDigits = (s) => {
     
-    for(let i = 1; i<s.length; i+=2){
-        let value = String.fromCharCode(s[i-1].charCodeAt()+Number(s[i]))
-        s = s.replace(s[i], value)
+    for (let i = 1; i<s.length; i+=2) {
+        let value = String.fromCharCode(s[i-1].charCodeAt()+Number(s[i]));
+        s = s.replace(s[i], value);
     }
     
-    return s
-}
+    return s;
+};
 \end{lstlisting}
 \medskip %END
 
@@ -3656,18 +3664,17 @@ https://leetcode.com/problems/destination-city/
 \begin{lstlisting}[title=Solution destCity, captionpos=t]
 const destCity = (paths) => {
     
-    let set = new Set()
+    let set = new Set();
     
-    for(let path of paths){
-        set.add(path[0])
+    for (let path of paths) {
+        set.add(path[0]);
     }
-    
-    for(let path of paths){
-        if(!set.has(path[1])){
-            return path[1]
+    for (let path of paths) {
+        if (!set.has(path[1])) {
+            return path[1];
         }
     }
-}
+};
 \end{lstlisting}
 \medskip %END 
 
@@ -3691,21 +3698,21 @@ https://leetcode.com/problems/maximum-number-of-pairs-in-array/
 \begin{lstlisting}[title=Solution numberOfPairs, captionpos=t]
 const numberOfPairs = (nums) => {
     
-    let map = new Map()
-    let count = 0
+    let map = new Map();
+    let result = 0;
     
     
-    for(let i=0;i<nums.length;i++){
-        if(map[nums[i]]){
-            delete(map[nums[i]])
-            count++
+    for (let i=0;i<nums.length;i++) {
+        if (map[nums[i]]) {
+            delete(map[nums[i]]);
+            result++;
         } else {
-            map[nums[i]] = 1
+            map[nums[i]] = 1;
         }
     }
 
-    return [count, Object.values(map).length]
-}
+    return [result, Object.values(map).length];
+};
 \end{lstlisting}
 \medskip %END
 
@@ -3732,19 +3739,19 @@ https://leetcode.com/problems/design-an-ordered-stream/
 \begin{lstlisting}[title=Solution orderedStream, captionpos=t]
 class OrderedStream {
     constructor(n) {
-      this.pointer = 0
-      this.list = []
+      this.pointer = 0;
+      this.list = [];
     }
   
     insert(id, value) {
-      let chunk = []
-      this.list[id - 1] = value
+      let chunk = [];
+      this.list[id - 1] = value;
       while(this.list[this.pointer]) {
-        chunk.push(this.list[this.pointer])
-        this.pointer++
+        chunk.push(this.list[this.pointer]);
+        this.pointer++;
       }
       
-      return chunk
+      return chunk;
     }
   }
 \end{lstlisting}
@@ -3772,15 +3779,15 @@ https://leetcode.com/problems/increasing-decreasing-string/
 \begin{lstlisting}[title=Solution sortString, captionpos=t]
 const sortString = (s) => {
     
-    let arr = Array.from(s)
-    let answer = '';
-    
+    let arr = Array.from(s);
+    let result = '';
+
     arr.sort();
   
     while (arr.length) {
       arr = arr.filter((x, i) => {
-        if (i === 0 || x !== answer[answer.length - 1]) {
-          answer += x;
+        if (i === 0 || x !== result[result.length - 1]) {
+          result += x;
           return false;
         }
         return true;
@@ -3788,7 +3795,7 @@ const sortString = (s) => {
       arr.reverse();
     }
   
-    return answer;
+    return result;
 };
 \end{lstlisting}
 \medskip %END
@@ -3816,16 +3823,16 @@ https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occur
 \begin{lstlisting}[title=Solution areOccurrencesEqual with Map, captionpos=t]
 const areOccurrencesEqual = (s) => {
     
-    let map = new Map()
+    let map = new Map();
     
-    for(let letter of s){
-        map[letter] = (map[letter] || 0) + 1
+    for (let letter of s) {
+        map[letter] = (map[letter] || 0) + 1;
     }
     
-    let count = new Set(Object.values(map))
-    if(count.size === 1) return true
-    return false 
-}
+    let count = new Set(Object.values(map));
+    if(count.size === 1) return true;
+    return false; 
+};
 \end{lstlisting}
 
 \begin{lstlisting}[title=Solution areOccurrencesEqual with reduce(), captionpos=t]
