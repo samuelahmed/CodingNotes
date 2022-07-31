@@ -4684,17 +4684,17 @@ const divisorGame = (n) => {
 \begin{lstlisting}[title=Solution divisorGame, captionpos=t]
 const divisorGame = (n) => {
     
-    let result = Array(n + 1).fill(false)
+    let result = Array(n + 1).fill(false);
     
     for (let i = 2; i <= n; ++i){
         for (let j = Math.floor(Math.sqrt(i)); 1 <= j; --j){
             if (!(i % j) && !result[i - j]){
-                result[i] = true
+                result[i] = true;
             }
         }
     }
    
-    return result[n]
+    return result[n];
 };
 \end{lstlisting}
 
@@ -4971,11 +4971,11 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
 \begin{lstlisting}[title=Solution maxDepth, captionpos=t]
 const maxDepth = (root) => {
     
-    if(root === undefined || root === null){
-        return 0
+    if (root === undefined || root === null) {
+        return 0;
     }
     
-    return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
+    return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 };
 \end{lstlisting}
 
@@ -5019,10 +5019,10 @@ https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-cl
 \begin{lstlisting}[title=Solution getTargetCopy, captionpos=t]
 const getTargetCopy = (original, cloned, target) => {
     
-    if(!original && !cloned) return false
-    if(original === target) return cloned
+    if(!original && !cloned) return false;
+    if(original === target) return cloned;
     
-    return getTargetCopy(original.left, cloned.left, target) || getTargetCopy(original.right, cloned.right, target)
+    return getTargetCopy(original.left, cloned.left, target) || getTargetCopy(original.right, cloned.right, target);
 };
 \end{lstlisting}
 
@@ -5054,17 +5054,17 @@ const evaluateTree = (root) => {
     
     const dfs = (node) => {
         
-        if(!node) return 
-        if(node.val === 0) return false
-        if(node.val === 1) return true
-        if(node.val === 2) {
-            return dfs(node.left) || dfs(node.right)
+        if (!node) return false; 
+        if (node.val === 0) return false;
+        if (node.val === 1) return true;
+        if (node.val === 2) {
+            return dfs(node.left) || dfs(node.right);
         } else if(node.val === 3){
-            return dfs(node.left) && dfs(node.right)
+            return dfs(node.left) && dfs(node.right);
         }
     };
     
-    return dfs(root)
+    return dfs(root);
 };
 \end{lstlisting}
 
