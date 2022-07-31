@@ -2091,15 +2091,15 @@ https://leetcode.com/problems/build-array-from-permutation/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution with for loop, captionpos=t]
-var buildArray = function(nums) {
+const buildArray = (nums) => {
 
     let result = [];
-    
-    for (let i = 0; i<nums.length; i++){
+
+    for (let i = 0; i<nums.length; i++) { 
         result.push(nums[nums[i]]);
     }
-    
-    return result;
+
+    return result; 
 };
 \end{lstlisting}
 	
@@ -2126,17 +2126,15 @@ https://leetcode.com/problems/count-items-matching-a-rule/
 
 \begin{lstlisting}[title=Solution countMatches, captionpos=t]
 const countMatches = (items, ruleKey, ruleValue) => {
-
-    const ruleIndex = {
+    
+    let ruleIndex = {
         'type': 0,
         'color': 1,
         'name': 2
-    }
+    };
     
     return items.reduce((ans,item) => 
-    
     item[ruleIndex[ruleKey]] === ruleValue ? ans + 1 : ans, 0);
-    
 };
 \end{lstlisting}
 \medskip %END 
@@ -5392,10 +5390,11 @@ const increasingBST = (root) => {
 https://leetcode.com/problems/merge-two-binary-trees/
 
 \begin{enumerate}
-	\item 
-	\item
-	\item
-	\item
+	\item If no root1 return root2, if no root2 return root1
+	\item Root1.val += root2.val
+	\item Root1.left = recusive call mergeTrees(root1.left, root2.left)
+	\item Root1.right = mergeTrees(root1.right, root2.right)
+	\item Return root1 
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution mergeTrees, captionpos=t]
@@ -5444,7 +5443,6 @@ const mergeTrees = (root1, root2) => {
 
 
  %START  
-
 \medskip   
 \subsection {Invert Binary Tree}
 https://leetcode.com/problems/invert-binary-tree/
@@ -5485,6 +5483,210 @@ const invertTree = (root) => {
 
 
 
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Maximum Depth of N-ary Tree}
+https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
+
+\begin{enumerate}
+	\item Initialize result at 0
+	\item Initialize queue as empty array
+	\item If !root return result
+	\item Queue.push(root)
+	\item While queue.length let n = queue.length
+	\item For loop where i less than n 
+	\item Let node = queue.shift()
+	\item Push ...node.children into queue
+	\item Result++ 
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution maxDepth, captionpos=t]
+const maxDepth = (root) => {
+    
+    let result = 0;
+    let queue = [];
+    
+    if(!root) return result;
+    queue.push(root);
+    
+    while(queue.length){
+        
+        let n = queue.length;
+        
+        for(let i = 0; i<n; i++){
+            let node = queue.shift();
+            queue.push(...node.children);
+        }
+        result++;
+    }
+    
+    return result;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Island Perimeter}
+https://leetcode.com/problems/island-perimeter/submissions/
+
+\begin{enumerate}
+	\item Initialize result as zero. Initialize rows as grid.length. Initialize cols as grid[0].length
+	\item For loop through rows with row. For loop through cols with col
+	\item If !grid[row][col] continue
+	\item Result += 4
+	\item If row GREATERTHAN 0 AND grid[row-1][col] result --
+	\item If col GREATERTHAN 0 AND grid[row][col - 1] result --
+	\item If row LESSTHAN rows - 1 AND grid[row+1][col] result --
+	\item if col LESSTHAN cols -1 AND grid[row][col+1] result --
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution islandPerimeter, captionpos=t]
+const islandPerimeter = (grid) => {
+    
+    let result = 0;
+    let rows = grid.length;
+    let cols = grid[0].length;
+    
+    for(let row = 0; row < rows; row++){
+        for(let col = 0; col < cols; col++){
+            
+            if(!grid[row][col]) continue;
+            result += 4;
+            
+            if(row > 0 && grid[row - 1][col]) result--;
+            if(col > 0 && grid[row][col - 1]) result--;
+            if(row < rows - 1 && grid[row + 1][col]) result--;
+            if(col < cols - 1 && grid[row][col + 1]) result--;
+        };
+    };
+    
+    return result
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Average of Levels in Binary Tree}
+https://leetcode.com/problems/average-of-levels-in-binary-tree/
+
+\begin{enumerate}
+	\item Initialize results array 
+	\item Initialize node at [root]
+	\item While node.length
+	\item Let nodeLength = node.length and row = 0
+	\item For loop through nodeLength 
+	\item Let n = node.shift(); row+= n.val
+	\item If n.left node.push(n.left)
+	\item If n.right node.push(n.right)
+	\item Result.push row/nodeLength
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution averageOfLevels, captionpos=t]
+const averageOfLevels = (root) => {
+    
+    let result = [];
+    let node = [root];
+    
+    while (node.length) {
+        let nodeLength = node.length; 
+        let row = 0; 
+        for (let i = 0; i < nodeLength; i++) {
+            let n = node.shift();
+            row += n.val;
+            if (n.left) node.push(n.left);
+            if (n.right) node.push(n.right);
+        }
+        result.push(row/nodeLength);
+    }
+    
+    return result;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Univalued Binary Tree}
+https://leetcode.com/problems/univalued-binary-tree/
+
+\begin{enumerate}
+	\item Initialize queue as empty array
+	\item Queue.push(root)
+	\item While queue.length !== 0
+	\item Let n = queue.shift()
+	\item If n.val not equal to root.val return false
+	\item If n.left queue.push n.left
+	\item If n.right queue.push n.right
+	\item Return true
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution isUnivalTree, captionpos=t]
+const isUnivalTree = (root) => {
+    
+    let queue = [];
+    queue.push(root);
+    
+    while(queue.length !== 0) {
+        let n = queue.shift();
+        
+        if(n.val !== root.val) return false;
+        if(n.left) queue.push(n.left);
+        if(n.right) queue.push(n.right);
+    };    
+    
+    return true;
+};
+\end{lstlisting}
+
+\medskip %END
 
 
 

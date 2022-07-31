@@ -135,3 +135,7 @@
 \contentsline {subsection}{\numberline {6.10}Merge Two Binary Trees}{151}{subsection.6.10}%
 \contentsline {section}{\numberline {7}Breadth First Search}{152}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Invert Binary Tree}{152}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Maximum Depth of N-ary Tree}{153}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Island Perimeter}{154}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Average of Levels in Binary Tree}{155}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Univalued Binary Tree}{156}{subsection.7.5}%
