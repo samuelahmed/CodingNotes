@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  31 JUL 2022 21:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  1 AUG 2022 12:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -695,19 +695,13 @@ nary-tree-in-a-
 
 [142] [143] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153]
 [154] [155] [156] (./CodingNotes.aux)
-
-Package rerunfilecheck Warning: File `CodingNotes.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `CodingNotes.out':
-(rerunfilecheck)             Before: D2A41D8C72EABD239126EFBBB96B5211;27086
-(rerunfilecheck)             After:  4EE0D9262848CBA69A507C8755D5BB1A;27052.
+Package rerunfilecheck Info: File `CodingNotes.out' has not changed.
+(rerunfilecheck)             Checksum: 4EE0D9262848CBA69A507C8755D5BB1A;27052.
  ) 
 Here is how much of TeX's memory you used:
  13243 strings out of 478268
  198278 string characters out of 5846348
- 777184 words of memory out of 5000000
+ 776184 words of memory out of 5000000
  28172 multiletter control sequences out of 15000+600000
  474314 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -723,7 +717,7 @@ l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on CodingNotes.pdf (156 pages, 541603 bytes).
+Output written on CodingNotes.pdf (156 pages, 541829 bytes).
 PDF statistics:
  5129 PDF objects out of 5155 (max. 8388607)
  4901 compressed objects within 50 object streams
