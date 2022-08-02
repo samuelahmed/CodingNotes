@@ -5793,7 +5793,7 @@ https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
 	\item Return false
 \end{enumerate}
 
-\begin{lstlisting}[title=Solution floodFill, captionpos=t]
+\begin{lstlisting}[title=Solution findTarget, captionpos=t]
 const findTarget = (root, k) => {
     
     let set = new Set();
@@ -5927,6 +5927,50 @@ const minDiffInBST = root => {
 };\end{lstlisting}
 
 \medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Same Tree}
+https://leetcode.com/problems/same-tree/
+
+\begin{enumerate}
+	\item If no p and q return true
+	\item if no p or queue, or p.val is not equal to q.val return false
+	\item Return recursive isSameTree(p.left and q.left) AND isSameTree(p.right and q.right)
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution isSameTree, captionpos=t]
+const isSameTree = (p, q) => {
+
+    if (!p && !q) return true;
+    if (!p || !q || p.val !== q.val) {
+        return false;    
+    }
+
+    return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
 
 
 
