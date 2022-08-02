@@ -139,3 +139,7 @@
 \contentsline {subsection}{\numberline {7.3}Island Perimeter}{154}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Average of Levels in Binary Tree}{155}{subsection.7.4}%
 \contentsline {subsection}{\numberline {7.5}Univalued Binary Tree}{156}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Flood Fill}{157}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Two Sum IV - Input is a BST}{159}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Minimum Absolute Difference in BST}{160}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Minimum Distance Between BST Nodes}{161}{subsection.7.9}%

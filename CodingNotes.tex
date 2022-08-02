@@ -5713,4 +5713,227 @@ const isUnivalTree = (root) => {
 
 
 
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Flood Fill}
+https://leetcode.com/problems/flood-fill/
+
+\begin{enumerate}
+	\item Initialize currColor as image[sr][sc]
+	\item Initialize queue as [[sr,sc]];
+	\item if currColor === color return image 
+	\item While queue.length let [row,col] = queue.shift()
+	\item If image[row][col] === currColor update them to color
+	\item UP If row - greaterthan or equal to 0 queue.push row-1,col 
+	\item DOWN If row + 1 less than image.length queue push row + 1, col
+	\item RIGHT If col + 1 less than image[0].length queue push row, col +1
+	\item LEFT if col - 1 greater than or equal to zero queue.push row, col-1
+	\item Return image
+
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution floodFill, captionpos=t]
+const floodFill = (image, sr, sc, color) => {
+    
+    let currColor = image[sr][sc];
+    let queue = [[sr, sc]];
+    
+    if(currColor === color) return image;
+    
+    while(queue.length !== 0){
+        
+        let [row, col] = queue.shift();
+        
+        if(image[row][col] === currColor){
+            image[row][col] = color;
+            if(row - 1 >= 0) queue.push([row-1, col]); 
+            //up
+            if(row + 1 < image.length) queue.push([row + 1, col]);
+            //down
+            if(col + 1 < image[0].length) queue.push([row, col+1]);
+            //right
+            if(col -1 >=0) queue.push([row, col-1]);
+            //left
+        }        
+    }
+    
+    return image;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Two Sum IV - Input is a BST}
+https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
+
+\begin{enumerate}
+	\item Initialize set as a new set
+	\item Initialize queue as [root]
+	\item While queue.length !== 0
+	\item let n = queue.shift()
+	\item If set has(k-n.val) return true
+	\item Set.add(n.val)
+	\item If(n.left) queue push n.left
+	\item If n.right queue.push n.right
+	\item Return false
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution floodFill, captionpos=t]
+const findTarget = (root, k) => {
+    
+    let set = new Set();
+    let queue = [root];
+    
+    while(queue.length) {
+        let n = queue.shift();
+        if(set.has(k - n.val)) return true;
+        set.add(n.val);
+        if(n.left) queue.push(n.left);
+        if(n.right) queue.push(n.right);
+    }
+    
+    return false;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Minimum Absolute Difference in BST}
+https://leetcode.com/problems/minimum-absolute-difference-in-bst/
+
+\begin{enumerate}
+	\item Initialize result as Infinity
+	\item Initialize prev as -Infinity
+	\item Build recursive with (node) and return if node is empty
+	\item Recursive call on node.left 
+	\item Result = Math.min(result, node.val -prev)
+	\item Prev = node.val
+	\item Recursive call on node.right
+	\item Recursive call on (root)
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution getMinimumDifference, captionpos=t]
+const getMinimumDifference = (root) => {
+    
+    let result = Infinity;
+    let prev = -Infinity;
+    
+    const recursive = (node) => {
+        if(!node) return result;
+        recursive(node.left);
+        result = Math.min(result, node.val - prev);
+        prev = node.val;
+        recursive(node.right);
+    }
+    
+    recursive(root);
+    return result;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Minimum Distance Between BST Nodes}
+https://leetcode.com/problems/minimum-distance-between-bst-nodes/submissions/
+
+\begin{lstlisting}[title=Solution minDiffInBST, captionpos=t]
+const minDiffInBST = (root) => {
+    let prev = null;
+    let result = Infinity;
+    
+    const recursive = (node) => {
+        if (!node) return;
+        recursive(node.left);
+        if (prev) {
+            result = Math.min(result, Math.abs(node.val - prev.val));
+        }
+        prev = node;
+        recursive(node.right);
+    };
+    
+    recursive(root);
+    return result;
+};
+\end{lstlisting}
+
+
+\begin{lstlisting}[title=Solution minDiffInBST Iterative, captionpos=t]
+const minDiffInBST = root => {
+    
+    const stack = [];
+    let curr = root, prev = null, min = Infinity;
+    
+    while (stack.length || curr) {
+        if (curr) {
+            stack.push(curr);
+            curr = curr.left;
+        } else {
+            curr = stack.pop();
+            if (prev) {
+                min = Math.min(min, Math.abs(curr.val - prev.val))
+            }
+            prev = curr;		
+            curr = curr.right;
+        }
+    }
+    
+    return min;
+};\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
 \end{document}
