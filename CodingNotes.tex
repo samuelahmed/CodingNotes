@@ -6155,4 +6155,88 @@ const lowestCommonAncestor = (root, p, q) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Closest Binary Search Tree Value}
+https://leetcode.com/problems/closest-binary-search-tree-value/
+
+\begin{enumerate}
+	\item  
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution closestValue, captionpos=t]
+const closestValue = (root, target) => {
+    
+    let child = target < root.val ? root.left : root.right;
+    if (!child) return root.val;
+    let closest = closestValue(child, target);
+    
+    return Math.abs(closest - target) < Math.abs(root.val - target) ? closest : root.val;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Binary Search Tree to Greater Sum Tree}
+https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+
+\begin{enumerate}
+	\item  
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution bstToGst, captionpos=t]
+const bstToGst = (root) => {
+    
+    const getSum = (node, sum) => {
+        
+        if (!node) return sum;
+        node.val += getSum(node.right, sum);
+        return getSum(node.left, node.val);
+    };
+    
+    getSum(root, 0);
+    return root;
+};
+
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
