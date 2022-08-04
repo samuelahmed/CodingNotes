@@ -5852,12 +5852,14 @@ const getMinimumDifference = (root) => {
     let prev = -Infinity;
     
     const recursive = (node) => {
+    
         if(!node) return result;
+        
         recursive(node.left);
         result = Math.min(result, node.val - prev);
         prev = node.val;
         recursive(node.right);
-    }
+    };
     
     recursive(root);
     return result;
@@ -5933,12 +5935,6 @@ const minDiffInBST = root => {
 
 
 
-
-
-
-
-
-
  %START  
 \pagebreak
 \medskip   
@@ -5970,9 +5966,188 @@ const isSameTree = (p, q) => {
 
 
 
+%END OF SECTION - BFS
 
 
 
+
+
+
+
+%START OF SECTION - BST
+
+\pagebreak
+\section{Binary Search Tree}
+
+
+
+
+
+
+
+
+ %START  
+\medskip   
+\subsection {Search in a Binary Search Tree}
+https://leetcode.com/problems/search-in-a-binary-search-tree/
+
+\begin{enumerate}
+	\item Initialize result as null 
+	\item Build recursive const with (node) as argument
+	\item If no node return result 
+	\item If node.val is equal to val, result = node and return result
+	\item If val lessthan node.val recursive node.left
+	\item if val greaterthan node.val recursive node.right
+	\item Recursive through root and return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution searchBST, captionpos=t]
+const searchBST = (root, val) => {
+    
+    let result = null; 
+    
+    const recursive = (node) => {
+        
+        if(!node) return result; 
+        if(node.val === val){
+            result = node;
+            return result;
+        }
+        if(val < node.val) recursive(node.left);
+        if(val > node.val) recursive(node.right);
+    };
+
+    recursive(root);
+    return result;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Convert Sorted Array to Binary Search Tree}
+https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+
+\begin{enumerate}
+	\item  
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution sortedArrayToBST, captionpos=t]
+const sortedArrayToBST = (nums) => {
+    
+    if (!nums) return null;
+    
+    const recursive = (low, high) => {
+        
+        let mid = Math.floor((low + high) / 2);
+        let root = new TreeNode(nums[mid]);
+        
+        if(low > high) return null;
+        
+        root.left = recursive(low, mid - 1);
+        root.right = recursive(mid + 1, high);
+        
+        return root;
+    };
+    
+    return recursive(0, nums.length - 1);
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Unique Binary Search Trees}
+https://leetcode.com/problems/unique-binary-search-trees/
+
+\begin{enumerate}
+	\item  
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution numTrees, captionpos=t]
+const numTrees = (n) => {
+    
+    let result = new Array(n + 1).fill(0);
+    result[0] = 1;
+    result[1] = 1;
+    
+    for (let i = 2; i <= n; i++){
+        for (let j = 1; j <= i; j++){
+            result[i] += result[j - 1] * result[i - j];
+        }
+    }
+    
+    return result[n];
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Lowest Common Ancestor of a Binary Search Tree}
+https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+
+\begin{enumerate}
+	\item  
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution lowestCommonAncestor, captionpos=t]
+const lowestCommonAncestor = (root, p, q) => {
+    
+    if(root.val > p.val && root.val > q.val) {
+        return lowestCommonAncestor(root.left, p, q);
+    }
+    
+    if(root.val < p.val && root.val < q.val) {
+        return lowestCommonAncestor(root.right, p, q);
+    }
+    
+    return root;
+};
+\end{lstlisting}
+
+\medskip %END
 
 
 
