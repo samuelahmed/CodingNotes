@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  3 AUG 2022 21:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  5 AUG 2022 16:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -706,21 +706,27 @@ Overfull \hbox (8.47285pt too wide) in paragraph at lines 6128--6129
 y-search-tree/ 
  []
 
-[167] [168] [169] (./CodingNotes.aux)
+[167] [168] [169]
+Overfull \hbox (27.80623pt too wide) in paragraph at lines 6259--6260
+\OT1/cmr/m/n/10 https://leetcode.com/problems/construct-binary-search-tree-from
+-preorder-traversal/ 
+ []
+
+[170] [171] (./CodingNotes.aux)
 
 Package rerunfilecheck Warning: File `CodingNotes.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `CodingNotes.out':
-(rerunfilecheck)             Before: FC1EA11C92C7DAE1F1CB675A2548B3E1;29360
-(rerunfilecheck)             After:  66BC307ECD284A6CC15F2DE04E785584;29627.
+(rerunfilecheck)             Before: 5E01FFDDCDA1B703628D7C68D20A26B5;29964
+(rerunfilecheck)             After:  E1D497C0EBCD2BC14C4BA9EEFCE4D879;30175.
  ) 
 Here is how much of TeX's memory you used:
- 13551 strings out of 478268
- 202704 string characters out of 5846348
+ 13620 strings out of 478268
+ 203704 string characters out of 5846348
  784188 words of memory out of 5000000
- 28206 multiletter control sequences out of 15000+600000
+ 28215 multiletter control sequences out of 15000+600000
  474314 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,479b,1837s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -735,10 +741,10 @@ l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on CodingNotes.pdf (169 pages, 573781 bytes).
+Output written on CodingNotes.pdf (171 pages, 580204 bytes).
 PDF statistics:
- 5547 PDF objects out of 6186 (max. 8388607)
- 5302 compressed objects within 54 object streams
- 3479 named destinations out of 3580 (max. 500000)
- 1217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5633 PDF objects out of 6186 (max. 8388607)
+ 5386 compressed objects within 54 object streams
+ 3539 named destinations out of 3580 (max. 500000)
+ 1233 words of extra memory for PDF output out of 10000 (max. 10000000)
 

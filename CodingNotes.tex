@@ -6224,7 +6224,6 @@ const bstToGst = (root) => {
     getSum(root, 0);
     return root;
 };
-
 \end{lstlisting}
 
 \medskip %END
@@ -6233,6 +6232,125 @@ const bstToGst = (root) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Construct Binary Search Tree from Preorder Traversal}
+https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
+
+\begin{enumerate}
+	\item Construct recursive function with lower, upper 
+	\item If preorder[0] less than lower or greaterthan upper return null
+	\item If preorder.length === 0 return null 
+	\item Initialize root as new TreeNode and shift first item of preorder into it
+	\item Set root.left as recursive(lower, root.val)
+	\item Set root.right as recursive(root.val, upper)
+	\item Return root
+	\item Return recursive(-Infinity, Infinity)
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution bstFromPreorder, captionpos=t]
+const bstFromPreorder = (preorder) => {
+    
+    const recursive = (lower, upper) => {
+        
+        if (preorder[0] < lower || preorder[0] > upper) return null;
+        if (preorder.length === 0) return null; 
+        
+        let root = new TreeNode(preorder.shift());
+        
+        root.left = recursive(lower, root.val);
+        root.right = recursive(root.val, upper);
+        
+        return root;
+    };
+
+    return recursive(-Infinity, Infinity);
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Balance a Binary Search Tree}
+https://leetcode.com/problems/balance-a-binary-search-tree/
+
+\begin{enumerate}
+	\item Initialize builtArray as arrayBuilder(root)
+	\item Return bstBuilder(builtArray)
+	\item Construct helper arrayBuilder function 
+	\item Construct helper bstBuilder function
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution balanceBST, captionpos=t]
+const balanceBST = (root) => {
+    
+    let builtArray = arrayBuilder(root);
+    
+    return bstBuilder(builtArray);
+};
+
+const arrayBuilder = (node) => {
+    
+    if (!node) return [];
+    
+    return [...arrayBuilder(node.left), node.val, ...arrayBuilder(node.right)];
+};
+
+const bstBuilder = (arr) => {
+    
+    if (arr.length === 0) return null;
+    if (arr.length === 1) return new TreeNode(arr);
+    
+    let mid = Math.floor(arr.length / 2);
+    let left = bstBuilder(arr.slice(0, mid));
+    let right = bstBuilder(arr.slice(mid + 1));
+    
+    return new TreeNode(arr[mid], left, right);
+};
+\end{lstlisting}
+\medskip %END
 
 
 

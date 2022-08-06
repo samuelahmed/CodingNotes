@@ -151,3 +151,5 @@
 \contentsline {subsection}{\numberline {8.4}Lowest Common Ancestor of a Binary Search Tree}{167}{subsection.8.4}%
 \contentsline {subsection}{\numberline {8.5}Closest Binary Search Tree Value}{168}{subsection.8.5}%
 \contentsline {subsection}{\numberline {8.6}Binary Search Tree to Greater Sum Tree}{169}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Construct Binary Search Tree from Preorder Traversal}{170}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.8}Balance a Binary Search Tree}{171}{subsection.8.8}%
