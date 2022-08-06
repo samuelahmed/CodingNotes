@@ -6367,4 +6367,56 @@ const bstBuilder = (arr) => {
 
 
 
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Kth Smallest Element in a BST}
+https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+
+\begin{enumerate}
+	\item Initialize stack, counter, and node
+	\item While true if node stack.push and set node to left
+	\item Else if stack is empty continue and increase counter
+	\item If counter equal k return node.val otherwise move to node.right
+
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution kthSmallest, captionpos=t]
+const kthSmallest = (root, k) => {
+    
+    let stack = [];
+    let counter = 0;
+    let node = root;
+    
+    while (true) {
+        if (node) {
+            stack.push(node);
+            node = node.left;
+        } else {
+            if (stack.length === 0) break;
+            node = stack.pop();
+            counter += 1;
+            if (counter === k) return node.val;
+            node = node.right;
+        }
+    }
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}

@@ -153,3 +153,4 @@
 \contentsline {subsection}{\numberline {8.6}Binary Search Tree to Greater Sum Tree}{169}{subsection.8.6}%
 \contentsline {subsection}{\numberline {8.7}Construct Binary Search Tree from Preorder Traversal}{170}{subsection.8.7}%
 \contentsline {subsection}{\numberline {8.8}Balance a Binary Search Tree}{171}{subsection.8.8}%
+\contentsline {subsection}{\numberline {8.9}Kth Smallest Element in a BST}{172}{subsection.8.9}%
