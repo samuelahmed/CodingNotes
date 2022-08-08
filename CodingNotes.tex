@@ -6139,8 +6139,9 @@ const numTrees = (n) => {
 https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 
 \begin{enumerate}
-	\item  
-	\item 
+	\item If root.val is greater than p.val AND q.val recursive root.left, p, q
+	\item If root.val is less than p.val AND q.val recursive root.right, p, q 
+	\item Return root
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution lowestCommonAncestor, captionpos=t]
@@ -6183,8 +6184,10 @@ const lowestCommonAncestor = (root, p, q) => {
 https://leetcode.com/problems/closest-binary-search-tree-value/
 
 \begin{enumerate}
-	\item  
-	\item 
+	\item  Initialize child as root.left if target less than root.val else as root.right
+	\item If no child return root.val
+	\item Set closest as recursive(child, target)
+	\item Return closest if Math.abs(closest - target) less than Math.abs(root.val - target) else return root.val
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution closestValue, captionpos=t]
@@ -6218,8 +6221,12 @@ const closestValue = (root, target) => {
 https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
 
 \begin{enumerate}
-	\item  
-	\item 
+	\item Build getSum function with node and sum
+	\item If no node return sum
+	\item Set node.val += getSum(node.right, sum)
+	\item Return getSum(node.left, node.val)
+	\item Recursive call on getSum(root, 0)
+	\item Return root
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution bstToGst, captionpos=t]
@@ -6229,6 +6236,7 @@ const bstToGst = (root) => {
         
         if (!node) return sum;
         node.val += getSum(node.right, sum);
+        
         return getSum(node.left, node.val);
     };
     
