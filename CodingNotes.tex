@@ -6447,8 +6447,13 @@ const kthSmallest = (root, k) => {
 https://leetcode.com/problems/delete-node-in-a-bst/
 
 \begin{enumerate}
-	\item 
-
+	\item Build callDFS function with (node) if no node return null
+	\item If node.val equal key and no node.left, return right if no node.right return left
+	\item Initialize curr as node.right
+	\item While curr.left set curr as curr.left  
+	\item Set curr.left as node.left and return node.right
+	\item If key is greater than node.val node.right = recursive(node.right) else node.left is recursive(node.left)
+	\item Return node and return recursive call on root
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution deleteNode, captionpos=t]
@@ -6464,7 +6469,7 @@ const deleteNode = (root, key) => {
             while (curr.left) {
                 curr = curr.left;
             }
-            curr.left = node.left
+            curr.left = node.left;
             return node.right;
         }
         if (key > node.val) {
