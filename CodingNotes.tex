@@ -6045,8 +6045,15 @@ const searchBST = (root, val) => {
 https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
 
 \begin{enumerate}
-	\item  
-	\item 
+	\item If nums is empty return null
+	\item Build recursive with low, high as arguments
+	\item Let mid equal Math.floor low + high divided by 2 
+	\item Let root equal new TreeNode nums[mid]
+	\item If low is greater than high return null
+	\item Root.left = recursive(low, mid - 1)
+	\item Root.right = recursive(mid + 1, high)
+	\item Return root
+	\item Return recursive(0, nums.length - 1)
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution sortedArrayToBST, captionpos=t]
@@ -6084,8 +6091,12 @@ const sortedArrayToBST = (nums) => {
 https://leetcode.com/problems/unique-binary-search-trees/
 
 \begin{enumerate}
-	\item  
-	\item 
+	\item Initialize result as new array n + 1 and fill with 0   
+	\item Set result[0] to 1 and result[1] to 1
+	\item  For loop starting from 2 less then or equal to n
+	\item For loop stating from 1 less then or equal to i 
+	\item  Set result[i] to be result[j - 1] times result[i - j]
+	\item Return result[n]
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution numTrees, captionpos=t]
