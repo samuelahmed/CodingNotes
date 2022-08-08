@@ -6494,5 +6494,58 @@ const deleteNode = (root, key) => {
 
 
 
+%END OF SECTION - BST
+
+
+
+
+
+
+
+%START OF SECTION - LINKED LIST
+
+\pagebreak
+\section{Linked List}
+
+
+
+
+
+
+
+
+
+
+ %START  
+\medskip   
+\subsection {Convert Binary Number in a Linked List to Integer}
+https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
+
+\begin{enumerate}
+	\item Initialize result as zero 
+	\item While loop as long as head is not null
+	\item Set result to result bitwise shift 1 or head.val
+	\item Set head to head.next
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution getDecimalValue, captionpos=t]
+const getDecimalValue = (head) => {
+    
+    let result = 0;
+    
+    while(head !== null) {
+        result = (result << 1) | head.val;
+        head = head.next;
+    }
+    
+    return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
 
 \end{document}

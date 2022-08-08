@@ -155,3 +155,5 @@
 \contentsline {subsection}{\numberline {8.8}Balance a Binary Search Tree}{171}{subsection.8.8}%
 \contentsline {subsection}{\numberline {8.9}Kth Smallest Element in a BST}{172}{subsection.8.9}%
 \contentsline {subsection}{\numberline {8.10}Delete Node in a BST}{173}{subsection.8.10}%
+\contentsline {section}{\numberline {9}Linked List}{174}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Convert Binary Number in a Linked List to Integer}{174}{subsection.9.1}%
