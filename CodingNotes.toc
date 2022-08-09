@@ -158,3 +158,4 @@
 \contentsline {section}{\numberline {9}Linked List}{174}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Convert Binary Number in a Linked List to Integer}{174}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Delete N Nodes After M Nodes of a Linked List}{175}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Reverse Linked List}{176}{subsection.9.3}%

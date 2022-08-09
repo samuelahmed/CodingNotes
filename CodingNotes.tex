@@ -6595,4 +6595,49 @@ const deleteNodes = (head, m, n) => {
 
 
 
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Reverse Linked List}
+https://leetcode.com/problems/reverse-linked-list/
+
+\begin{enumerate}
+	\item Initialize result as null
+	\item While loop as long as head is not null 
+	\item Set next as head.next
+	\item Set head.next as result
+	\item Set result as head
+	\item Set head as next
+	\item Return result
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution reverseList, captionpos=t]
+const reverseList = (head) => {
+    
+    let result = null;
+    
+    while (head !== null) {
+        let next = head.next;
+        head.next = result;
+        result = head;
+        head = next;
+    }
+    
+    return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
 \end{document}
