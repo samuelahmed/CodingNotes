@@ -6600,10 +6600,6 @@ const deleteNodes = (head, m, n) => {
 
 
 
-
-
-
-
  %START  
 \pagebreak
 \medskip   
@@ -6636,6 +6632,49 @@ const reverseList = (head) => {
 };
 \end{lstlisting}
 \medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Delete Node in a Linked List}
+https://leetcode.com/problems/delete-node-in-a-linked-list/
+
+\begin{enumerate}
+	\item Set node.val to node.next.val
+	\item Set node.next as node.next.next
+
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution deleteNode, captionpos=t]
+const deleteNode = (node) => {
+
+    node.val = node.next.val;
+    node.next = node.next.next;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
