@@ -6512,10 +6512,6 @@ const deleteNode = (root, key) => {
 
 
 
-
-
-
-
  %START  
 \medskip   
 \subsection {Convert Binary Number in a Linked List to Integer}
@@ -6540,6 +6536,57 @@ const getDecimalValue = (head) => {
     }
     
     return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Delete N Nodes After M Nodes of a Linked List}
+https://leetcode.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/
+
+\begin{enumerate}
+	\item Initialize current as head.next, prev as head, and count to one
+	\item While loop as long as current not null, if count is equal to m + n set count to zero
+	\item If count is less than m, prev = current and current = current.next
+	\item Else if count is less than m + n, current = current.next, prev.next = current
+	\item Increment count
+	\item Return head
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution deleteNodes, captionpos=t]
+const deleteNodes = (head, m, n) => {
+    
+    let current = head.next;
+    let prev = head;
+    let count = 1;
+    
+    while (current !== null) {
+        if (count === m + n) count = 0;
+        if (count < m) {
+            prev = current;
+            current = current.next;
+        } else if (count < m + n) {
+            current = current.next;
+            prev.next = current;
+        }
+        count++;
+    }
+    
+    return head;
 };
 \end{lstlisting}
 \medskip %END
