@@ -175,3 +175,4 @@
 \contentsline {subsection}{\numberline {11.5}Keys and Rooms}{189}{subsection.11.5}%
 \contentsline {section}{\numberline {12}Trie}{190}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Index Pairs of a String}{190}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Search Suggestions System}{192}{subsection.12.2}%
