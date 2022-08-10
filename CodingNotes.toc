@@ -1,162 +1,170 @@
-\contentsline {section}{\numberline {1}Basic Javascript Concepts}{6}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Array.prototype.slice()}{6}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Array.prototype.sort()}{7}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Array.prototype.join()}{8}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Array.prototype.indexOf()}{9}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Array.prototype.reduce()}{10}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}String.prototype.split()}{11}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}Array.prototype.fill()}{12}{subsection.1.7}%
-\contentsline {subsection}{\numberline {1.8}map()}{13}{subsection.1.8}%
-\contentsline {subsection}{\numberline {1.9}Array.prototype.push()}{15}{subsection.1.9}%
-\contentsline {subsection}{\numberline {1.10}Array.prototype.splice()}{16}{subsection.1.10}%
-\contentsline {subsection}{\numberline {1.11}Bitwise XOR (\textasciicircum )}{17}{subsection.1.11}%
-\contentsline {subsection}{\numberline {1.12}String.prototype.charCodeAt()}{18}{subsection.1.12}%
-\contentsline {subsection}{\numberline {1.13}String.fromCharCode()}{19}{subsection.1.13}%
-\contentsline {subsection}{\numberline {1.14}Array.prototype.some()}{20}{subsection.1.14}%
-\contentsline {subsection}{\numberline {1.15}Array.prototype.every()}{21}{subsection.1.15}%
-\contentsline {subsection}{\numberline {1.16}Array.prototype.includes()}{22}{subsection.1.16}%
-\contentsline {subsection}{\numberline {1.17}Array.prototype.find()}{23}{subsection.1.17}%
-\contentsline {subsection}{\numberline {1.18}Math.max(), Math.min(), Math.abs()}{24}{subsection.1.18}%
-\contentsline {subsection}{\numberline {1.19}parseInt() \& parseFloat()}{25}{subsection.1.19}%
-\contentsline {subsection}{\numberline {1.20}Logical (and \&\&) and (or $\Vert $) }{26}{subsection.1.20}%
-\contentsline {subsection}{\numberline {1.21}Set() constructor}{28}{subsection.1.21}%
-\contentsline {subsection}{\numberline {1.22}String.prototype.charAt()}{29}{subsection.1.22}%
-\contentsline {subsection}{\numberline {1.23}for...of}{30}{subsection.1.23}%
-\contentsline {subsection}{\numberline {1.24}for...in}{31}{subsection.1.24}%
-\contentsline {subsection}{\numberline {1.25}Conditional (ternary) operator}{32}{subsection.1.25}%
-\contentsline {subsection}{\numberline {1.26}Map.prototype.get()}{33}{subsection.1.26}%
-\contentsline {subsection}{\numberline {1.27}Map.prototype.has()}{34}{subsection.1.27}%
-\contentsline {subsection}{\numberline {1.28}Set}{35}{subsection.1.28}%
-\contentsline {subsection}{\numberline {1.29}Object.prototype.toString()}{37}{subsection.1.29}%
-\contentsline {subsection}{\numberline {1.30}String.prototype.replace()}{38}{subsection.1.30}%
-\contentsline {subsection}{\numberline {1.31}Set.prototype.add()}{39}{subsection.1.31}%
-\contentsline {subsection}{\numberline {1.32}Array.prototype.unshift()}{40}{subsection.1.32}%
-\contentsline {subsection}{\numberline {1.33}Set.prototype.size}{41}{subsection.1.33}%
-\contentsline {subsection}{\numberline {1.34}Set.prototype.delete()}{42}{subsection.1.34}%
-\contentsline {subsection}{\numberline {1.35}delete operator}{43}{subsection.1.35}%
-\contentsline {subsection}{\numberline {1.36}Array.prototype.reverse()}{44}{subsection.1.36}%
-\contentsline {subsection}{\numberline {1.37}Array() constructor}{46}{subsection.1.37}%
-\contentsline {subsection}{\numberline {1.38}Math.trunc()}{47}{subsection.1.38}%
-\contentsline {subsection}{\numberline {1.39}continue}{48}{subsection.1.39}%
-\contentsline {subsection}{\numberline {1.40}Map.prototype.set()}{50}{subsection.1.40}%
-\contentsline {subsection}{\numberline {1.41}String.prototype.substring()}{51}{subsection.1.41}%
-\contentsline {subsection}{\numberline {1.42}String.prototype.toLowerCase() String.prototype.toUpperCase()}{52}{subsection.1.42}%
-\contentsline {subsection}{\numberline {1.43}this}{53}{subsection.1.43}%
-\contentsline {subsection}{\numberline {1.44}Object.values()}{54}{subsection.1.44}%
-\contentsline {subsection}{\numberline {1.45}constructor}{56}{subsection.1.45}%
-\contentsline {subsection}{\numberline {1.46}Classes}{57}{subsection.1.46}%
-\contentsline {subsection}{\numberline {1.47}Array.from()}{58}{subsection.1.47}%
-\contentsline {subsection}{\numberline {1.48}Array.prototype.forEach()}{59}{subsection.1.48}%
-\contentsline {subsection}{\numberline {1.49}Map() constructor}{60}{subsection.1.49}%
-\contentsline {section}{\numberline {2}Array Algorithm Problems}{61}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Build Array from Permutation}{61}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Count Items Matching a Rule}{62}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Create Target Array in the Given Order}{63}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Decode XORed Array}{64}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Decompress Run-Length Encoded List}{65}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Final Value of Variable After Performing Operations}{66}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Concatenation of Array}{67}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Kids With the Greatest Number of Candies}{68}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Maximum Number of Words Found in Sentences}{70}{subsection.2.9}%
-\contentsline {subsection}{\numberline {2.10}Number of Good Pairs}{71}{subsection.2.10}%
-\contentsline {subsection}{\numberline {2.11}Shuffle String}{72}{subsection.2.11}%
-\contentsline {subsection}{\numberline {2.12}Richest Customer Wealth}{73}{subsection.2.12}%
-\contentsline {subsection}{\numberline {2.13}Running Sum of 1d Array}{74}{subsection.2.13}%
-\contentsline {subsection}{\numberline {2.14}Shuffle the Array}{75}{subsection.2.14}%
-\contentsline {subsection}{\numberline {2.15}How Many Numbers Are Smaller Than the Current Number}{76}{subsection.2.15}%
-\contentsline {subsection}{\numberline {2.16}Sum of All Odd Length Subarrays}{77}{subsection.2.16}%
-\contentsline {subsection}{\numberline {2.17}Count Number of Pairs With Absolute Difference K}{80}{subsection.2.17}%
-\contentsline {subsection}{\numberline {2.18}Minimum Number of Moves to Seat Everyone}{81}{subsection.2.18}%
-\contentsline {subsection}{\numberline {2.19}Minimum Amount of Time to Fill Cups}{82}{subsection.2.19}%
-\contentsline {subsection}{\numberline {2.20}Assign Cookies}{83}{subsection.2.20}%
-\contentsline {section}{\numberline {3}String Algorithm Problems}{84}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Defanging an IP Address}{84}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Jewels and Stones}{85}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Goal Parser Interpretation}{86}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Cells in a Range on an Excel Sheet}{87}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Split a String in Balanced Strings}{88}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Sorting the Sentence}{90}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Decode the Message}{91}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Maximum Nesting Depth of the Parentheses}{92}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}Fizz Buzz}{93}{subsection.3.9}%
-\contentsline {subsection}{\numberline {3.10}Check If Two String Arrays are Equivalent}{94}{subsection.3.10}%
-\contentsline {subsection}{\numberline {3.11}Count the Number of Consistent Strings}{95}{subsection.3.11}%
-\contentsline {subsection}{\numberline {3.12}To Lower Case}{97}{subsection.3.12}%
-\contentsline {subsection}{\numberline {3.13}Rings and Rods}{98}{subsection.3.13}%
-\contentsline {subsection}{\numberline {3.14}Truncate Sentence}{100}{subsection.3.14}%
-\contentsline {subsection}{\numberline {3.15}Check if the Sentence Is Pangram}{101}{subsection.3.15}%
-\contentsline {subsection}{\numberline {3.16}Count Asterisks}{102}{subsection.3.16}%
-\contentsline {subsection}{\numberline {3.17}Unique Morse Code Words}{104}{subsection.3.17}%
-\contentsline {subsection}{\numberline {3.18}Number of Strings That Appear as Substrings in Word}{106}{subsection.3.18}%
-\contentsline {subsection}{\numberline {3.19}Remove Outermost Parentheses}{107}{subsection.3.19}%
-\contentsline {subsection}{\numberline {3.20}Replace All Digits with Characters}{108}{subsection.3.20}%
-\contentsline {section}{\numberline {4}Hash Tables}{109}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Destination City}{109}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Maximum Number of Pairs in Array}{110}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Design an Ordered Stream}{111}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Increasing Decreasing String}{112}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Check if All Characters Have Equal Number of Occurrences}{113}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Divide Array Into Equal Pairs}{114}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}N-Repeated Element in Size 2N Array}{115}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Sum of Unique Elements}{116}{subsection.4.8}%
-\contentsline {subsection}{\numberline {4.9}Maximum Number of Balls in a Box}{117}{subsection.4.9}%
-\contentsline {subsection}{\numberline {4.10}Check if Number Has Equal Digit Count and Digit Value}{118}{subsection.4.10}%
-\contentsline {subsection}{\numberline {4.11}Keep Multiplying Found Values by Two}{119}{subsection.4.11}%
-\contentsline {subsection}{\numberline {4.12}Two Out of Three}{120}{subsection.4.12}%
-\contentsline {subsection}{\numberline {4.13}Kth Distinct String in an Array}{122}{subsection.4.13}%
-\contentsline {subsection}{\numberline {4.14}Maximum Number of Words You Can Type}{123}{subsection.4.14}%
-\contentsline {subsection}{\numberline {4.15}Substrings of Size Three with Distinct Characters}{124}{subsection.4.15}%
-\contentsline {subsection}{\numberline {4.16}Find the Difference of Two Arrays}{125}{subsection.4.16}%
-\contentsline {subsection}{\numberline {4.17}Isomorphic Strings}{126}{subsection.4.17}%
-\contentsline {subsection}{\numberline {4.18}Word Pattern}{127}{subsection.4.18}%
-\contentsline {subsection}{\numberline {4.19}Longest Harmonious Subsequence}{128}{subsection.4.19}%
-\contentsline {subsection}{\numberline {4.20}Next Greater Element I}{129}{subsection.4.20}%
-\contentsline {section}{\numberline {5}Dynamic Programming}{130}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Counting Bits}{130}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Fibonacci Number}{131}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Pascal's Triangle}{132}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Divisor Game}{134}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}N-th Tribonacci Number}{135}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Min Cost Climbing Stairs}{136}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Pascal's Triangle II}{137}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Best Time to Buy and Sell Stock}{138}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}Climbing Stairs}{139}{subsection.5.9}%
-\contentsline {subsection}{\numberline {5.10}Is Subsequence}{140}{subsection.5.10}%
-\contentsline {section}{\numberline {6}Depth First Search Problems}{141}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Maximum Depth of Binary Tree}{141}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Find a Corresponding Node of a Binary Tree in a Clone of That Tree}{142}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Evaluate Boolean Binary Tree}{143}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Find All The Lonely Nodes}{144}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Range Sum of BST}{145}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Sum of Root To Leaf Binary Numbers}{146}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}N-ary Tree Preorder Traversal}{147}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}N-ary Tree Postorder Traversal}{149}{subsection.6.8}%
-\contentsline {subsection}{\numberline {6.9}Increasing Order Search Tree}{150}{subsection.6.9}%
-\contentsline {subsection}{\numberline {6.10}Merge Two Binary Trees}{151}{subsection.6.10}%
-\contentsline {section}{\numberline {7}Breadth First Search}{152}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Invert Binary Tree}{152}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Maximum Depth of N-ary Tree}{153}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Island Perimeter}{154}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Average of Levels in Binary Tree}{155}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Univalued Binary Tree}{156}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}Flood Fill}{157}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}Two Sum IV - Input is a BST}{159}{subsection.7.7}%
-\contentsline {subsection}{\numberline {7.8}Minimum Absolute Difference in BST}{160}{subsection.7.8}%
-\contentsline {subsection}{\numberline {7.9}Minimum Distance Between BST Nodes}{161}{subsection.7.9}%
-\contentsline {subsection}{\numberline {7.10}Same Tree}{163}{subsection.7.10}%
-\contentsline {section}{\numberline {8}Binary Search Tree}{164}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Search in a Binary Search Tree}{164}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Convert Sorted Array to Binary Search Tree}{165}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Unique Binary Search Trees}{166}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Lowest Common Ancestor of a Binary Search Tree}{167}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Closest Binary Search Tree Value}{168}{subsection.8.5}%
-\contentsline {subsection}{\numberline {8.6}Binary Search Tree to Greater Sum Tree}{169}{subsection.8.6}%
-\contentsline {subsection}{\numberline {8.7}Construct Binary Search Tree from Preorder Traversal}{170}{subsection.8.7}%
-\contentsline {subsection}{\numberline {8.8}Balance a Binary Search Tree}{171}{subsection.8.8}%
-\contentsline {subsection}{\numberline {8.9}Kth Smallest Element in a BST}{172}{subsection.8.9}%
-\contentsline {subsection}{\numberline {8.10}Delete Node in a BST}{173}{subsection.8.10}%
-\contentsline {section}{\numberline {9}Linked List}{174}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Convert Binary Number in a Linked List to Integer}{174}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Delete N Nodes After M Nodes of a Linked List}{175}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Reverse Linked List}{176}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Delete Node in a Linked List}{177}{subsection.9.4}%
+\contentsline {section}{\numberline {1}Basic Javascript Concepts}{7}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Array.prototype.slice()}{7}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Array.prototype.sort()}{8}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Array.prototype.join()}{9}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Array.prototype.indexOf()}{10}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Array.prototype.reduce()}{11}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}String.prototype.split()}{12}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Array.prototype.fill()}{13}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}map()}{14}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Array.prototype.push()}{16}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Array.prototype.splice()}{17}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Bitwise XOR (\textasciicircum )}{18}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}String.prototype.charCodeAt()}{19}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}String.fromCharCode()}{20}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.14}Array.prototype.some()}{21}{subsection.1.14}%
+\contentsline {subsection}{\numberline {1.15}Array.prototype.every()}{22}{subsection.1.15}%
+\contentsline {subsection}{\numberline {1.16}Array.prototype.includes()}{23}{subsection.1.16}%
+\contentsline {subsection}{\numberline {1.17}Array.prototype.find()}{24}{subsection.1.17}%
+\contentsline {subsection}{\numberline {1.18}Math.max(), Math.min(), Math.abs()}{25}{subsection.1.18}%
+\contentsline {subsection}{\numberline {1.19}parseInt() \& parseFloat()}{26}{subsection.1.19}%
+\contentsline {subsection}{\numberline {1.20}Logical (and \&\&) and (or $\Vert $) }{27}{subsection.1.20}%
+\contentsline {subsection}{\numberline {1.21}Set() constructor}{29}{subsection.1.21}%
+\contentsline {subsection}{\numberline {1.22}String.prototype.charAt()}{30}{subsection.1.22}%
+\contentsline {subsection}{\numberline {1.23}for...of}{31}{subsection.1.23}%
+\contentsline {subsection}{\numberline {1.24}for...in}{32}{subsection.1.24}%
+\contentsline {subsection}{\numberline {1.25}Conditional (ternary) operator}{33}{subsection.1.25}%
+\contentsline {subsection}{\numberline {1.26}Map.prototype.get()}{34}{subsection.1.26}%
+\contentsline {subsection}{\numberline {1.27}Map.prototype.has()}{35}{subsection.1.27}%
+\contentsline {subsection}{\numberline {1.28}Set}{36}{subsection.1.28}%
+\contentsline {subsection}{\numberline {1.29}Object.prototype.toString()}{38}{subsection.1.29}%
+\contentsline {subsection}{\numberline {1.30}String.prototype.replace()}{39}{subsection.1.30}%
+\contentsline {subsection}{\numberline {1.31}Set.prototype.add()}{40}{subsection.1.31}%
+\contentsline {subsection}{\numberline {1.32}Array.prototype.unshift()}{41}{subsection.1.32}%
+\contentsline {subsection}{\numberline {1.33}Set.prototype.size}{42}{subsection.1.33}%
+\contentsline {subsection}{\numberline {1.34}Set.prototype.delete()}{43}{subsection.1.34}%
+\contentsline {subsection}{\numberline {1.35}delete operator}{44}{subsection.1.35}%
+\contentsline {subsection}{\numberline {1.36}Array.prototype.reverse()}{45}{subsection.1.36}%
+\contentsline {subsection}{\numberline {1.37}Array() constructor}{47}{subsection.1.37}%
+\contentsline {subsection}{\numberline {1.38}Math.trunc()}{48}{subsection.1.38}%
+\contentsline {subsection}{\numberline {1.39}continue}{49}{subsection.1.39}%
+\contentsline {subsection}{\numberline {1.40}Map.prototype.set()}{51}{subsection.1.40}%
+\contentsline {subsection}{\numberline {1.41}String.prototype.substring()}{52}{subsection.1.41}%
+\contentsline {subsection}{\numberline {1.42}String.prototype.toLowerCase() String.prototype.toUpperCase()}{53}{subsection.1.42}%
+\contentsline {subsection}{\numberline {1.43}this}{54}{subsection.1.43}%
+\contentsline {subsection}{\numberline {1.44}Object.values()}{55}{subsection.1.44}%
+\contentsline {subsection}{\numberline {1.45}constructor}{57}{subsection.1.45}%
+\contentsline {subsection}{\numberline {1.46}Classes}{58}{subsection.1.46}%
+\contentsline {subsection}{\numberline {1.47}Array.from()}{59}{subsection.1.47}%
+\contentsline {subsection}{\numberline {1.48}Array.prototype.forEach()}{60}{subsection.1.48}%
+\contentsline {subsection}{\numberline {1.49}Map() constructor}{61}{subsection.1.49}%
+\contentsline {section}{\numberline {2}Array Algorithm Problems}{62}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Build Array from Permutation}{62}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Count Items Matching a Rule}{63}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Create Target Array in the Given Order}{64}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Decode XORed Array}{65}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Decompress Run-Length Encoded List}{66}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Final Value of Variable After Performing Operations}{67}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Concatenation of Array}{68}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Kids With the Greatest Number of Candies}{69}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Maximum Number of Words Found in Sentences}{71}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Number of Good Pairs}{72}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Shuffle String}{73}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}Richest Customer Wealth}{74}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Running Sum of 1d Array}{75}{subsection.2.13}%
+\contentsline {subsection}{\numberline {2.14}Shuffle the Array}{76}{subsection.2.14}%
+\contentsline {subsection}{\numberline {2.15}How Many Numbers Are Smaller Than the Current Number}{77}{subsection.2.15}%
+\contentsline {subsection}{\numberline {2.16}Sum of All Odd Length Subarrays}{78}{subsection.2.16}%
+\contentsline {subsection}{\numberline {2.17}Count Number of Pairs With Absolute Difference K}{81}{subsection.2.17}%
+\contentsline {subsection}{\numberline {2.18}Minimum Number of Moves to Seat Everyone}{82}{subsection.2.18}%
+\contentsline {subsection}{\numberline {2.19}Minimum Amount of Time to Fill Cups}{83}{subsection.2.19}%
+\contentsline {subsection}{\numberline {2.20}Assign Cookies}{84}{subsection.2.20}%
+\contentsline {section}{\numberline {3}String Algorithm Problems}{85}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Defanging an IP Address}{85}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Jewels and Stones}{86}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Goal Parser Interpretation}{87}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Cells in a Range on an Excel Sheet}{88}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Split a String in Balanced Strings}{89}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Sorting the Sentence}{91}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Decode the Message}{92}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Maximum Nesting Depth of the Parentheses}{93}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Fizz Buzz}{94}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Check If Two String Arrays are Equivalent}{95}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Count the Number of Consistent Strings}{96}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}To Lower Case}{98}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}Rings and Rods}{99}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Truncate Sentence}{101}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Check if the Sentence Is Pangram}{102}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Count Asterisks}{103}{subsection.3.16}%
+\contentsline {subsection}{\numberline {3.17}Unique Morse Code Words}{105}{subsection.3.17}%
+\contentsline {subsection}{\numberline {3.18}Number of Strings That Appear as Substrings in Word}{107}{subsection.3.18}%
+\contentsline {subsection}{\numberline {3.19}Remove Outermost Parentheses}{108}{subsection.3.19}%
+\contentsline {subsection}{\numberline {3.20}Replace All Digits with Characters}{109}{subsection.3.20}%
+\contentsline {section}{\numberline {4}Hash Tables}{110}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Destination City}{110}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Maximum Number of Pairs in Array}{111}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Design an Ordered Stream}{112}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Increasing Decreasing String}{113}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Check if All Characters Have Equal Number of Occurrences}{114}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Divide Array Into Equal Pairs}{115}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}N-Repeated Element in Size 2N Array}{116}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Sum of Unique Elements}{117}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Maximum Number of Balls in a Box}{118}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}Check if Number Has Equal Digit Count and Digit Value}{119}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Keep Multiplying Found Values by Two}{120}{subsection.4.11}%
+\contentsline {subsection}{\numberline {4.12}Two Out of Three}{121}{subsection.4.12}%
+\contentsline {subsection}{\numberline {4.13}Kth Distinct String in an Array}{123}{subsection.4.13}%
+\contentsline {subsection}{\numberline {4.14}Maximum Number of Words You Can Type}{124}{subsection.4.14}%
+\contentsline {subsection}{\numberline {4.15}Substrings of Size Three with Distinct Characters}{125}{subsection.4.15}%
+\contentsline {subsection}{\numberline {4.16}Find the Difference of Two Arrays}{126}{subsection.4.16}%
+\contentsline {subsection}{\numberline {4.17}Isomorphic Strings}{127}{subsection.4.17}%
+\contentsline {subsection}{\numberline {4.18}Word Pattern}{128}{subsection.4.18}%
+\contentsline {subsection}{\numberline {4.19}Longest Harmonious Subsequence}{129}{subsection.4.19}%
+\contentsline {subsection}{\numberline {4.20}Next Greater Element I}{130}{subsection.4.20}%
+\contentsline {section}{\numberline {5}Dynamic Programming}{131}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Counting Bits}{131}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Fibonacci Number}{132}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Pascal's Triangle}{133}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Divisor Game}{135}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}N-th Tribonacci Number}{136}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Min Cost Climbing Stairs}{137}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Pascal's Triangle II}{138}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Best Time to Buy and Sell Stock}{139}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Climbing Stairs}{140}{subsection.5.9}%
+\contentsline {subsection}{\numberline {5.10}Is Subsequence}{141}{subsection.5.10}%
+\contentsline {section}{\numberline {6}Depth First Search Problems}{142}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Maximum Depth of Binary Tree}{142}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Find a Corresponding Node of a Binary Tree in a Clone of That Tree}{143}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Evaluate Boolean Binary Tree}{144}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Find All The Lonely Nodes}{145}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Range Sum of BST}{146}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Sum of Root To Leaf Binary Numbers}{147}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}N-ary Tree Preorder Traversal}{148}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}N-ary Tree Postorder Traversal}{150}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Increasing Order Search Tree}{151}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.10}Merge Two Binary Trees}{152}{subsection.6.10}%
+\contentsline {section}{\numberline {7}Breadth First Search}{153}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Invert Binary Tree}{153}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Maximum Depth of N-ary Tree}{154}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Island Perimeter}{155}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Average of Levels in Binary Tree}{156}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Univalued Binary Tree}{157}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Flood Fill}{158}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Two Sum IV - Input is a BST}{160}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Minimum Absolute Difference in BST}{161}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Minimum Distance Between BST Nodes}{162}{subsection.7.9}%
+\contentsline {subsection}{\numberline {7.10}Same Tree}{164}{subsection.7.10}%
+\contentsline {section}{\numberline {8}Binary Search Tree}{165}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Search in a Binary Search Tree}{165}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Convert Sorted Array to Binary Search Tree}{166}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Unique Binary Search Trees}{167}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Lowest Common Ancestor of a Binary Search Tree}{168}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Closest Binary Search Tree Value}{169}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Binary Search Tree to Greater Sum Tree}{170}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Construct Binary Search Tree from Preorder Traversal}{171}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.8}Balance a Binary Search Tree}{172}{subsection.8.8}%
+\contentsline {subsection}{\numberline {8.9}Kth Smallest Element in a BST}{173}{subsection.8.9}%
+\contentsline {subsection}{\numberline {8.10}Delete Node in a BST}{174}{subsection.8.10}%
+\contentsline {section}{\numberline {9}Linked List}{175}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Convert Binary Number in a Linked List to Integer}{175}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Delete N Nodes After M Nodes of a Linked List}{176}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Reverse Linked List}{177}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Delete Node in a Linked List}{178}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Palindrome Linked List}{179}{subsection.9.5}%
+\contentsline {section}{\numberline {10}Sliding Window}{180}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Longest Nice Substring}{180}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Find the K-Beauty of a Number}{181}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Maximum Average Subarray I}{182}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Contains Duplicate II}{183}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Max Consecutive Ones III}{184}{subsection.10.5}%
+\contentsline {section}{\numberline {11}GRAPHS}{185}{section.11}%

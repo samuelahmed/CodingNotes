@@ -6673,6 +6673,349 @@ const deleteNode = (node) => {
 
 
 
+ %START  
+\pagebreak
+\medskip   
+\subsection {Palindrome Linked List}
+https://leetcode.com/problems/palindrome-linked-list/
+
+\begin{enumerate}
+	\item Initialize current and reverse to empty strings
+	\item While loop (head) is not null 
+	\item Set current += head.val
+	\item Set reverse to head.val + reverse 
+	\item Set head to head.next
+	\item Return current === reverse
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution isPalindrome, captionpos=t]
+const isPalindrome = (head) => {
+    
+    let current = '';
+    let reverse = '';
+    
+    while(head !== null) {
+        current += head.val;
+        reverse = head.val + reverse;
+        head = head.next;
+    }
+    
+    return current === reverse;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+%END OF SECTION - LINKED LIST
+
+
+
+
+
+
+
+%START OF SECTION - SLIDING WINDOW
+
+\pagebreak
+\section{Sliding Window}
+
+
+
+
+
+
+
+
+ %START  
+\medskip   
+\subsection {Longest Nice Substring}
+https://leetcode.com/problems/longest-nice-substring/
+
+\begin{enumerate}
+	\item Initialize arr as split s and create a new Set(arr)
+	\item Initialize char, sub1, and sub2 as empty strings
+	\item If s is shorter than 2 return empty string
+	\item Loop through arr.length starting from zero 
+	\item Set char to arr[i], if set has char upper and lowercase continue
+	\item Recursive call to set sub1 setting s.substring 0, i
+	\item Recursive call to set sub2 setting s.substring i + 1
+	\item Return sub1.length >= sub2.length ? sub1 : sub2 (longer one)
+	\item Return s
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution longestNiceSubstring, captionpos=t]
+const longestNiceSubstring = (s) => {
+    
+    let arr = [...s];
+    let set = new Set(arr);
+    let char = '';
+    let sub1 = '';
+    let sub2 = '';
+    
+    if (s.length < 2) return "";
+    
+    for (let i = 0; i < arr.length; i++) {
+        char = arr[i];
+        if (set.has(char.toUpperCase()) && set.has(char.toLowerCase())) continue;
+        sub1 = longestNiceSubstring(s.substring(0, i));
+        sub2 = longestNiceSubstring(s.substring(i + 1));
+        return sub1.length >= sub2.length ? sub1 : sub2;
+    }
+    
+    return s; 
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Find the K-Beauty of a Number}
+https://leetcode.com/problems/find-the-k-beauty-of-a-number/
+
+\begin{enumerate}
+	\item Initialize result to zero 
+	\item Turn number into a string so I can slice it and use it for for loop
+	\item Turn it back into a number so I can compare with modulo (or let js do it automatically)
+	\item If nums modulo substring === 0 result ++ 
+	\item Return result 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution divisorSubstrings, captionpos=t]
+const divisorSubstrings = (num, k) => {
+    
+    let result = 0;
+    let stringNum = String(num);
+    let sliced = '';
+    
+    for (let i = 0; i <= stringNum.length - k; i++) {
+        sliced = stringNum.slice(i, k + i);
+        if(num % sliced === 0) result++;
+    }
+
+    return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Maximum Average Subarray I}
+https://leetcode.com/problems/maximum-average-subarray-i/
+
+\begin{enumerate}
+	\item Initialize sum as zero 
+	\item Loop through nums until k adding value to sum
+	\item Set max to sum
+	\item Loop through nums again updating sum to be sum-nums[i-k]+nums[i]
+	\item Set max to biggest value of max and sum
+	\item Return max divided by k 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution findMaxAverage, captionpos=t]
+const findMaxAverage = (nums, k) => {
+
+    let sum = 0;
+
+    for (let i = 0; i < k; i++) {
+        sum += nums[i];
+    }
+    
+    let max = sum;
+
+    for (let i = k; i < nums.length; i++) {
+        sum = sum - nums[i - k] + nums[i];
+        max = Math.max(max, sum);
+    }
+    
+    return max / k;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Contains Duplicate II}
+https://leetcode.com/problems/contains-duplicate-ii/
+
+\begin{enumerate}
+	\item Create new Map()
+	\item For loop from zero till nums.length 
+	\item If i - map.get(nums[i]) <= k return true
+	\item Else map.set(nums[i], i)
+	\item Return false
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution containsNearbyDuplicate, captionpos=t]
+const containsNearbyDuplicate = (nums, k) => {
+
+    let map = new Map();
+
+    for (let i = 0; i < nums.length; i++) {
+        if (i - map.get(nums[i]) <= k) {
+            return true;
+        } else {
+            map.set(nums[i], i);
+        }
+    }
+
+    return false;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Max Consecutive Ones III}
+https://leetcode.com/problems/max-consecutive-ones-iii/
+
+\begin{enumerate}
+	\item Initialize result, count, and start at 0
+	\item For loop and if nums[i] === 0 increment count
+	\item If count is less than k start++ and if nums[start] === 0 decrement count 
+	\item Set result to math.max result, i - start + 1 and return
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution longestOnes, captionpos=t]
+const longestOnes = (nums, k) => {
+    
+    let result = 0;
+    let count = 0;
+    let start = 0;
+    
+    for (let i = 0; i < nums.length; i++) {
+        
+        if (nums[i] === 0) count++;
+        if (count > k) {
+            if (nums[start] === 0) {
+                count--;
+            }
+            start++;
+        }
+        result = Math.max(result, i - start + 1);
+    }
+
+    return result; 
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%END OF SECTION - LINKED LIST
+
+
+
+
+
+
+
+%START OF SECTION - GRAPHS
+
+\pagebreak
+\section{GRAPHS}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
