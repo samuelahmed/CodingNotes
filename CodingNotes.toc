@@ -168,3 +168,10 @@
 \contentsline {subsection}{\numberline {10.4}Contains Duplicate II}{183}{subsection.10.4}%
 \contentsline {subsection}{\numberline {10.5}Max Consecutive Ones III}{184}{subsection.10.5}%
 \contentsline {section}{\numberline {11}GRAPHS}{185}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Find Center of Star Graph}{185}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Find if Path Exists in Graph}{186}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Find the Town Judge}{187}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}All Paths From Source to Target}{188}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Keys and Rooms}{189}{subsection.11.5}%
+\contentsline {section}{\numberline {12}Trie}{190}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Index Pairs of a String}{190}{subsection.12.1}%

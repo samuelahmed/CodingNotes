@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  9 AUG 2022 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  10 AUG 2022 14:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -718,22 +718,22 @@ Overfull \hbox (11.97292pt too wide) in paragraph at lines 6518--6519
 -list-to-integer/ 
  []
 
-[175] [176] [177] [178] [179] [180] [181] [182] [183] [184] [185]
-(./CodingNotes.aux)
+[175] [176] [177] [178] [179] [180] [181] [182] [183] [184] [185] [186]
+[187] [188] [189] [190] [191] (./CodingNotes.aux)
 
 Package rerunfilecheck Warning: File `CodingNotes.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `CodingNotes.out':
-(rerunfilecheck)             Before: 4029D0E7CBD97B3D10967B9E9C0E48A4;32936
-(rerunfilecheck)             After:  F11FD4F08ABFAF8371E73A6C5B0562D1;33012.
+(rerunfilecheck)             Before: 9558183BB5928849E41113EDB5D30FFB;34025
+(rerunfilecheck)             After:  6269365D267F6A0A731C1963AB635514;34213.
  ) 
 Here is how much of TeX's memory you used:
- 13970 strings out of 478268
- 208551 string characters out of 5846348
- 784197 words of memory out of 5000000
- 28248 multiletter control sequences out of 15000+600000
+ 14164 strings out of 478268
+ 211508 string characters out of 5846348
+ 784195 words of memory out of 5000000
+ 28275 multiletter control sequences out of 15000+600000
  474314 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,479b,1837s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -748,10 +748,10 @@ l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on CodingNotes.pdf (185 pages, 615871 bytes).
+Output written on CodingNotes.pdf (191 pages, 634956 bytes).
 PDF statistics:
- 6123 PDF objects out of 6186 (max. 8388607)
- 5857 compressed objects within 59 object streams
- 3856 named destinations out of 4296 (max. 500000)
- 1353 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6373 PDF objects out of 7423 (max. 8388607)
+ 6099 compressed objects within 61 object streams
+ 4023 named destinations out of 4296 (max. 500000)
+ 1409 words of extra memory for PDF output out of 10000 (max. 10000000)
 

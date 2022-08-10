@@ -7006,11 +7006,297 @@ const longestOnes = (nums, k) => {
 
 
 
+ %START  
+\medskip   
+\subsection {Find Center of Star Graph}
+https://leetcode.com/problems/find-center-of-star-graph/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution findCenter, captionpos=t]
+const findCenter = (edges) => {
+    
+    let [[a, b], [c, d]] = edges;
+    
+    return a === c || b === c ? c : d;
+};
+\end{lstlisting}
+\medskip %END
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Find if Path Exists in Graph}
+https://leetcode.com/problems/find-if-path-exists-in-graph/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution validPath, captionpos=t]
+const validPath = (n, edges, start, end) => {
+    
+    let graph = new Map();
+    let visited = new Set();
+    
+    for (const [v, e] of edges) {
+        if (graph.has(v)) {
+            graph.get(v).push(e);
+        } else {
+            graph.set(v, [e]);
+        }
+        
+        if (graph.has(e)) {
+            graph.get(e).push(v);
+        } else {
+            graph.set(e, [v]);
+        }
+    }
+        
+    const dfs = (v) => {
+        visited.add(v);    
+        let edges = graph.get(v);   
+        if (edges && edges.length > 0) {
+            for (const e of edges) {
+                if (!visited.has(e)) dfs(e);
+            }
+        }
+    };
+    dfs(start);
+        
+    return visited.has(end);
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Find the Town Judge}
+https://leetcode.com/problems/find-the-town-judge/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution findJudge, captionpos=t]
+const findJudge = (n, trust) => {
+    
+    let trusted = new Array(n+1).fill(0);
+    
+    for(let [i,j] of trust) {
+        trusted[i] -= 1;
+        trusted[j] += 1;
+    }
+    for(let i = 1; i < trusted.length; i++) {
+        if ((n-1) === trusted[i]) {
+            return i;
+        }
+    }
+    
+    return -1;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {All Paths From Source to Target}
+https://leetcode.com/problems/all-paths-from-source-to-target/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution allPathsSourceTarget, captionpos=t]
+const allPathsSourceTarget = (graph) => {
+
+    let result = [];
+
+    const dfs = (id, output) => {
+
+        if (id === graph.length - 1) {
+            result.push(output);
+        }
+
+        for (const num of graph[id]) {
+            dfs(num, [...output, num]);
+        }
+    };
+    dfs(0, [0]);
+
+    return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Keys and Rooms}
+https://leetcode.com/problems/keys-and-rooms/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution canVisitAllRooms, captionpos=t]
+const canVisitAllRooms = (rooms) => { 
+    
+    let visitedRoom = {};
+    
+    const dfs = (index) => {
+        if(visitedRoom[index]) return;
+        visitedRoom[index] = true;
+        rooms[index].forEach(key => { 
+            dfs(key)
+        });
+    };
+    dfs(0);
+    
+    return Object.keys(visitedRoom).length === rooms.length;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+%END OF SECTION - GRAPHS
+
+
+
+
+
+
+
+%START OF SECTION - TRIE
+
+\pagebreak
+\section{Trie}
+
+
+
+ %START  
+\medskip   
+\subsection {Index Pairs of a String}
+https://leetcode.com/problems/index-pairs-of-a-string/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution indexPairs, captionpos=t]
+const indexPairs = (text, words) => {
+    
+    let trie = buildTrie(words);
+    let result = [];
+    
+    for(let i=0; i<text.length;i++){
+      let root = trie.child[text[i]];
+      if(!root) continue;
+      let sub = [i];
+      let j = i;
+      while(root){
+        if(root.isWord){
+          sub.push(j);
+        }
+        if(sub.length === 2) {
+          result.push(sub.slice());
+          sub.pop();
+        }        
+        root = root.child[text[++j]];
+      }      
+    }
+    
+  return result;
+};
+
+class Trie{
+  constructor(){
+    this.child = {};
+    this.isWord = false;
+    this.word = ''
+  }
+};
+
+const buildTrie = (words, root = new Trie()) => {
+    
+  let og = root;
+  
+  for(let w of words){
+    for(let s of w){
+      if(!root.child[s]) root.child[s] = new Trie();
+      root = root.child[s];
+    }
+    root.isWord = true;
+    root.word = w;
+    root = og;
+  }
+    
+  return og;
+};
+\end{lstlisting}
+\medskip %END
 
 
 
