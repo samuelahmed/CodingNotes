@@ -7626,6 +7626,108 @@ const removeElements = (head, val) => {
 
 
 
+ %START  
+\pagebreak
+\medskip   
+\subsection {All Possible Full Binary Trees}
+https://leetcode.com/problems/all-possible-full-binary-trees/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution allPossibleFBT, captionpos=t]
+const allPossibleFBT = (n) => {
+    
+    let dp = new Array(n+1).fill(-1);
+    
+    return solve(n,dp);
+};
+
+
+const solve = (n,dp) => {
+    
+    let result = [];
+
+    if(n % 2 === 0) return dp[n] = [];
+    if(dp[n] !== -1) return dp[n];
+    if(n === 1) return dp[n] = [new TreeNode(0)];    
+    
+    n = n - 1;
+    
+    for(let ctr = 1 ; ctr < n ; ctr ++) {
+        let left = solve(ctr,dp);
+        let right= solve(n-ctr,dp);
+        for(let row = 0 ; row < left.length ; row ++) {
+            for(let col = 0 ; col < right.length ; col ++) {   
+                let node = new TreeNode(0);
+                node.left = left[row];
+                node.right= right[col];
+                result.push(node);
+            }
+        }
+    }
+    
+    return dp[n] = result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Find the Winner of the Circular Game}
+https://leetcode.com/problems/find-the-winner-of-the-circular-game/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution findTheWinner, captionpos=t]
+const findTheWinner = (n, k) => {
+
+    let arr = Array.from({length:n}, (_, i) => i+1);
+    let count = 0;
+
+    const helper = (arr,k) => {
+
+        if (arr.length < 2) return arr;
+            count++;
+        if (count===k) {
+            arr.shift();
+            count = 0;
+        } else {
+            arr.push(arr[0]);
+            arr.shift();
+        }
+
+        return helper(arr,k);
+    };
+
+    return helper(arr,k);
+};
+\end{lstlisting}
+\medskip %END
 
 
 

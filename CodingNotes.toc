@@ -183,3 +183,5 @@
 \contentsline {subsection}{\numberline {13.1}Reverse String}{196}{subsection.13.1}%
 \contentsline {subsection}{\numberline {13.2}Power of Two}{197}{subsection.13.2}%
 \contentsline {subsection}{\numberline {13.3}Power of Two}{198}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}All Possible Full Binary Trees}{199}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Find the Winner of the Circular Game}{200}{subsection.13.5}%
