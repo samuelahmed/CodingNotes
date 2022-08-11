@@ -7592,4 +7592,42 @@ const isPowerOfTwo = (n) => {
 
 
 
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Power of Two}
+https://leetcode.com/problems/power-of-two/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution removeElements, captionpos=t]
+const removeElements = (head, val) => {
+    
+    if (!head) return null;
+    if (head.val === val) {
+        return removeElements(head.next, val);
+    }
+    head.next = removeElements(head.next, val);
+    
+    return head;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
