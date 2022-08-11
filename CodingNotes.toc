@@ -167,7 +167,7 @@
 \contentsline {subsection}{\numberline {10.3}Maximum Average Subarray I}{182}{subsection.10.3}%
 \contentsline {subsection}{\numberline {10.4}Contains Duplicate II}{183}{subsection.10.4}%
 \contentsline {subsection}{\numberline {10.5}Max Consecutive Ones III}{184}{subsection.10.5}%
-\contentsline {section}{\numberline {11}GRAPHS}{185}{section.11}%
+\contentsline {section}{\numberline {11}Graphs}{185}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Find Center of Star Graph}{185}{subsection.11.1}%
 \contentsline {subsection}{\numberline {11.2}Find if Path Exists in Graph}{186}{subsection.11.2}%
 \contentsline {subsection}{\numberline {11.3}Find the Town Judge}{187}{subsection.11.3}%
@@ -176,3 +176,9 @@
 \contentsline {section}{\numberline {12}Trie}{190}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Index Pairs of a String}{190}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Search Suggestions System}{192}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Design File System}{193}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Short Encoding of Words}{194}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Top K Frequent Words}{195}{subsection.12.5}%
+\contentsline {section}{\numberline {13}Recursion}{196}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Reverse String}{196}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Power of Two}{197}{subsection.13.2}%

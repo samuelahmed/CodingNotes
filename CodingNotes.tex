@@ -6998,7 +6998,7 @@ const longestOnes = (nums, k) => {
 %START OF SECTION - GRAPHS
 
 \pagebreak
-\section{GRAPHS}
+\section{Graphs}
 
 
 
@@ -7366,8 +7366,8 @@ const suggestedProducts = (products, searchWord) => {
  %START  
 \pagebreak
 \medskip   
-\subsection {Search Suggestions System}
-https://leetcode.com/problems/search-suggestions-system/
+\subsection {Design File System}
+https://leetcode.com/problems/design-file-system/
 
 \begin{enumerate}
 	\item 
@@ -7397,8 +7397,197 @@ FileSystem.prototype.get = function(path) {
     
     return this.cache[path] || -1;
 };
-end{lstlisting}
+\end{lstlisting}
 \medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Short Encoding of Words}
+https://leetcode.com/problems/short-encoding-of-words/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution minimumLengthEncoding, captionpos=t]
+const minimumLengthEncoding = (words) => {
+    
+    let trie = {};
+    let leavesMap = new Map();
+    let result = 0;
+
+    for (let word of words) {
+        let node = trie;
+        for (let i = word.length-1; i >= 0; i--) {
+            let c = word[i];
+            if(!node[c]) {
+                node[c] = {};
+            }
+            node = node[c];
+        }
+        leavesMap.set(node, word.length);
+    }
+    leavesMap.forEach((value, key) => {
+        if (Object.keys(key).length === 0){
+            result += value+1;
+        } 
+    });
+    
+    return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Top K Frequent Words}
+https://leetcode.com/problems/top-k-frequent-words/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution topKFrequent, captionpos=t]
+const topKFrequent = (words, k) => {
+    
+    let hash = {};
+    
+    for (let word of words) {
+        hash[word] = hash[word] +1 || 1;
+    }
+    
+    let result = Object.keys(hash).sort((a,b)=>{
+            let countCompare = hash[b] - hash[a];
+            if (countCompare === 0) return a.localeCompare(b);
+            else return countCompare;
+    });
+    
+    return result.slice(0, k);
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%END OF SECTION - TRIE
+
+
+
+
+
+
+%START OF SECTION - RECURSION
+
+\pagebreak
+\section{Recursion}
+
+
+
+
+
+ %START  
+\medskip   
+\subsection {Reverse String}
+https://leetcode.com/problems/reverse-string/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution reverseString, captionpos=t]
+const reverseString = (s) => {
+    
+    let temp = s[0];
+    
+    if (s.length === 0) {
+        return; 
+    }
+    
+    s.shift();
+    reverseString(s);
+    s.push(temp);
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Power of Two}
+https://leetcode.com/problems/power-of-two/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution isPowerOfTwo, captionpos=t]
+const isPowerOfTwo = (n) => {    
+    
+    if (n === 1) return true;
+    if (n <= 0) return false;
+    if (n % 2 !== 0) return false;
+    
+    return isPowerOfTwo(Math.floor(n/2));    
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
 
 
 
