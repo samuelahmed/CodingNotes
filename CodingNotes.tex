@@ -7597,8 +7597,8 @@ const isPowerOfTwo = (n) => {
  %START  
 \pagebreak
 \medskip   
-\subsection {Power of Two}
-https://leetcode.com/problems/power-of-two/
+\subsection {Remove Linked List Elements}
+https://leetcode.com/problems/remove-linked-list-elements/
 
 \begin{enumerate}
 	\item 
@@ -7728,6 +7728,308 @@ const findTheWinner = (n, k) => {
 };
 \end{lstlisting}
 \medskip %END
+
+
+
+
+
+
+
+
+
+%END OF SECTION - TRIE
+
+
+
+
+
+
+%START OF SECTION - STACK
+
+\pagebreak
+\section{Stack}
+
+
+
+
+ %START  
+
+\medskip   
+\subsection {Baseball Game}
+https://leetcode.com/problems/baseball-game/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution calPoints, captionpos=t]
+const calPoints = (ops) => {
+    
+    let stack = [];
+    let result = 0;
+    
+    for (let i = 0; i < ops.length; i++) {
+       if (ops[i] === '+') {
+            let prev = stack[stack.length - 1];
+            let prev2 = stack[stack.length - 2];
+            stack.push(prev + prev2);
+            result += (prev + prev2);
+        } else if (ops[i] === 'D') {
+            let prev = stack[stack.length - 1];
+            let double = prev * 2;
+            stack.push(double);
+            result += double
+        } else if (ops[i] === 'C') {
+            let remove = stack.pop();
+            result -= remove;
+        } else {
+            const standard = parseInt(ops[i]);
+            stack.push(standard);
+            result += standard;
+        }
+    }
+    
+    return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Remove All Adjacent Duplicates In String}
+https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution removeDuplicates, captionpos=t]
+const removeDuplicates = s => {
+    
+    const stack = [];
+      
+    for (let char of s) {
+      stack[stack.length - 1] === char
+          ? stack.pop() 
+          : stack.push(char);
+    }
+      
+    return stack.join('');
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Implement Queue using Stacks}
+https://leetcode.com/problems/implement-queue-using-stacks/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution removeDuplicates, captionpos=t]
+const MyQueue = function() {
+    this.stack = [];
+    this.reversed = [];
+};
+
+MyQueue.prototype.push = function(x) {
+    this.stack.push(x);
+};
+
+MyQueue.prototype.pop = function() {
+    if (!this.reversed.length) {
+        while (this.stack.length) {
+            this.reversed.push(this.stack.pop());
+        }
+    }
+    
+    return this.reversed.pop();
+};
+
+MyQueue.prototype.peek = function() {
+    return this.reversed[this.reversed.length - 1] ?? this.stack[0];
+};
+
+MyQueue.prototype.empty = function() {
+    return !this.stack.length && !this.reversed.length;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Valid Parentheses}
+https://leetcode.com/problems/valid-parentheses/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution isValid, captionpos=t]
+const isValid = (s) => {
+       
+    let stack = [];
+    let bracketMap = {
+        ")": '(',
+        "]": '[',
+        "}": '{',
+    };
+    
+    if (s.length === 0) {
+        return true;
+    }
+    
+    for(let i = 0; i < s.length; i++) {
+        if (s[i] === '(' || s[i] === '[' || s[i] === '{') {
+            stack.push(s[i]);
+        } else {
+            if (stack[stack.length - 1] === bracketMap[s[i]]) {
+                stack.pop();
+            } else {
+                return false;
+            }
+        } 
+    }
+
+    return stack.length === 0;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Buildings With an Ocean View}
+https://leetcode.com/problems/buildings-with-an-ocean-view/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution findBuildings, captionpos=t]
+const findBuildings = (heights) => {
+    
+    const stack = [];
+    
+    for (let i = 0; i < heights.length; i++) {
+        while (stack.length && heights[i] >= heights[stack[stack.length - 1]]) {
+            stack.pop();
+        }
+        stack.push(i);
+    }
+    
+    return stack;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+%END OF SECTION - TRIE
+
+
+
+
+
+
+%START OF SECTION - HEAP
+
+\pagebreak
+\section{Heap}
+
+
+
+ %START  
+\medskip   
+\subsection {Maximum Product of Two Elements in an Array}
+https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution maxProduct, captionpos=t]
+const maxProduct = (nums) => {
+
+    let m1 = 0;
+    let m2 = 0;
+
+    for (const val of nums) {
+        m2 = Math.max(m2, Math.min(m1, val));
+        m1 = Math.max(m1, val);
+    }
+
+    return (m1 - 1) * (m2 - 1);
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
