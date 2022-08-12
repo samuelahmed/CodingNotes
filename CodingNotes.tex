@@ -7818,9 +7818,9 @@ https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
 \end{enumerate}
 
 \begin{lstlisting}[title=Solution removeDuplicates, captionpos=t]
-const removeDuplicates = s => {
+const removeDuplicates = (s) => {
     
-    const stack = [];
+    let stack = [];
       
     for (let char of s) {
       stack[stack.length - 1] === char
@@ -7958,7 +7958,7 @@ https://leetcode.com/problems/buildings-with-an-ocean-view/
 \begin{lstlisting}[title=Solution findBuildings, captionpos=t]
 const findBuildings = (heights) => {
     
-    const stack = [];
+    let stack = [];
     
     for (let i = 0; i < heights.length; i++) {
         while (stack.length && heights[i] >= heights[stack[stack.length - 1]]) {
@@ -8008,7 +8008,7 @@ const maxProduct = (nums) => {
     let m1 = 0;
     let m2 = 0;
 
-    for (const val of nums) {
+    for (let val of nums) {
         m2 = Math.max(m2, Math.min(m1, val));
         m1 = Math.max(m1, val);
     }
@@ -8225,6 +8225,59 @@ const lastStoneWeight = (stones) => {
  %START  
  \pagebreak
 \medskip   
+\subsection {Relative Ranks}
+https://leetcode.com/problems/relative-ranks/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution findRelativeRanks, captionpos=t]
+//Assuming PriorityQueue Library Available
+const findRelativeRanks = function (score) {
+    
+    let ranks = new MaxPriorityQueue();
+
+    for (let i = 0; i < score.length; i++) {
+        ranks.enqueue(i, score[i]);
+    }
+        for (let i = 0; i < score.length; i++) {
+            const item = ranks.dequeue();
+            let rank;
+            
+            switch (i) {
+                case 0:
+                    rank = "Gold Medal";
+                    break;
+                case 1:
+                    rank = "Silver Medal";
+                    break;
+                case 2:
+                    rank = "Bronze Medal";
+                    break;
+                default:
+                    rank = (i + 1).toString();
+            }
+        score[item.element] = rank;
+        }
+    
+    return score;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+ %START  
+ \pagebreak
+\medskip   
 \subsection {Kth Largest Element in a Stream}
 https://leetcode.com/problems/kth-largest-element-in-a-stream/
 
@@ -8254,8 +8307,6 @@ KthLargest.prototype.add = function(val) {
 };
 \end{lstlisting}
 \medskip %END
-
-
 
 
 
