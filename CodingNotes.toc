@@ -193,3 +193,6 @@
 \contentsline {subsection}{\numberline {14.5}Buildings With an Ocean View}{205}{subsection.14.5}%
 \contentsline {section}{\numberline {15}Heap}{206}{section.15}%
 \contentsline {subsection}{\numberline {15.1}Maximum Product of Two Elements in an Array}{206}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}The K Weakest Rows in a Matrix}{207}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Last Stone Weight}{211}{subsection.15.3}%
+\contentsline {subsection}{\numberline {15.4}Kth Largest Element in a Stream}{212}{subsection.15.4}%
