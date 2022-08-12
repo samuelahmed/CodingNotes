@@ -197,3 +197,5 @@
 \contentsline {subsection}{\numberline {15.3}Last Stone Weight}{211}{subsection.15.3}%
 \contentsline {subsection}{\numberline {15.4}Relative Ranks}{212}{subsection.15.4}%
 \contentsline {subsection}{\numberline {15.5}Kth Largest Element in a Stream}{213}{subsection.15.5}%
+\contentsline {section}{\numberline {16}Matrix}{214}{section.16}%
+\contentsline {subsection}{\numberline {16.1}Flipping an Image}{214}{subsection.16.1}%

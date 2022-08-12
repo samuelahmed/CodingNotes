@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  11 AUG 2022 21:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  12 AUG 2022 12:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -726,15 +726,21 @@ Overfull \hbox (4.44516pt too wide) in paragraph at lines 7998--7999
 n-an-array/ 
  []
 
-[206] [207] [208] [209] [210] [211] [212] [213] (./CodingNotes.aux)
-Package rerunfilecheck Info: File `CodingNotes.out' has not changed.
-(rerunfilecheck)             Checksum: 13E441BE7BF19BAC5CC334C56A06A8D5;38113.
+[206] [207] [208] [209] [210] [211] [212] [213] [214] (./CodingNotes.aux)
+
+Package rerunfilecheck Warning: File `CodingNotes.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `CodingNotes.out':
+(rerunfilecheck)             Before: 13E441BE7BF19BAC5CC334C56A06A8D5;38113
+(rerunfilecheck)             After:  B183045EAE3EBB712068EEA5693E4147;38341.
  ) 
 Here is how much of TeX's memory you used:
- 14852 strings out of 478268
- 222135 string characters out of 5846348
+ 14874 strings out of 478268
+ 222473 string characters out of 5846348
  878212 words of memory out of 5000000
- 28373 multiletter control sequences out of 15000+600000
+ 28375 multiletter control sequences out of 15000+600000
  474314 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,479b,1837s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -749,10 +755,10 @@ l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on CodingNotes.pdf (213 pages, 701949 bytes).
+Output written on CodingNotes.pdf (214 pages, 704127 bytes).
 PDF statistics:
- 7252 PDF objects out of 7423 (max. 8388607)
- 6947 compressed objects within 70 object streams
- 4613 named destinations out of 5155 (max. 500000)
+ 7279 PDF objects out of 7423 (max. 8388607)
+ 6973 compressed objects within 70 object streams
+ 4633 named destinations out of 5155 (max. 500000)
  1593 words of extra memory for PDF output out of 10000 (max. 10000000)
 

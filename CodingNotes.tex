@@ -8315,4 +8315,65 @@ KthLargest.prototype.add = function(val) {
 
 
 
+
+
+
+%END OF SECTION - HEAP
+
+
+
+
+
+
+%START OF SECTION - MATRIX
+
+\pagebreak
+\section{Matrix}
+
+
+
+
+
+
+ %START  
+\medskip   
+\subsection {Flipping an Image}
+https://leetcode.com/problems/flipping-an-image/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution flipAndInvertImage, captionpos=t]
+const flipAndInvertImage = (image) => {
+    
+    for (let row in image) {
+        image[row] = image[row].reverse();
+        image[row] = image[row].map(x => 1 - x);
+    }
+    
+    return image;
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution flipAndInvertImage1Line, captionpos=t]
+const flipAndInvertImage1Line = (A) => {
+    
+    return A.map(row => row.reverse().map(num => num^1));
+};
+
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
 \end{document}
