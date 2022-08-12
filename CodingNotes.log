@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  12 AUG 2022 13:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  12 AUG 2022 16:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -271,12 +271,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 2.
- [2] [3] [4] [5])
+ [2] [3] [4] [5]
+[6])
 \tf@toc=\write4
 \openout4 = `CodingNotes.toc'.
 
-
-[6] [7]
+ [7]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 122--123
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
@@ -727,21 +727,21 @@ n-an-array/
  []
 
 [207] [208] [209] [210] [211] [212] [213] [214] [215] [216] [217] [218]
-[219] (./CodingNotes.aux)
+[219] [220] [221] [222] [223] (./CodingNotes.aux)
 
 Package rerunfilecheck Warning: File `CodingNotes.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `CodingNotes.out':
-(rerunfilecheck)             Before: A8FE2A5FA9EB56E7C2C314939DB23339;38919
-(rerunfilecheck)             After:  7B5175272F934CBE02896E975D450E90;39063.
+(rerunfilecheck)             Before: 04C90F9993DDE70FFA6B9C3D0FFC7261;39830
+(rerunfilecheck)             After:  DED1BAB55B0E9115ABE21C8B1F342442;40030.
  ) 
 Here is how much of TeX's memory you used:
- 14970 strings out of 478268
- 223903 string characters out of 5846348
- 878215 words of memory out of 5000000
- 28388 multiletter control sequences out of 15000+600000
+ 15062 strings out of 478268
+ 225293 string characters out of 5846348
+ 878218 words of memory out of 5000000
+ 28400 multiletter control sequences out of 15000+600000
  474314 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,479b,1837s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -756,10 +756,10 @@ l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on CodingNotes.pdf (219 pages, 714752 bytes).
+Output written on CodingNotes.pdf (223 pages, 724296 bytes).
 PDF statistics:
- 7418 PDF objects out of 7423 (max. 8388607)
- 7105 compressed objects within 72 object streams
- 4716 named destinations out of 5155 (max. 500000)
- 1633 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7550 PDF objects out of 8907 (max. 8388607)
+ 7232 compressed objects within 73 object streams
+ 4796 named destinations out of 5155 (max. 500000)
+ 1673 words of extra memory for PDF output out of 10000 (max. 10000000)
 

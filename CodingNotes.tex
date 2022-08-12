@@ -8543,4 +8543,180 @@ const transpose = (matrix) => {
 
 
 
+
+
+
+%END OF SECTION - MATRIX
+
+
+
+
+
+
+%START OF SECTION - TWO POINTERS
+
+\pagebreak
+\section{Two Pointers}
+
+
+
+
+ %START  
+\medskip   
+\subsection {Reverse Words in a String III}
+https://leetcode.com/problems/reverse-words-in-a-string-iii/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution reverseWords, captionpos=t]
+const reverseWords = (s) => {
+    
+    let result = '';
+    let word = '';
+    
+    for (let c of s) {
+        if (c === ' ') {
+            result += word + c;
+            word = '';
+        } else {
+            word = c + word;
+        }
+    }
+    
+    return result + word;
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution reverseWordsSplit, captionpos=t]
+const reverseWordsSplit = (s) => {
+    
+    return s.split(' ').map(w => w
+        .split('')
+        .reverse()
+        .join(''))
+        .join(' ');
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Remove Palindromic Subsequences}
+https://leetcode.com/problems/remove-palindromic-subsequences/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution removePalindromeSub, captionpos=t]
+const removePalindromeSub = (s) => {
+    
+    let result = 0;
+    
+    if (s === s.split('').reverse().join('')) {
+        result = 1;
+    } else {
+        result = 2;
+    }
+
+    return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Number of Arithmetic Triplets}
+https://leetcode.com/problems/number-of-arithmetic-triplets/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution arithmeticTriplets, captionpos=t]
+const arithmeticTriplets = (nums, diff) => {
+    
+    let object = {};
+    let result = 0;
+    
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] >= diff * 2){
+            if (object[nums[i]-diff] && object[nums[i] - diff * 2]) {
+                result++
+            }
+        }   
+        object[nums[i]] = true;
+    }
+    
+    return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Intersection of Two Arrays}
+https://leetcode.com/problems/intersection-of-two-arrays/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution intersection, captionpos=t]
+const intersection = (nums1, nums2) => {
+    
+    let setNum1 = new Set(nums1);
+
+    return [...new Set(nums2.filter(num => setNum1.has(num)))];
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
 \end{document}
