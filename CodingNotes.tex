@@ -8376,4 +8376,171 @@ const flipAndInvertImage1Line = (A) => {
 
 
 
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Matrix Diagonal Sum}
+https://leetcode.com/problems/matrix-diagonal-sum/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution diagonalSum, captionpos=t]
+const diagonalSum = (mat) => {
+
+    let result = 0;
+    let j = mat[0].length - 1;
+
+    for (let i = 0; i < mat.length; i++, j--) {
+        if (i !== j) {
+            result += mat[i][j];
+        }
+        result += mat[i][i];
+    }
+
+    return result;
+};
+\end{lstlisting}
+
+
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Count Negative Numbers in a Sorted Matrix}
+https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution countNegatives, captionpos=t]
+const countNegatives = (grid) => {
+    
+    let result = 0;
+    
+    for (let i = 0; i < grid.length; i++) {
+      for (let j = grid[i].length - 1; j >= 0; j--) {
+        if (grid[i][j] < 0) {
+          result += 1;
+        }
+      }
+    }
+    
+    return result;
+};
+\end{lstlisting}
+
+\begin{lstlisting}[title=Solution countNegativesFlat, captionpos=t]
+const countNegativesFlat = (grid) => {
+    
+    return grid.flat().filter(ele => ele < 0).length;
+};
+\end{lstlisting}
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Shift 2D Grid}
+https://leetcode.com/problems/shift-2d-grid/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution shiftGrid, captionpos=t]
+const shiftGrid = (grid, k) => {
+    
+    let m = grid.length;
+    
+    for (let j = 0; j < k; j++) {
+        for (let i = 0; i < m; i++) {
+            grid[i].unshift(grid[((m + i -1) % m)].pop()); 
+        }
+    }
+    
+    return grid;
+};
+\end{lstlisting}
+
+
+\medskip %END
+
+
+
+
+
+
+
+
+
+
+ %START  
+\pagebreak
+\medskip   
+\subsection {Transpose Matrix}
+https://leetcode.com/problems/transpose-matrix/
+
+\begin{enumerate}
+	\item 
+	\item 
+\end{enumerate}
+
+\begin{lstlisting}[title=Solution transpose, captionpos=t]
+const transpose = (matrix) => {
+    
+    let row = matrix.length;
+    let col = matrix[0].length;
+    let result = [];
+    
+    if(matrix.length === 0) return [];
+    
+    for (let i = 0; i < col; i++) {
+        result[i] = [];
+        for (let j = 0; j < row; j++) {
+            result[i][j] = matrix[j][i];
+        }
+    }
+    
+    return result;
+};
+\end{lstlisting}
+\medskip %END
+
+
+
+
+
+
+
+
 \end{document}

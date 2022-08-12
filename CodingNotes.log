@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  12 AUG 2022 12:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.8)  12 AUG 2022 13:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -276,7 +276,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `CodingNotes.toc'.
 
 
-[6]
+[6] [7]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 122--123
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
@@ -284,67 +284,67 @@ b / JavaScript / Reference /
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 131.
-[7]
+[8]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 146--147
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[8]
+[9]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 168--169
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[9]
+[10]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 194--195
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[10]
+[11]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 216--217
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[11]
+[12]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 239--240
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[12]
+[13]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 264--265
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[13]
+[14]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 290--291
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[14] [15]
+[15] [16]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 354--355
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[16]
+[17]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 387--388
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[17]
+[18]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 418--419
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[18]
+[19]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 447--448
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
@@ -354,37 +354,37 @@ LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line
 459.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [19]
+) [20]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 474--475
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[20]
+[21]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 492--493
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[21]
+[22]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 516--517
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[22]
+[23]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 542--543
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[23]
+[24]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 565--566
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[24]
+[25]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 604--605
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
@@ -402,7 +402,7 @@ Overfull \hbox (16.99698pt too wide) in paragraph at lines 612--613
 Web / JavaScript / Reference /
  []
 
-[25]
+[26]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 662--663
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
@@ -414,7 +414,7 @@ Overfull \hbox (16.99698pt too wide) in paragraph at lines 666--667
 Web / JavaScript / Reference /
  []
 
-[26]
+[27]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 706.
@@ -439,19 +439,19 @@ Overfull \hbox (16.99698pt too wide) in paragraph at lines 712--713
 Web / JavaScript / Reference /
  []
 
-[27] [28]
+[28] [29]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 764--765
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[29]
+[30]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 810--811
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[30]
+[31]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 839--840
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
@@ -463,115 +463,115 @@ Overfull \hbox (1.72287pt too wide) in paragraph at lines 842--843
 ments or NodeList),
  []
 
-[31]
+[32]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 876--877
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[32]
+[33]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 918--919
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[33]
+[34]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 967--968
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[34]
+[35]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1009--1010
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[35]
+[36]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1050--1051
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[36] [37]
+[37] [38]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1140--1141
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[38]
+[39]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1186--1187
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[39]
+[40]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1226--1227
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[40]
+[41]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1272--1273
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[41]
+[42]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1318--1319
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[42]
+[43]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1350--1351
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[43]
+[44]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1403--1404
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[44]
+[45]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1443--1444
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[45] [46]
+[46] [47]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1502--1503
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[47]
+[48]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1540--1541
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[48]
+[49]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1586--1587
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[49] [50]
+[50] [51]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1672--1673
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[51]
+[52]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1705--1706
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[52]
+[53]
 Overfull \hbox (72.17784pt too wide) in paragraph at lines 1754--1754
 []\OT1/cmr/bx/n/12 String.prototype.toLowerCase() String.prototype.toUpperCase(
 ) 
@@ -589,158 +589,159 @@ Overfull \hbox (19.96906pt too wide) in paragraph at lines 1756--1759
 loper . mozilla . org / en-[]US /
  []
 
-[53]
+[54]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1795--1796
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[54]
+[55]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1828--1829
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[55] [56]
+[56] [57]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1881--1882
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[57]
+[58]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1913--1914
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[58]
+[59]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 1954--1955
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[59]
+[60]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 2001--2002
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[60]
+[61]
 Overfull \hbox (1.99698pt too wide) in paragraph at lines 2043--2044
 []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . org / en-[]US / docs / We
 b / JavaScript / Reference /
  []
 
-[61] [62] [63] [64] [65] [66]
+[62] [63] [64] [65] [66] [67]
 Overfull \hbox (17.83415pt too wide) in paragraph at lines 2250--2251
 \OT1/cmr/m/n/10 https://leetcode.com/problems/final-value-of-variable-after-per
 forming-operations/ 
  []
 
-[67] [68] [69] [70]
+[68] [69] [70] [71]
 Overfull \hbox (3.97292pt too wide) in paragraph at lines 2348--2349
 \OT1/cmr/m/n/10 https://leetcode.com/problems/maximum-number-of-words-found-in-
 sentences/ 
  []
 
-[71] [72] [73] [74] [75] [76]
+[72] [73] [74] [75] [76] [77]
 Overfull \hbox (13.41731pt too wide) in paragraph at lines 2542--2543
 \OT1/cmr/m/n/10 leetcode.com/problems/how-many-numbers-are-smaller-than-the-cur
 rent-number/ 
  []
 
-[77] [78] [79] [80]
+[78] [79] [80] [81]
 Overfull \hbox (2.55621pt too wide) in paragraph at lines 2669--2670
 \OT1/cmr/m/n/10 https://leetcode.com/problems/count-number-of-pairs-with-absolu
 te-difference-
  []
 
-[81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95]
-[96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106] [107] [108]
+[82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96]
+[97] [98] [99] [100] [101] [102] [103] [104] [105] [106] [107] [108] [109]
 Overfull \hbox (3.86183pt too wide) in paragraph at lines 3615--3616
 []\OT1/cmr/m/n/10 Initialize value to String fromCharCode(s[i-1].charCodeAt()+N
 umber(s[i])) 
  []
 
-[109] [110] [111] [112] [113]
+[110] [111] [112] [113] [114]
 Overfull \hbox (45.9451pt too wide) in paragraph at lines 3812--3813
 \OT1/cmr/m/n/10 https://leetcode.com/problems/check-if-all-characters-have-equa
 l-number-of-occurrences/ 
  []
 
-[114] [115] [116] [117] [118]
+[115] [116] [117] [118] [119]
 Overfull \hbox (6.05623pt too wide) in paragraph at lines 4027--4028
 \OT1/cmr/m/n/10 https://leetcode.com/problems/check-if-number-has-equal-digit-c
 ount-and-digit-
  []
 
-[119]
+[120]
 Overfull \hbox (20.41745pt too wide) in paragraph at lines 4055--4056
 \OT1/cmr/m/n/10 https://leetcode.com/problems/keep-multiplying-found-values-by-
 two/submissions/ 
  []
 
-[120] [121] [122] [123] [124]
+[121] [122] [123] [124] [125]
 Overfull \hbox (7.25061pt too wide) in paragraph at lines 4271--4272
 \OT1/cmr/m/n/10 https://leetcode.com/problems/substrings-of-size-three-with-dis
 tinct-characters/ 
  []
 
-[125] [126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136]
-[137] [138] [139] [140] [141] [142]
+[126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137]
+[138] [139] [140] [141] [142] [143]
 Overfull \hbox (3.63959pt too wide) in paragraph at lines 5010--5011
 \OT1/cmr/m/n/10 https://leetcode.com/problems/find-a-corresponding-node-of-a-bi
 nary-tree-in-a-
  []
 
-[143] [144] [145] [146] [147] [148] [149] [150] [151] [152] [153] [154]
-[155] [156] [157] [158] [159] [160] [161]
+[144] [145] [146] [147] [148] [149] [150] [151] [152] [153] [154] [155]
+[156] [157] [158] [159] [160] [161] [162]
 Overfull \hbox (20.80627pt too wide) in paragraph at lines 5885--5886
 \OT1/cmr/m/n/10 https://leetcode.com/problems/minimum-distance-between-bst-node
 s/submissions/ 
  []
 
-[162] [163] [164] [165] [166] [167]
+[163] [164] [165] [166] [167] [168]
 Overfull \hbox (8.47285pt too wide) in paragraph at lines 6139--6140
 \OT1/cmr/m/n/10 https://leetcode.com/problems/lowest-common-ancestor-of-a-binar
 y-search-tree/ 
  []
 
-[168] [169] [170]
+[169] [170] [171]
 Overfull \hbox (27.80623pt too wide) in paragraph at lines 6278--6279
 \OT1/cmr/m/n/10 https://leetcode.com/problems/construct-binary-search-tree-from
 -preorder-traversal/ 
  []
 
-[171] [172] [173] [174]
+[172] [173] [174] [175]
 Overfull \hbox (11.97292pt too wide) in paragraph at lines 6518--6519
 \OT1/cmr/m/n/10 https://leetcode.com/problems/convert-binary-number-in-a-linked
 -list-to-integer/ 
  []
 
-[175] [176] [177] [178] [179] [180] [181] [182] [183] [184] [185] [186]
-[187] [188] [189] [190] [191] [192] [193] [194] [195] [196] [197] [198]
-[199] [200] [201] [202] [203] [204] [205]
+[176] [177] [178] [179] [180] [181] [182] [183] [184] [185] [186] [187]
+[188] [189] [190] [191] [192] [193] [194] [195] [196] [197] [198] [199]
+[200] [201] [202] [203] [204] [205] [206]
 Overfull \hbox (4.44516pt too wide) in paragraph at lines 7998--7999
 \OT1/cmr/m/n/10 https://leetcode.com/problems/maximum-product-of-two-elements-i
 n-an-array/ 
  []
 
-[206] [207] [208] [209] [210] [211] [212] [213] [214] (./CodingNotes.aux)
+[207] [208] [209] [210] [211] [212] [213] [214] [215] [216] [217] [218]
+[219] (./CodingNotes.aux)
 
 Package rerunfilecheck Warning: File `CodingNotes.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `CodingNotes.out':
-(rerunfilecheck)             Before: 13E441BE7BF19BAC5CC334C56A06A8D5;38113
-(rerunfilecheck)             After:  B183045EAE3EBB712068EEA5693E4147;38341.
+(rerunfilecheck)             Before: A8FE2A5FA9EB56E7C2C314939DB23339;38919
+(rerunfilecheck)             After:  7B5175272F934CBE02896E975D450E90;39063.
  ) 
 Here is how much of TeX's memory you used:
- 14874 strings out of 478268
- 222473 string characters out of 5846348
- 878212 words of memory out of 5000000
- 28375 multiletter control sequences out of 15000+600000
+ 14970 strings out of 478268
+ 223903 string characters out of 5846348
+ 878215 words of memory out of 5000000
+ 28388 multiletter control sequences out of 15000+600000
  474314 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,479b,1837s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -755,10 +756,10 @@ l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on CodingNotes.pdf (214 pages, 704127 bytes).
+Output written on CodingNotes.pdf (219 pages, 714752 bytes).
 PDF statistics:
- 7279 PDF objects out of 7423 (max. 8388607)
- 6973 compressed objects within 70 object streams
- 4633 named destinations out of 5155 (max. 500000)
- 1593 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7418 PDF objects out of 7423 (max. 8388607)
+ 7105 compressed objects within 72 object streams
+ 4716 named destinations out of 5155 (max. 500000)
+ 1633 words of extra memory for PDF output out of 10000 (max. 10000000)
 
